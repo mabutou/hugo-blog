@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://butou.ma/posts/music-trans/" />
+  <link rel="canonical" href="https://butou.ma/posts/music-trans/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/butou.ma\/"
+      },
+      "articleSection" : "posts",
+      "name" : "如何在不同音乐平台间迁移歌单",
+      "headline" : "如何在不同音乐平台间迁移歌单",
+      "description" : "点击下载觉哥歌单文本文件（共 365 首）：jueSpotifyPlaylist.csv\n 起因：刷微博看到黄觉分享了一个 Spotify 歌单二维码，发现评论里好多人没用过 Spotify。反正睡不着，顺手写篇相关教程。\n  我各种音乐平台都用过，其中网易云重度用户，累计听歌量两万三  但网易云在 iPhone 上不能在锁屏后用 Siri 直接唤醒放歌（对 AirPods 支持也不行），故最近转移到 Apple Music 了。（转移了六千首过去）   也为了防止单一平台版权原因下架，系统研究了一下各平台的迁移方法\n 先写 Spotify 转 Apple Music，网易云转 Apple Music 复杂些有空再更新。（其余 QQ 音乐 \/ 虾米音乐之类都比较简单，不一定写了）\n Spotify 迁移至 Apple Music   以觉哥的歌单为例，先把二维码解析为链接\n 先用 Spotify 手机端扫描微博那张图，用右上角自带分享功能得到歌单链接：https:\/\/open.spotify.com\/user\/huangjue6766\/playlist\/2lfNXg1139huYYskKclWjD?si=whfaAAhjROihSAOYbykDOw    打开 tunemymusic 网站，网址 https:\/\/www.tunemymusic.com\/zh-cn\/\n  点击开始，选择来源为 Spotify\n    上面的链接贴进去\n    然后按照提示，点下一步，选择目的地为 Apple Music",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-08-18 19:49:20 \u002b0800 CST",
+      "dateModified" : "2019-08-18 19:49:20 \u002b0800 CST",
+      "url" : "https:\/\/butou.ma\/posts\/music-trans\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>如何在不同音乐平台间迁移歌单 - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="如何在不同音乐平台间迁移歌单 - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="点击下载觉哥歌单文本文件（共 365 首）：jueSpotifyPlaylist.csv
+ 起因：刷微博看到黄觉分享了一个 Spotify 歌单二维码，发现评论里好多人没用过 Spotify。反正睡不着，顺手写篇相关教程。
+  我各种音乐平台都用过，其中网易云重度用户，累计听歌量两万三  但网易云在 iPhone 上不能在锁屏后用 Siri 直接唤醒放歌（对 AirPods 支持也不行），故最近转移到 Apple Music 了。（转移了六千首过去）   也为了防止单一平台版权原因下架，系统研究了一下各平台的迁移方法
+ 先写 Spotify 转 Apple Music，网易云转 Apple Music 复杂些有空再更新。（其余 QQ 音乐 / 虾米音乐之类都比较简单，不一定写了）
+ Spotify 迁移至 Apple Music   以觉哥的歌单为例，先把二维码解析为链接
+ 先用 Spotify 手机端扫描微博那张图，用右上角自带分享功能得到歌单链接：https://open.spotify.com/user/huangjue6766/playlist/2lfNXg1139huYYskKclWjD?si=whfaAAhjROihSAOYbykDOw    打开 tunemymusic 网站，网址 https://www.tunemymusic.com/zh-cn/
+  点击开始，选择来源为 Spotify
+    上面的链接贴进去
+    然后按照提示，点下一步，选择目的地为 Apple Music" />
+  <meta name="description" content="点击下载觉哥歌单文本文件（共 365 首）：jueSpotifyPlaylist.csv
+ 起因：刷微博看到黄觉分享了一个 Spotify 歌单二维码，发现评论里好多人没用过 Spotify。反正睡不着，顺手写篇相关教程。
+  我各种音乐平台都用过，其中网易云重度用户，累计听歌量两万三  但网易云在 iPhone 上不能在锁屏后用 Siri 直接唤醒放歌（对 AirPods 支持也不行），故最近转移到 Apple Music 了。（转移了六千首过去）   也为了防止单一平台版权原因下架，系统研究了一下各平台的迁移方法
+ 先写 Spotify 转 Apple Music，网易云转 Apple Music 复杂些有空再更新。（其余 QQ 音乐 / 虾米音乐之类都比较简单，不一定写了）
+ Spotify 迁移至 Apple Music   以觉哥的歌单为例，先把二维码解析为链接
+ 先用 Spotify 手机端扫描微博那张图，用右上角自带分享功能得到歌单链接：https://open.spotify.com/user/huangjue6766/playlist/2lfNXg1139huYYskKclWjD?si=whfaAAhjROihSAOYbykDOw    打开 tunemymusic 网站，网址 https://www.tunemymusic.com/zh-cn/
+  点击开始，选择来源为 Spotify
+    上面的链接贴进去
+    然后按照提示，点下一步，选择目的地为 Apple Music" />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/butou.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 homepage">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://butou.ma" >Home</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://photos.butou.ma" >Photo</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma" >Timeline</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://wiki.butou.ma/" >Wiki</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" >About</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">如何在不同音乐平台间迁移歌单</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2019-08-18 19:49:20 CST">
+                18 Aug 2019
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p>点击下载觉哥歌单文本文件（共 365 首）：<a href="https://butou.ma/wp-content/uploads/2019/08/jueSpotifyPlaylist.csv">jueSpotifyPlaylist.csv</a></p>
+<blockquote>
+<p><strong>起因：刷微博看到黄觉分享了一个 Spotify 歌单二维码，发现评论里好多人没用过 Spotify。反正睡不着，顺手写篇相关教程</strong>。</p>
+<p><img src="/img/%E6%88%AA%E5%B1%8F-2019-08-08-04.26.48.png" alt=""><img src="https://butou.ma/wp-content/uploads/2019/08" alt=""></p>
+</blockquote>
+<ul>
+<li>我各种音乐平台都用过，其中网易云重度用户，累计听歌量两万三</li>
+<li><img src="/img/IMG_2962-20201114181556886.png" alt=""></li>
+<li>但网易云在 iPhone 上不能在锁屏后用 Siri 直接唤醒放歌（对 AirPods 支持也不行），故最近转移到 Apple Music 了。（转移了六千首过去）</li>
+<li><img src="/img/image-20201114181613506.png" alt=""></li>
+</ul>
+<p><strong>也为了防止单一平台版权原因下架，系统研究了一下各平台的迁移方法</strong></p>
+<blockquote>
+<p><strong>先写 Spotify 转 Apple Music，网易云转 Apple Music 复杂些有空再更新。</strong><em><strong>（其余 QQ 音乐 / 虾米音乐之类都比较简单，不一定写了）</strong></em></p>
+</blockquote>
+<h1 id="spotify-迁移至-apple-music">Spotify 迁移至 Apple Music</h1>
+<ul>
+<li>
+<p>以觉哥的歌单为例，先把二维码解析为链接</p>
+<ul>
+<li>先用 Spotify 手机端扫描微博那张图，用右上角自带分享功能得到歌单链接：<a href="https://open.spotify.com/user/huangjue6766/playlist/2lfNXg1139huYYskKclWjD?si=whfaAAhjROihSAOYbykDOw">https://open.spotify.com/user/huangjue6766/playlist/2lfNXg1139huYYskKclWjD?si=whfaAAhjROihSAOYbykDOw</a></li>
+</ul>
+</li>
+<li>
+<p>打开 tunemymusic 网站，网址 <a href="https://www.tunemymusic.com/zh-cn/">https://www.tunemymusic.com/zh-cn/</a></p>
+</li>
+<li>
+<p>点击开始，选择来源为 Spotify</p>
+</li>
+<li>
+<p><img src="/img/image-20190808040441985-20201114181644739.png" alt=""></p>
+</li>
+<li>
+<p><strong>上面的链接贴进去</strong></p>
+</li>
+<li>
+<p><img src="/img/image-20190808040609080-20201114181652376.png" alt=""></p>
+</li>
+<li>
+<p><strong>然后按照提示，点下一步，选择目的地为 Apple Music</strong></p>
+</li>
+<li>
+<p><strong>这一步需要弹到 Apple 网站登录授权（注意授权完成后，这个界面不会自动响应，需要手动再点击下中间这个按钮）</strong></p>
+</li>
+<li>
+<p><img src="/img/image-20190808040853832-20201114181658718.png" alt=""></p>
+</li>
+<li>
+<p><strong>最后一步，点开始移动，就能一键完成歌单迁移，进度条往后走完后，会提示失败了几首并列出来</strong></p>
+</li>
+<li>
+<p><img src="/img/Xnip2019-08-08_03-03-06-e1565214414639-20201114181713892.jpg" alt=""></p>
+</li>
+</ul>
+<blockquote>
+<p><strong>注：</strong></p>
+<p><strong>选择导入源时，也可以直接导入文本文件</strong></p>
+<p><strong>这个网站还支持其他一些平台，步骤都基本一样</strong></p>
+</blockquote>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/tech/">
+                Tech
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

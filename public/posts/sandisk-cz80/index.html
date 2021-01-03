@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://butou.ma/posts/sandisk-cz80/" />
+  <link rel="canonical" href="https://butou.ma/posts/sandisk-cz80/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/butou.ma\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Mac OS 下解决 SanDisk CZ80 掉速问题",
+      "headline" : "Mac OS 下解决 SanDisk CZ80 掉速问题",
+      "description" : "CZ80 速度很快可以用来做 win to go 系统。但由于主控原因，用久了会明显掉速。 想要恢复原本速度，可以直接全盘写零进行还原。格式化是没用的。  命令步骤如下：\n在终端中查询磁盘编号：\nbash diskutil list\n确认编号（如 diskX）后（注意大小写），全盘写零：\nbash diskutil zeroDisk \/dev\/diskX\n过程可能有点慢，进度条走完就好了。",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2017",
+      "datePublished": "2017-11-09 19:28:23 \u002b0800 CST",
+      "dateModified" : "2017-11-09 19:28:23 \u002b0800 CST",
+      "url" : "https:\/\/butou.ma\/posts\/sandisk-cz80\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Mac OS 下解决 SanDisk CZ80 掉速问题 - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="Mac OS 下解决 SanDisk CZ80 掉速问题 - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="CZ80 速度很快可以用来做 win to go 系统。但由于主控原因，用久了会明显掉速。 想要恢复原本速度，可以直接全盘写零进行还原。格式化是没用的。  命令步骤如下：
+在终端中查询磁盘编号：
+bash diskutil list
+确认编号（如 diskX）后（注意大小写），全盘写零：
+bash diskutil zeroDisk /dev/diskX
+过程可能有点慢，进度条走完就好了。" />
+  <meta name="description" content="CZ80 速度很快可以用来做 win to go 系统。但由于主控原因，用久了会明显掉速。 想要恢复原本速度，可以直接全盘写零进行还原。格式化是没用的。  命令步骤如下：
+在终端中查询磁盘编号：
+bash diskutil list
+确认编号（如 diskX）后（注意大小写），全盘写零：
+bash diskutil zeroDisk /dev/diskX
+过程可能有点慢，进度条走完就好了。" />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/butou.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 homepage">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://butou.ma" >Home</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://photos.butou.ma" >Photo</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma" >Timeline</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://wiki.butou.ma/" >Wiki</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" >About</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Mac OS 下解决 SanDisk CZ80 掉速问题</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2017-11-09 19:28:23 CST">
+                09 Nov 2017
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <ul>
+<li>CZ80 速度很快可以用来做 win to go 系统。但由于主控原因，用久了会明显掉速。</li>
+<li>想要恢复原本速度，可以直接全盘写零进行还原。格式化是没用的。</li>
+</ul>
+<p>命令步骤如下：</p>
+<p>在终端中查询磁盘编号：</p>
+<p><code>bash diskutil list</code></p>
+<p>确认编号（如 diskX）后（注意大小写），全盘写零：</p>
+<p><code>bash diskutil zeroDisk /dev/diskX</code></p>
+<p>过程可能有点慢，进度条走完就好了。</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/tech/">
+                Tech
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

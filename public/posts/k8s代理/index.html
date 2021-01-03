@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.79.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://blog.pp.wtf/posts/k8s%E4%BB%A3%E7%90%86/" />
+  <link rel="canonical" href="https://blog.pp.wtf/posts/k8s%E4%BB%A3%E7%90%86/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://blog.pp.wtf/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/blog.pp.wtf\/"
+      },
+      "articleSection" : "posts",
+      "name" : "国内主机配置 k8s 的注意事项及如何正确设置代理",
+      "headline" : "国内主机配置 k8s 的注意事项及如何正确设置代理",
+      "description" : "最近学习 kubernetes，在公司三台 centos7 服务器上用 kubeadm 部署 k8s 测试环境。\n过程中有些注意事项，提前避开能节省很多时间。\n 1. 安装指定 docker 版本\n  kubeadm 对 docker 版本的支持有限，目前只支持到 18.09\n  直接装最新版的会在后面步骤里报错，还得重装一次。\n  2. 某些教程里使用的是旧版 kubeadm ，对应的 weave 安装命令也是旧版的\n 我装的最新版 kubeadm (1.16)，发现装 weave 时遇到版本问题。 用下面命令装的 ：  kubectl apply -f \u0026quot;https:\/\/cloud.weave.works\/k8s\/net?k8s-version=$(kubectl version | base64 | tr -d \u0027\\\\n\u0027)\u0026quot; 3. 正确设置代理（重要）。\n  本来 kubeadm 部署 k8s 很简单，但国内无法正常访问 gcr.io 。很多人被拉取 gcr.io 镜像时的网络问题卡住。\n  linux 下在终端用 setproxy 或 sethttp 命令设置的代理对 docker pull 无效。需要额外设置。",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-11-23 19:58:29 \u002b0800 CST",
+      "dateModified" : "2019-11-23 19:58:29 \u002b0800 CST",
+      "url" : "https:\/\/blog.pp.wtf\/posts\/k8s%E4%BB%A3%E7%90%86\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>国内主机配置 k8s 的注意事项及如何正确设置代理 - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="国内主机配置 k8s 的注意事项及如何正确设置代理 - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="最近学习 kubernetes，在公司三台 centos7 服务器上用 kubeadm 部署 k8s 测试环境。
+过程中有些注意事项，提前避开能节省很多时间。
+ 1. 安装指定 docker 版本
+  kubeadm 对 docker 版本的支持有限，目前只支持到 18.09
+  直接装最新版的会在后面步骤里报错，还得重装一次。
+  2. 某些教程里使用的是旧版 kubeadm ，对应的 weave 安装命令也是旧版的
+ 我装的最新版 kubeadm (1.16)，发现装 weave 时遇到版本问题。 用下面命令装的 ：  kubectl apply -f &quot;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d &#39;\\n&#39;)&quot; 3. 正确设置代理（重要）。
+  本来 kubeadm 部署 k8s 很简单，但国内无法正常访问 gcr.io 。很多人被拉取 gcr.io 镜像时的网络问题卡住。
+  linux 下在终端用 setproxy 或 sethttp 命令设置的代理对 docker pull 无效。需要额外设置。" />
+  <meta name="description" content="最近学习 kubernetes，在公司三台 centos7 服务器上用 kubeadm 部署 k8s 测试环境。
+过程中有些注意事项，提前避开能节省很多时间。
+ 1. 安装指定 docker 版本
+  kubeadm 对 docker 版本的支持有限，目前只支持到 18.09
+  直接装最新版的会在后面步骤里报错，还得重装一次。
+  2. 某些教程里使用的是旧版 kubeadm ，对应的 weave 安装命令也是旧版的
+ 我装的最新版 kubeadm (1.16)，发现装 weave 时遇到版本问题。 用下面命令装的 ：  kubectl apply -f &quot;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d &#39;\\n&#39;)&quot; 3. 正确设置代理（重要）。
+  本来 kubeadm 部署 k8s 很简单，但国内无法正常访问 gcr.io 。很多人被拉取 gcr.io 镜像时的网络问题卡住。
+  linux 下在终端用 setproxy 或 sethttp 命令设置的代理对 docker pull 无效。需要额外设置。" />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  <script async src="https://www.googletagmanager.com/gtag/js?id=UA-109814537-1"></script>
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma/" target="_blank">Timeline</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="https://photo.butou.ma" target="_blank">Photo</a>
+  </div>
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" target="_blank">About</a>
+  </div>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">国内主机配置 k8s 的注意事项及如何正确设置代理</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2019-11-23 19:58:29 CST">
+                23 Nov 2019
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://blog.pp.wtf/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <blockquote>
+<p>最近学习 kubernetes，在公司三台 centos7 服务器上用 kubeadm 部署 k8s 测试环境。</p>
+<p>过程中有些注意事项，提前避开能节省很多时间。</p>
+</blockquote>
+<p>1. 安装指定 docker 版本</p>
+<ul>
+<li>
+<p>kubeadm 对 docker 版本的支持有限，目前只支持到 18.09</p>
+</li>
+<li>
+<p>直接装最新版的会在后面步骤里报错，还得重装一次。</p>
+</li>
+</ul>
+<p>2. 某些教程里使用的是旧版 kubeadm ，对应的 weave 安装命令也是旧版的</p>
+<ul>
+<li>我装的最新版 kubeadm (1.16)，发现装 weave 时遇到版本问题。</li>
+<li>用下面命令装的 ：</li>
+</ul>
+<pre><code>kubectl apply -f &quot;https://cloud.weave.works/k8s/net?k8s-version=$(kubectl version | base64 | tr -d '\\n')&quot;
+</code></pre><p><strong>3. 正确设置代理（重要）。</strong></p>
+<ul>
+<li>
+<p>本来 kubeadm 部署 k8s 很简单，但国内无法正常访问 <a href="http://gcr.io/">gcr.io</a> 。很多人被拉取 <a href="http://k8s.gcr.io/v2/">gcr.io</a> 镜像时的网络问题卡住。</p>
+</li>
+<li>
+<p>linux 下在终端用 setproxy 或 sethttp 命令设置的代理对 docker pull 无效。需要额外设置。</p>
+</li>
+</ul>
+<h3 id="操作步骤">操作步骤</h3>
+<ul>
+<li>创建目录</li>
+</ul>
+<pre><code>sudo mkdir -p /etc/systemd/system/docker.service.d
+</code></pre><ul>
+<li>新建文件，走 http 代理</li>
+</ul>
+<pre><code>vim /etc/systemd/system/docker.service.d/http-proxy.conf
+</code></pre><ul>
+<li>内容（ip 和端口号根据客户端设置修改）</li>
+</ul>
+<pre><code>\[Service\]
+Environment=&quot;HTTP\_PROXY=http://127.0.0.1:8001/&quot;
+</code></pre><ul>
+<li>刷新更改</li>
+</ul>
+<pre><code>sudo systemctl daemon-reload
+</code></pre><ul>
+<li>重新启动 Docker</li>
+</ul>
+<pre><code>sudo systemctl restart docker
+</code></pre><ul>
+<li>验证配置是否已加载</li>
+</ul>
+<pre><code>systemctl show --property=Environment docker
+</code></pre><ul>
+<li>如果生效会显示对应设置参数</li>
+</ul>
+<p>之后的步骤里就可以 pull <a href="http://gcr.io/">gcr.io</a> 上的镜像了。</p>
+<blockquote>
+<p>详细配置参考官网文档：</p>
+<p><a href="https://docs.docker.com/config/daemon/systemd/">https://docs.docker.com/config/daemon/systemd/</a></p>
+</blockquote>
+<p>注：如果配置的是局域网内其他机器上运行的代理客户端，需要在对应客户端开启局域网共享功能（某些 GUI 客户端没有这个选项，可以手动在配置文件里将本地监听从 127.0.0.1 改成 0.0.0.0 ）。</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

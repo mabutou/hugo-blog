@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://butou.ma/posts/ankiconnect/" />
+  <link rel="canonical" href="https://butou.ma/posts/ankiconnect/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/butou.ma\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Mac 版 Anki 安装 AnkiConnect 插件后连接失败解决方法",
+      "headline" : "Mac 版 Anki 安装 AnkiConnect 插件后连接失败解决方法",
+      "description" : "最近使用 Anki 记忆 COCA 词汇时，碰到此问题。  使用 Chrome 上的 Anki 取词插件（比如我用的 Online Dictionary Helper） 时，将单词添加至新卡片的功能需要依靠 AnkiConnect 插件连接桌面客户端与取词插件。 由于 Mac 系统的机制，会导致 Anki 客户端处于后台时，AnkiConnect 的进程被挂起。 结果是取词插件设置页面检测不到 AnkiConnect，或者检测到并设置好后短时间内连接又断开。 打开终端执行下面三行命令  解决方法如下：\ndefaults write net.ankiweb.dtop NSAppSleepDisabled -bool true defaults write net.ichi2.anki NSAppSleepDisabled -bool true defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true  重启 Anki 客户端  官方文档原文： Notes for Mac OS X Users Starting with Mac OS X Mavericks, a feature named App Nap has been introduced to the operating system.",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2018",
+      "datePublished": "2018-11-15 19:39:14 \u002b0800 CST",
+      "dateModified" : "2018-11-15 19:39:14 \u002b0800 CST",
+      "url" : "https:\/\/butou.ma\/posts\/ankiconnect\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Mac 版 Anki 安装 AnkiConnect 插件后连接失败解决方法 - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="Mac 版 Anki 安装 AnkiConnect 插件后连接失败解决方法 - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="最近使用 Anki 记忆 COCA 词汇时，碰到此问题。  使用 Chrome 上的 Anki 取词插件（比如我用的 Online Dictionary Helper） 时，将单词添加至新卡片的功能需要依靠 AnkiConnect 插件连接桌面客户端与取词插件。 由于 Mac 系统的机制，会导致 Anki 客户端处于后台时，AnkiConnect 的进程被挂起。 结果是取词插件设置页面检测不到 AnkiConnect，或者检测到并设置好后短时间内连接又断开。 打开终端执行下面三行命令  解决方法如下：
+defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true defaults write net.ichi2.anki NSAppSleepDisabled -bool true defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true  重启 Anki 客户端  官方文档原文： Notes for Mac OS X Users Starting with Mac OS X Mavericks, a feature named App Nap has been introduced to the operating system." />
+  <meta name="description" content="最近使用 Anki 记忆 COCA 词汇时，碰到此问题。  使用 Chrome 上的 Anki 取词插件（比如我用的 Online Dictionary Helper） 时，将单词添加至新卡片的功能需要依靠 AnkiConnect 插件连接桌面客户端与取词插件。 由于 Mac 系统的机制，会导致 Anki 客户端处于后台时，AnkiConnect 的进程被挂起。 结果是取词插件设置页面检测不到 AnkiConnect，或者检测到并设置好后短时间内连接又断开。 打开终端执行下面三行命令  解决方法如下：
+defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true defaults write net.ichi2.anki NSAppSleepDisabled -bool true defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true  重启 Anki 客户端  官方文档原文： Notes for Mac OS X Users Starting with Mac OS X Mavericks, a feature named App Nap has been introduced to the operating system." />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/butou.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 homepage">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://butou.ma" >Home</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://photos.butou.ma" >Photo</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma" >Timeline</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://wiki.butou.ma/" >Wiki</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" >About</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Mac 版 Anki 安装 AnkiConnect 插件后连接失败解决方法</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2018-11-15 19:39:14 CST">
+                15 Nov 2018
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <h3 id="最近使用-anki-记忆-coca-词汇时碰到此问题">最近使用 Anki 记忆 COCA 词汇时，碰到此问题。</h3>
+<ul>
+<li>使用 Chrome 上的 Anki 取词插件（比如我用的 Online Dictionary Helper） 时，将单词添加至新卡片的功能需要依靠 AnkiConnect 插件连接桌面客户端与取词插件。</li>
+<li>由于 Mac 系统的机制，会导致 Anki 客户端处于后台时，AnkiConnect 的进程被挂起。</li>
+<li>结果是取词插件设置页面检测不到 AnkiConnect，或者检测到并设置好后短时间内连接又断开。</li>
+<li>打开终端执行下面三行命令</li>
+</ul>
+<p>解决方法如下：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true
+defaults write net.ichi2.anki NSAppSleepDisabled -bool true
+defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true
+</code></pre></div><ul>
+<li>重启 Anki 客户端</li>
+</ul>
+<h2 id="官方文档原文httpsfoosoftnetprojectsanki-connectindexhtmlnotes-for-mac-os-x-users"><a href="https://foosoft.net/projects/anki-connect/index.html#notes-for-mac-os-x-users">官方文档原文：</a></h2>
+<h3 id="notes-for-mac-os-x-users">Notes for Mac OS X Users</h3>
+<p>Starting with <a href="https://en.wikipedia.org/wiki/OS_X_Mavericks">Mac OS X Mavericks</a>, a feature named <em>App Nap</em> has been introduced to the operating system. This feature causes certain applications which are open (but not visible) to be placed in a suspended state. As this behavior causes AnkiConnect to stop working while you have another window in the foreground, App Nap should be disabled for Anki:</p>
+<ol>
+<li>Start the Terminal application.</li>
+<li>Execute the following commands in the terminal window:
+<ul>
+<li><code>defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true</code></li>
+<li><code>defaults write net.ichi2.anki NSAppSleepDisabled -bool true</code></li>
+<li><code>defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true</code></li>
+</ul>
+</li>
+<li>Restart Anki.</li>
+</ol>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/tech/">
+                Tech
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

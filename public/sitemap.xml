@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://butou.ma/categories/</loc>
+    <lastmod>2020-05-19T20:00:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/golang-port/</loc>
+    <lastmod>2020-05-19T20:00:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/</loc>
+    <lastmod>2020-05-19T20:00:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/</loc>
+    <lastmod>2020-05-19T20:00:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/categories/tech/</loc>
+    <lastmod>2020-05-19T20:00:02+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/dangling-life/</loc>
+    <lastmod>2020-05-06T19:59:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/categories/life/</loc>
+    <lastmod>2020-05-06T19:59:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/k8s-proxy/</loc>
+    <lastmod>2019-11-23T19:58:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/vultr-network/</loc>
+    <lastmod>2019-10-22T19:57:38+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/nas-data/</loc>
+    <lastmod>2019-10-22T19:56:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/keyboard-fix/</loc>
+    <lastmod>2019-10-05T19:55:41+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/macos-shell/</loc>
+    <lastmod>2019-09-18T19:53:55+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/chrome-plugin/</loc>
+    <lastmod>2019-09-11T19:50:56+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/music-trans/</loc>
+    <lastmod>2019-08-18T19:49:20+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/beidao/</loc>
+    <lastmod>2019-04-20T19:48:13+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/rsshub/</loc>
+    <lastmod>2019-04-20T19:43:29+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/macos-bug/</loc>
+    <lastmod>2019-03-19T19:40:33+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/ankiconnect/</loc>
+    <lastmod>2018-11-15T19:39:14+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/chrome-trans/</loc>
+    <lastmod>2018-05-16T19:36:47+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/chrome-sync/</loc>
+    <lastmod>2018-05-16T19:33:35+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/sandisk-cz80/</loc>
+    <lastmod>2017-11-09T19:28:23+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/posts/about-me/</loc>
+    <lastmod>2017-11-05T19:13:59+08:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/tags/</loc>
+  </url>
+  
+</urlset>

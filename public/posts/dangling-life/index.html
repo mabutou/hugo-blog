@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://butou.ma/posts/dangling-life/" />
+  <link rel="canonical" href="https://butou.ma/posts/dangling-life/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/butou.ma\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Dangling Life",
+      "headline" : "Dangling Life",
+      "description" : "容器技术 Docker 里有种特殊镜像叫 dangling image , 虚悬镜像。指那些失去了标签和名字但依然存在的镜像。 工作用的 Mac 上经常会用 Docker 进行测试，偶尔手动清理下会发现一大堆被遗忘的 dangling image。 每次看到这些镜像我都会联想到现实，感觉自己的生活也时常处于 dangling 状态，没有明确的方向，存在感很弱。\n试图回忆最近生活里记忆深刻的画面，发现一片空白。反倒经常想起前两年创业时的经历，当时经常熬夜加班， 没赚到钱还一直亏钱。但显然当时的生活是很充实的。\n相对于虚悬镜像，还有从仓库拉取别人测试过能运行，预定义了标签和名称的镜像。\n人作为社会性动物，在成长过程中也会被环境塑造，被定义不同的标签。仿佛人生就得像容器那样遵循这些预定目标运行，然而这些标签很多更像是人生的枷锁，把我们困在里面，逐渐异化。旧容器生命周期到达后，新容器依然会根据同样的镜像重启。相似的剧情在一代代人身上重演。\n上面两种生活一种没有方向，另一种是被他人或社会塑造的方向。\n第三种是选择自己构建镜像，标签名称运行目标都能自定义，风险是有可能运行失败，就算运行成功也不一定结果就更美好，可能运行效率还没有从仓库直接拉取的高。但构建的过程或许能让自己更接近生活的本质。\n人生如梦，我们仍在故事的中途，希望每个人都能早日构建出属于自己的叙事。",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-05-06 19:59:20 \u002b0800 CST",
+      "dateModified" : "2020-05-06 19:59:20 \u002b0800 CST",
+      "url" : "https:\/\/butou.ma\/posts\/dangling-life\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Dangling Life - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="Dangling Life - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="容器技术 Docker 里有种特殊镜像叫 dangling image , 虚悬镜像。指那些失去了标签和名字但依然存在的镜像。 工作用的 Mac 上经常会用 Docker 进行测试，偶尔手动清理下会发现一大堆被遗忘的 dangling image。 每次看到这些镜像我都会联想到现实，感觉自己的生活也时常处于 dangling 状态，没有明确的方向，存在感很弱。
+试图回忆最近生活里记忆深刻的画面，发现一片空白。反倒经常想起前两年创业时的经历，当时经常熬夜加班， 没赚到钱还一直亏钱。但显然当时的生活是很充实的。
+相对于虚悬镜像，还有从仓库拉取别人测试过能运行，预定义了标签和名称的镜像。
+人作为社会性动物，在成长过程中也会被环境塑造，被定义不同的标签。仿佛人生就得像容器那样遵循这些预定目标运行，然而这些标签很多更像是人生的枷锁，把我们困在里面，逐渐异化。旧容器生命周期到达后，新容器依然会根据同样的镜像重启。相似的剧情在一代代人身上重演。
+上面两种生活一种没有方向，另一种是被他人或社会塑造的方向。
+第三种是选择自己构建镜像，标签名称运行目标都能自定义，风险是有可能运行失败，就算运行成功也不一定结果就更美好，可能运行效率还没有从仓库直接拉取的高。但构建的过程或许能让自己更接近生活的本质。
+人生如梦，我们仍在故事的中途，希望每个人都能早日构建出属于自己的叙事。" />
+  <meta name="description" content="容器技术 Docker 里有种特殊镜像叫 dangling image , 虚悬镜像。指那些失去了标签和名字但依然存在的镜像。 工作用的 Mac 上经常会用 Docker 进行测试，偶尔手动清理下会发现一大堆被遗忘的 dangling image。 每次看到这些镜像我都会联想到现实，感觉自己的生活也时常处于 dangling 状态，没有明确的方向，存在感很弱。
+试图回忆最近生活里记忆深刻的画面，发现一片空白。反倒经常想起前两年创业时的经历，当时经常熬夜加班， 没赚到钱还一直亏钱。但显然当时的生活是很充实的。
+相对于虚悬镜像，还有从仓库拉取别人测试过能运行，预定义了标签和名称的镜像。
+人作为社会性动物，在成长过程中也会被环境塑造，被定义不同的标签。仿佛人生就得像容器那样遵循这些预定目标运行，然而这些标签很多更像是人生的枷锁，把我们困在里面，逐渐异化。旧容器生命周期到达后，新容器依然会根据同样的镜像重启。相似的剧情在一代代人身上重演。
+上面两种生活一种没有方向，另一种是被他人或社会塑造的方向。
+第三种是选择自己构建镜像，标签名称运行目标都能自定义，风险是有可能运行失败，就算运行成功也不一定结果就更美好，可能运行效率还没有从仓库直接拉取的高。但构建的过程或许能让自己更接近生活的本质。
+人生如梦，我们仍在故事的中途，希望每个人都能早日构建出属于自己的叙事。" />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/butou.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 homepage">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://butou.ma" >Home</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://photos.butou.ma" >Photo</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma" >Timeline</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://wiki.butou.ma/" >Wiki</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" >About</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Dangling Life</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-05-06 19:59:20 CST">
+                06 May 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <h5 id="容器技术-docker-里有种特殊镜像叫-dangling-image--虚悬镜像指那些失去了标签和名字但依然存在的镜像"><strong>容器技术 Docker 里有种特殊镜像叫 dangling image , 虚悬镜像。指那些失去了标签和名字但依然存在的镜像。</strong></h5>
+<p>工作用的 Mac 上经常会用 Docker 进行测试，偶尔手动清理下会发现一大堆被遗忘的 dangling image。 每次看到这些镜像我都会联想到现实，感觉自己的生活也时常处于 dangling 状态，没有明确的方向，存在感很弱。</p>
+<p>试图回忆最近生活里记忆深刻的画面，发现一片空白。反倒经常想起前两年创业时的经历，当时经常熬夜加班， 没赚到钱还一直亏钱。但显然当时的生活是很充实的。</p>
+<p>相对于虚悬镜像，还有从仓库拉取别人测试过能运行，预定义了标签和名称的镜像。</p>
+<p>人作为社会性动物，在成长过程中也会被环境塑造，被定义不同的标签。仿佛人生就得像容器那样遵循这些预定目标运行，然而这些标签很多更像是人生的枷锁，把我们困在里面，逐渐异化。旧容器生命周期到达后，新容器依然会根据同样的镜像重启。相似的剧情在一代代人身上重演。</p>
+<p>上面两种生活一种没有方向，另一种是被他人或社会塑造的方向。</p>
+<p>第三种是选择自己构建镜像，标签名称运行目标都能自定义，风险是有可能运行失败，就算运行成功也不一定结果就更美好，可能运行效率还没有从仓库直接拉取的高。但构建的过程或许能让自己更接近生活的本质。</p>
+<p>人生如梦，我们仍在故事的中途，希望每个人都能早日构建出属于自己的叙事。</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/life/">
+                Life
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

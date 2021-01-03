@@ -1,0 +1,27 @@
+baseURL = "https://butou.ma/"
+languageCode = "en-us"
+title = "Mabutou's Blog"
+theme = "yinyang"
+[author]
+  name = "Butou Ma"
+  homepage = "https://butou.ma/"
+[params]
+mainSections = ["posts"]
+headTitle = "Mabutou"
+disqus = "mabutou" # disqus account name
+[[params.socials]]
+name = "Home"
+link = "https://butou.ma"
+[[params.socials]]
+name = "Photo"
+link = "https://photos.butou.ma"
+[[params.socials]]
+name = "Timeline"
+link = "https://timeline.butou.ma"
+[[params.socials]]
+name = "Wiki"
+link = "https://wiki.butou.ma/"
+[[params.socials]]
+name = "About"
+link = "/posts/about-me/"
+postHeaderContent = ""

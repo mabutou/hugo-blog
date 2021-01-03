@@ -1,0 +1,265 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://butou.ma/posts/golang-port/" />
+  <link rel="canonical" href="https://butou.ma/posts/golang-port/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/butou.ma\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Go 小程序实现 Windows 平台临时启动特定端口",
+      "headline" : "Go 小程序实现 Windows 平台临时启动特定端口",
+      "description" : "exe 下载链接： winport.exe\n偶尔需要测试某台主机的端口的防火墙策略是否生效，需要在机器上临时启动对应端口。\nLinux 和 macOS 上都能用 netcat 很方便的用一条命令启动一个本地端口。 比如 1081 端口：\nnc -l 1081 但在 Windows 平台没有预装 netcat , 找了几个安装包，使用起来也有问题。\n就用 go 写了个小程序，通过启动参数自定义端口，在对应端口上启动一个 http 服务。\nwinport.go 代码：\npackage main import ( \u0026quot;fmt\u0026quot; \u0026quot;net\/http\u0026quot; \u0026quot;flag\u0026quot; ) var cliport = flag.Int(\u0026quot;p\u0026quot;, 8888, \u0026quot;please input port\u0026quot;) func main() { flag.Parse() http.HandleFunc(\u0026quot;\/\u0026quot;, HelloServer) http.ListenAndServe(fmt.Sprintf(\u0026quot;:%d\u0026quot;, \\*cliport), nil) } func HelloServer(w http.ResponseWriter, r \\*http.Request) { fmt.Fprintf(w, \u0026quot;Hello, %s!\u0026quot;, r.URL.Path\\[1:\\]) } 编译为 exe 程序\nGOOS=windows GOARCH=amd64 go build -o winport.",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2020",
+      "datePublished": "2020-05-19 20:00:02 \u002b0800 CST",
+      "dateModified" : "2020-05-19 20:00:02 \u002b0800 CST",
+      "url" : "https:\/\/butou.ma\/posts\/golang-port\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Go 小程序实现 Windows 平台临时启动特定端口 - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="Go 小程序实现 Windows 平台临时启动特定端口 - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="exe 下载链接： winport.exe
+偶尔需要测试某台主机的端口的防火墙策略是否生效，需要在机器上临时启动对应端口。
+Linux 和 macOS 上都能用 netcat 很方便的用一条命令启动一个本地端口。 比如 1081 端口：
+nc -l 1081 但在 Windows 平台没有预装 netcat , 找了几个安装包，使用起来也有问题。
+就用 go 写了个小程序，通过启动参数自定义端口，在对应端口上启动一个 http 服务。
+winport.go 代码：
+package main import ( &quot;fmt&quot; &quot;net/http&quot; &quot;flag&quot; ) var cliport = flag.Int(&quot;p&quot;, 8888, &quot;please input port&quot;) func main() { flag.Parse() http.HandleFunc(&quot;/&quot;, HelloServer) http.ListenAndServe(fmt.Sprintf(&quot;:%d&quot;, \*cliport), nil) } func HelloServer(w http.ResponseWriter, r \*http.Request) { fmt.Fprintf(w, &quot;Hello, %s!&quot;, r.URL.Path\[1:\]) } 编译为 exe 程序
+GOOS=windows GOARCH=amd64 go build -o winport." />
+  <meta name="description" content="exe 下载链接： winport.exe
+偶尔需要测试某台主机的端口的防火墙策略是否生效，需要在机器上临时启动对应端口。
+Linux 和 macOS 上都能用 netcat 很方便的用一条命令启动一个本地端口。 比如 1081 端口：
+nc -l 1081 但在 Windows 平台没有预装 netcat , 找了几个安装包，使用起来也有问题。
+就用 go 写了个小程序，通过启动参数自定义端口，在对应端口上启动一个 http 服务。
+winport.go 代码：
+package main import ( &quot;fmt&quot; &quot;net/http&quot; &quot;flag&quot; ) var cliport = flag.Int(&quot;p&quot;, 8888, &quot;please input port&quot;) func main() { flag.Parse() http.HandleFunc(&quot;/&quot;, HelloServer) http.ListenAndServe(fmt.Sprintf(&quot;:%d&quot;, \*cliport), nil) } func HelloServer(w http.ResponseWriter, r \*http.Request) { fmt.Fprintf(w, &quot;Hello, %s!&quot;, r.URL.Path\[1:\]) } 编译为 exe 程序
+GOOS=windows GOARCH=amd64 go build -o winport." />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/butou.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 homepage">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://butou.ma" >Home</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://photos.butou.ma" >Photo</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma" >Timeline</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://wiki.butou.ma/" >Wiki</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" >About</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Go 小程序实现 Windows 平台临时启动特定端口</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2020-05-19 20:00:02 CST">
+                19 May 2020
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p><strong><em>exe 下载链接： <a href="/winport.exe">winport.exe</a></em></strong></p>
+<p>偶尔需要测试某台主机的端口的防火墙策略是否生效，需要在机器上临时启动对应端口。</p>
+<p>Linux 和 macOS 上都能用 netcat 很方便的用一条命令启动一个本地端口。 比如 1081 端口：</p>
+<pre><code>nc -l 1081
+</code></pre><p>但在 Windows 平台没有预装 netcat , 找了几个安装包，使用起来也有问题。</p>
+<p>就用 go 写了个小程序，通过启动参数自定义端口，在对应端口上启动一个 http 服务。</p>
+<p>winport.go 代码：</p>
+<pre><code>package main
+
+import (
+	&quot;fmt&quot;
+	&quot;net/http&quot;
+	&quot;flag&quot;
+)
+var cliport = flag.Int(&quot;p&quot;, 8888, &quot;please input port&quot;)
+
+func main() {
+	flag.Parse()
+	http.HandleFunc(&quot;/&quot;, HelloServer)
+	http.ListenAndServe(fmt.Sprintf(&quot;:%d&quot;, \*cliport), nil)
+}
+
+func HelloServer(w http.ResponseWriter, r \*http.Request) {
+	fmt.Fprintf(w, &quot;Hello, %s!&quot;, r.URL.Path\[1:\])
+}
+</code></pre><p>编译为 exe 程序</p>
+<pre><code>GOOS=windows GOARCH=amd64 go build -o winport.exe winport.go
+</code></pre><p>比如要测试 10001 端口，对应命令：</p>
+<pre><code>winport.exe -p=10001
+</code></pre><p>浏览器打开 http://localhost:10001 , 应该能看到如下界面。</p>
+<p><img src="/img/win.png" alt=""></p>
+<p>然后就可以开始测试了。</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/tech/">
+                Tech
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

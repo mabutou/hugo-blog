@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://butou.ma/posts/chrome-trans/" />
+  <link rel="canonical" href="https://butou.ma/posts/chrome-trans/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/butou.ma\/"
+      },
+      "articleSection" : "posts",
+      "name" : "Google账号数据迁移指南",
+      "headline" : "Google账号数据迁移指南",
+      "description" : " 我有两个 Google 账号，旧的那个 2008 年高中时注册的，已经十年了，但是 id 是当时随意取的。新账号前几年注册的，很好记，但一直懒得迁移数据就放那没用。 昨天花了好几个小时，终于完成了数据迁移。过程中有好几个地方可以使用谷歌自带的功能完成，节省很多时间。 当然相比之下，还是微软账号迁移方便，直接在原账号基础上关联一个别名 ID，然后把新的别名 ID 设置为主 ID 就搞定了，几分钟完成。  Google 不支持别名 ID，只好手动导数据。  Chrome 的数据最重要，里面有三千多书签，上百个网站的账号密码，几十个插件和应用，和主题。  直接退出 pc 端旧账号（本地会保留数据），然后登陆新账号进行同步即可。 可能会发生同步错误问题，得去掉同步项最后的 “Credit cards and addresses using Google Pay” ，详情参考另一篇博文 解决 Chrome 浏览器同步失败问题   谷歌相册，里面有我三千多张照片，如果全下载下来再上传到新账号，得花很久时间。研究了一下，可以使用自带功能，将新账号作为家庭账号关联在一起，将当前所有照片共享过去，登录新账号后，全选保存到内容库，就能全部迁移过去。 谷歌网盘，与相册类似，直接共享所有文件至新账号，新账号保存到自己盘里。 Google keep 同上。 gmail 设置项里有迁移功能，将收到的所有邮件全部迁移到新账号。 通讯录，导出为本地文件后，登录新账号，切换到旧版界面完成导入。 YouTube 订阅列表，这个没找到比较方便的方法，手动重新关注的。   备注：谷歌提供归档功能，可以将账号内的所有服务的数据生成一个压缩文件下载到本地。链接： https:\/\/takeout.google.com\/settings\/takeout\n ",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2018",
+      "datePublished": "2018-05-16 19:36:47 \u002b0800 CST",
+      "dateModified" : "2018-05-16 19:36:47 \u002b0800 CST",
+      "url" : "https:\/\/butou.ma\/posts\/chrome-trans\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>Google账号数据迁移指南 - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="Google账号数据迁移指南 - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content=" 我有两个 Google 账号，旧的那个 2008 年高中时注册的，已经十年了，但是 id 是当时随意取的。新账号前几年注册的，很好记，但一直懒得迁移数据就放那没用。 昨天花了好几个小时，终于完成了数据迁移。过程中有好几个地方可以使用谷歌自带的功能完成，节省很多时间。 当然相比之下，还是微软账号迁移方便，直接在原账号基础上关联一个别名 ID，然后把新的别名 ID 设置为主 ID 就搞定了，几分钟完成。  Google 不支持别名 ID，只好手动导数据。  Chrome 的数据最重要，里面有三千多书签，上百个网站的账号密码，几十个插件和应用，和主题。  直接退出 pc 端旧账号（本地会保留数据），然后登陆新账号进行同步即可。 可能会发生同步错误问题，得去掉同步项最后的 “Credit cards and addresses using Google Pay” ，详情参考另一篇博文 解决 Chrome 浏览器同步失败问题   谷歌相册，里面有我三千多张照片，如果全下载下来再上传到新账号，得花很久时间。研究了一下，可以使用自带功能，将新账号作为家庭账号关联在一起，将当前所有照片共享过去，登录新账号后，全选保存到内容库，就能全部迁移过去。 谷歌网盘，与相册类似，直接共享所有文件至新账号，新账号保存到自己盘里。 Google keep 同上。 gmail 设置项里有迁移功能，将收到的所有邮件全部迁移到新账号。 通讯录，导出为本地文件后，登录新账号，切换到旧版界面完成导入。 YouTube 订阅列表，这个没找到比较方便的方法，手动重新关注的。   备注：谷歌提供归档功能，可以将账号内的所有服务的数据生成一个压缩文件下载到本地。链接： https://takeout.google.com/settings/takeout
+ " />
+  <meta name="description" content=" 我有两个 Google 账号，旧的那个 2008 年高中时注册的，已经十年了，但是 id 是当时随意取的。新账号前几年注册的，很好记，但一直懒得迁移数据就放那没用。 昨天花了好几个小时，终于完成了数据迁移。过程中有好几个地方可以使用谷歌自带的功能完成，节省很多时间。 当然相比之下，还是微软账号迁移方便，直接在原账号基础上关联一个别名 ID，然后把新的别名 ID 设置为主 ID 就搞定了，几分钟完成。  Google 不支持别名 ID，只好手动导数据。  Chrome 的数据最重要，里面有三千多书签，上百个网站的账号密码，几十个插件和应用，和主题。  直接退出 pc 端旧账号（本地会保留数据），然后登陆新账号进行同步即可。 可能会发生同步错误问题，得去掉同步项最后的 “Credit cards and addresses using Google Pay” ，详情参考另一篇博文 解决 Chrome 浏览器同步失败问题   谷歌相册，里面有我三千多张照片，如果全下载下来再上传到新账号，得花很久时间。研究了一下，可以使用自带功能，将新账号作为家庭账号关联在一起，将当前所有照片共享过去，登录新账号后，全选保存到内容库，就能全部迁移过去。 谷歌网盘，与相册类似，直接共享所有文件至新账号，新账号保存到自己盘里。 Google keep 同上。 gmail 设置项里有迁移功能，将收到的所有邮件全部迁移到新账号。 通讯录，导出为本地文件后，登录新账号，切换到旧版界面完成导入。 YouTube 订阅列表，这个没找到比较方便的方法，手动重新关注的。   备注：谷歌提供归档功能，可以将账号内的所有服务的数据生成一个压缩文件下载到本地。链接： https://takeout.google.com/settings/takeout
+ " />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/butou.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 homepage">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://butou.ma" >Home</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://photos.butou.ma" >Photo</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma" >Timeline</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://wiki.butou.ma/" >Wiki</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" >About</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">Google账号数据迁移指南</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2018-05-16 19:36:47 CST">
+                16 May 2018
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <ul>
+<li>我有两个 Google 账号，旧的那个 2008 年高中时注册的，已经十年了，但是 id 是当时随意取的。新账号前几年注册的，很好记，但一直懒得迁移数据就放那没用。</li>
+<li>昨天花了好几个小时，终于完成了数据迁移。过程中有好几个地方可以使用谷歌自带的功能完成，节省很多时间。</li>
+<li>当然相比之下，还是微软账号迁移方便，直接在原账号基础上关联一个别名 ID，然后把新的别名 ID 设置为主 ID 就搞定了，几分钟完成。</li>
+</ul>
+<h2 id="google-不支持别名-id只好手动导数据">Google 不支持别名 ID，只好手动导数据。</h2>
+<ol>
+<li>Chrome 的数据最重要，里面有三千多书签，上百个网站的账号密码，几十个插件和应用，和主题。
+<ul>
+<li><strong>直接退出 pc 端旧账号（本地会保留数据），然后登陆新账号进行同步即可。</strong></li>
+<li>可能会发生同步错误问题，得去掉同步项最后的 “Credit cards and addresses using Google Pay” ，详情参考另一篇博文 <a href="/posts/chrome-sync/">解决 Chrome 浏览器同步失败问题</a></li>
+</ul>
+</li>
+<li>谷歌相册，里面有我三千多张照片，如果全下载下来再上传到新账号，得花很久时间。研究了一下，可以使用自带功能，将新账号作为家庭账号关联在一起，将当前所有照片共享过去，登录新账号后，全选保存到内容库，就能全部迁移过去。</li>
+<li>谷歌网盘，与相册类似，直接共享所有文件至新账号，新账号保存到自己盘里。</li>
+<li>Google keep 同上。</li>
+<li>gmail 设置项里有迁移功能，将收到的所有邮件全部迁移到新账号。</li>
+<li>通讯录，导出为本地文件后，登录新账号，切换到旧版界面完成导入。</li>
+<li>YouTube 订阅列表，这个没找到比较方便的方法，手动重新关注的。</li>
+</ol>
+<blockquote>
+<p>备注：谷歌提供归档功能，可以将账号内的所有服务的数据生成一个压缩文件下载到本地。链接： https://takeout.google.com/settings/takeout</p>
+</blockquote>
+<p><img src="/img/20180516161857.png" alt=""></p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/tech/">
+                Tech
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,10 @@
+name = "hugo-blog"
+type = "webpack"
+account_id = "3e196b8605fd883dfcee5cdb5dd106cc"
+workers_dev = false
+route = "butou.ma/*"
+zone_id = "91c9f72bd0892e7ea92d21e3afb9e3b0"
+
+[site]
+bucket = "./public"
+entry-point = "workers-site"

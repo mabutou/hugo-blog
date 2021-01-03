@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://butou.ma/posts/macos-shell/" />
+  <link rel="canonical" href="https://butou.ma/posts/macos-shell/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/butou.ma\/"
+      },
+      "articleSection" : "posts",
+      "name" : "macOS 小脚本-批量复制指定目录下特定类型文件",
+      "headline" : "macOS 小脚本-批量复制指定目录下特定类型文件",
+      "description" : "github: https:\/\/github.com\/mabutou\/macOS_copyScript\n 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。\n Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!\/bin\/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$\u0026#39;\\\\n\u0026#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\\_files=\\`find .\/ -name \u0026#34;\\*.md\u0026#34; -print\\` #设置目标文件夹 des\\_dir=\u0026#34;\/Users\/XXX\/Downloads\/md\u0026#34; echo $des\\_dir #如果没有对应目标文件夹就创建 \\[ -d $des\\_dir \\] || mkdir -p $des\\_dir \u0026amp;\u0026gt; \/dev\/null #按行读取文件路径 for file in $head\\_files do source\\_dir=${file#.\/} echo $source\\_dir; #是否保留文件夹层级 #\\[ -d $des\\_dir$source\\_dir \\] || mkdir -p $des\\_dir$source\\_dir #cp -p \u0026#34;$file\u0026#34; $des\\_dir$source\\_dir #执行复制命令 cp -p \u0026#34;$file\u0026#34; $des\\_dir ((file\\_count\u002b\u002b)) done echo \u0026#34;复制完毕?",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-09-18 19:53:55 \u002b0800 CST",
+      "dateModified" : "2019-09-18 19:53:55 \u002b0800 CST",
+      "url" : "https:\/\/butou.ma\/posts\/macos-shell\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>macOS 小脚本-批量复制指定目录下特定类型文件 - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="macOS 小脚本-批量复制指定目录下特定类型文件 - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="github: https://github.com/mabutou/macOS_copyScript
+ 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。
+ Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!/bin/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$&#39;\\n&#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\_files=\`find ./ -name &#34;\*.md&#34; -print\` #设置目标文件夹 des\_dir=&#34;/Users/XXX/Downloads/md&#34; echo $des\_dir #如果没有对应目标文件夹就创建 \[ -d $des\_dir \] || mkdir -p $des\_dir &amp;&gt; /dev/null #按行读取文件路径 for file in $head\_files do source\_dir=${file#./} echo $source\_dir; #是否保留文件夹层级 #\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir #cp -p &#34;$file&#34; $des\_dir$source\_dir #执行复制命令 cp -p &#34;$file&#34; $des\_dir ((file\_count&#43;&#43;)) done echo &#34;复制完毕?" />
+  <meta name="description" content="github: https://github.com/mabutou/macOS_copyScript
+ 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。
+ Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!/bin/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$&#39;\\n&#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\_files=\`find ./ -name &#34;\*.md&#34; -print\` #设置目标文件夹 des\_dir=&#34;/Users/XXX/Downloads/md&#34; echo $des\_dir #如果没有对应目标文件夹就创建 \[ -d $des\_dir \] || mkdir -p $des\_dir &amp;&gt; /dev/null #按行读取文件路径 for file in $head\_files do source\_dir=${file#./} echo $source\_dir; #是否保留文件夹层级 #\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir #cp -p &#34;$file&#34; $des\_dir$source\_dir #执行复制命令 cp -p &#34;$file&#34; $des\_dir ((file\_count&#43;&#43;)) done echo &#34;复制完毕?" />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/butou.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 homepage">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://butou.ma" >Home</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://photos.butou.ma" >Photo</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma" >Timeline</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://wiki.butou.ma/" >Wiki</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" >About</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">macOS 小脚本-批量复制指定目录下特定类型文件</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2019-09-18 19:53:55 CST">
+                18 Sep 2019
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <blockquote>
+<p>github: <a href="https://github.com/mabutou/macOS_copyScript">https://github.com/mabutou/macOS_copyScript</a></p>
+</blockquote>
+<h3 id="使用场景">使用场景：</h3>
+<p>比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。</p>
+<ul>
+<li>Linux 系统上可以用一条 find 和 cp 组合命令直接完成。</li>
+<li>然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。</li>
+</ul>
+<h3 id="使用方法">使用方法：</h3>
+<ul>
+<li>按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 <a href="http://copyscript.sh/">copyScript.sh</a>。</li>
+<li>若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。</li>
+<li>使用 sh <a href="http://copyscript.sh/">copyScript.sh</a> 命令执行即可。</li>
+</ul>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
+</span><span style="color:#75715e"></span><span style="color:#75715e">#修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名</span>
+IFS<span style="color:#f92672">=</span><span style="color:#e6db74">$&#39;\\n&#39;</span>
+<span style="color:#75715e">#递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改</span>
+head<span style="color:#ae81ff">\_</span>files<span style="color:#f92672">=</span><span style="color:#ae81ff">\`</span>find ./ -name <span style="color:#e6db74">&#34;\*.md&#34;</span> -print<span style="color:#ae81ff">\`</span>
+<span style="color:#75715e">#设置目标文件夹</span>
+des<span style="color:#ae81ff">\_</span>dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/XXX/Downloads/md&#34;</span>
+echo $des<span style="color:#ae81ff">\_</span>dir
+<span style="color:#75715e">#如果没有对应目标文件夹就创建</span>
+<span style="color:#ae81ff">\[</span> -d $des<span style="color:#ae81ff">\_</span>dir <span style="color:#ae81ff">\]</span> <span style="color:#f92672">||</span> mkdir -p $des<span style="color:#ae81ff">\_</span>dir &amp;&gt; /dev/null
+<span style="color:#75715e">#按行读取文件路径</span>
+<span style="color:#66d9ef">for</span> file in $head<span style="color:#ae81ff">\_</span>files
+<span style="color:#66d9ef">do</span>
+source<span style="color:#ae81ff">\_</span>dir<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>file#./<span style="color:#e6db74">}</span>
+echo $source<span style="color:#ae81ff">\_</span>dir;
+<span style="color:#75715e">#是否保留文件夹层级</span>
+<span style="color:#75715e">#\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir</span>
+<span style="color:#75715e">#cp -p &#34;$file&#34; $des\_dir$source\_dir</span>
+<span style="color:#75715e">#执行复制命令</span>
+cp -p <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> $des<span style="color:#ae81ff">\_</span>dir
+<span style="color:#f92672">((</span>file<span style="color:#ae81ff">\_</span>count++<span style="color:#f92672">))</span>
+<span style="color:#66d9ef">done</span>
+echo <span style="color:#e6db74">&#34;复制完毕?&#34;</span>
+echo <span style="color:#e6db74">&#34;文件总数：</span><span style="color:#e6db74">${</span>file<span style="color:#ae81ff">\_</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74"> ?&#34;</span>
+</code></pre></div>
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/tech/">
+                Tech
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

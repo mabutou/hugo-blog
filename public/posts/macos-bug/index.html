@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="Hugo 0.80.0" />
+
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="author" content="Butou Ma" />
+  <meta property="og:url" content="https://butou.ma/posts/macos-bug/" />
+  <link rel="canonical" href="https://butou.ma/posts/macos-bug/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+
+  <script type="application/ld+json">
+  {
+      "@context" : "http://schema.org",
+      "@type" : "BlogPosting",
+      "mainEntityOfPage": {
+           "@type": "WebPage",
+           "@id": "https:\/\/butou.ma\/"
+      },
+      "articleSection" : "posts",
+      "name" : "macOS 玄学 bug — 音频输出异常\u002b切换左桌面快捷键失灵 || \u0027Move left a space\u0027 shortcuts not working",
+      "headline" : "macOS 玄学 bug — 音频输出异常\u002b切换左桌面快捷键失灵 || \u0027Move left a space\u0027 shortcuts not working",
+      "description" : "我的系统版本：10.13.5\n音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：\n 启动终端，输入命令:  sudo killall coreaudiod\n 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl \u002b 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：\n  先将其他一样的快捷键设置为另外的组合\n  启动终端输入下面命令，回车即可\n  killall Dock",
+      "inLanguage" : "en-US",
+      "author" : "Butou Ma",
+      "creator" : "Butou Ma",
+      "publisher": "Butou Ma",
+      "accountablePerson" : "Butou Ma",
+      "copyrightHolder" : "Butou Ma",
+      "copyrightYear" : "2019",
+      "datePublished": "2019-03-19 19:40:33 \u002b0800 CST",
+      "dateModified" : "2019-03-19 19:40:33 \u002b0800 CST",
+      "url" : "https:\/\/butou.ma\/posts\/macos-bug\/",
+      "keywords" : [  ]
+  }
+</script>
+<title>macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working - Mabutou&#39;s Blog</title>
+  <meta property="og:title" content="macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working - Mabutou&#39;s Blog" />
+  <meta property="og:type" content="article" />
+  <meta property="og:description" content="我的系统版本：10.13.5
+音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：
+ 启动终端，输入命令:  sudo killall coreaudiod
+ 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl &#43; 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：
+  先将其他一样的快捷键设置为另外的组合
+  启动终端输入下面命令，回车即可
+  killall Dock" />
+  <meta name="description" content="我的系统版本：10.13.5
+音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：
+ 启动终端，输入命令:  sudo killall coreaudiod
+ 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl &#43; 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：
+  先将其他一样的快捷键设置为另外的组合
+  启动终端输入下面命令，回车即可
+  killall Dock" />
+  <meta property="og:locale" content="en-us" />
+
+  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
+  <link rel="stylesheet" href="/css/github-markdown.css" />
+  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
+  <link rel="stylesheet" href="/css/index.css">
+  <link rel="stylesheet" href="/css/butou.css">
+
+  
+
+  <link href="/index.xml" rel="alternate" type="application/rss+xml"
+    title="Mabutou&#39;s Blog">
+  
+  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
+  
+  
+
+  
+</head>
+
+<body>
+  <article class="post " id="article">
+    <div class="row">
+      <div class="col-xs-12 homepage">
+        <div class="site-header">
+          <header>
+  <div class="signatures site-title">
+    <a href="/">Mabutou</a>
+  </div>
+</header>
+<div class="site-footer">
+  
+  <div class="site-footer-item">
+    <a href="https://butou.ma" >Home</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://photos.butou.ma" >Photo</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://timeline.butou.ma" >Timeline</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="https://wiki.butou.ma/" >Wiki</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+  <div class="site-footer-item">
+    <a href="/posts/about-me/" >About</a>
+  </div>
+  
+  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+  
+  
+</div>
+
+        </div>
+        <header class="post-header">
+          <h1 class="post-title">macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working</h1>
+          
+          <div class="row post-desc">
+            <div class="col-xs-6">
+              
+              <time class="post-date" datetime="2019-03-19 19:40:33 CST">
+                19 Mar 2019
+              </time>
+              
+            </div>
+            <div class="col-xs-6">
+              
+              <div class="post-author">
+                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
+              </div>
+              
+            </div>
+          </div>
+          
+        </header>
+
+        <div class="post-content markdown-body">
+          
+          <p>我的系统版本：10.13.5</p>
+<h2 id="音频输出异常">音频输出异常</h2>
+<ol>
+<li>平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。</li>
+<li>偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。</li>
+</ol>
+<p>解决方法：</p>
+<ul>
+<li>启动终端，输入命令:</li>
+</ul>
+<p>sudo killall coreaudiod</p>
+<ul>
+<li>回车即可 (可能需要输入密码)</li>
+</ul>
+<h2 id="切换桌面快捷键失灵">切换桌面快捷键失灵</h2>
+<ol>
+<li>设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl + 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。</li>
+</ol>
+<p><img src="/img/006tKfTcgy1g0wg1da4stj30yi0u0q5k-1.jpg" alt=""></p>
+<p>解决方法：</p>
+<ul>
+<li>
+<p>先将其他一样的快捷键设置为另外的组合</p>
+</li>
+<li>
+<p>启动终端输入下面命令，回车即可</p>
+</li>
+</ul>
+<p>killall Dock</p>
+
+        </div>
+
+        <div class="row middle-xs">
+          <div class="col-xs-12">
+            
+            <div class="post-category">
+              <a href="/categories/tech/">
+                Tech
+              </a>
+            </div>
+            
+          </div>
+        </div>
+        
+          <div class="row">
+            <div class="col-xs-12">
+              
+            </div>
+          </div>
+
+          
+
+          
+          
+          <div style="height: 50px;"></div>
+          
+          <div class="post-comments">
+            <div id="disqus_thread"></div>
+<script>
+  window.addEventListener("load", () => {
+    (function() {
+      
+      var d = document,
+        s = d.createElement("script");
+      s.src = "https://mabutou.disqus.com/embed.js";
+      s.setAttribute("data-timestamp", +new Date());
+      (d.head || d.body).appendChild(s);
+    })();
+  });
+</script>
+<noscript
+  >Please enable JavaScript to view the
+  <a href="https://disqus.com/?ref_noscript"
+    >comments powered by Disqus.</a
+  ></noscript
+>
+
+          </div>
+          
+        
+
+        
+
+<div class="row end-xs">
+  
+  
+</div>
+<div class="header-line"></div>
+
+
+      </div>
+    </div>
+  </article>
+
+  <script src="/js/highlight.pack.js"></script>
+
+
+<script>
+  hljs.initHighlightingOnLoad();
+  
+  
+  
+    
+    
+  
+</script>
+
+  
+
+</body>
+
+</html>

@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>https://butou.ma/first/</loc>
+    <lastmod>2020-12-17T13:01:46+08:00</lastmod>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://butou.ma/en/first/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://butou.ma/first/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/categories/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://butou.ma/en/categories/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://butou.ma/categories/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://butou.ma/en/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://butou.ma/"
+                />
+  </url>
+  
+  <url>
+    <loc>https://butou.ma/tags/</loc>
+    <xhtml:link
+                rel="alternate"
+                hreflang="en"
+                href="https://butou.ma/en/tags/"
+                />
+    <xhtml:link
+                rel="alternate"
+                hreflang="cn"
+                href="https://butou.ma/tags/"
+                />
+  </url>
+  
+</urlset>
