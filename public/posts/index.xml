@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on Mabutou&#39;s Blog</title>
-    <link>https://butou.ma/posts/</link>
-    <description>Recent content in Posts on Mabutou&#39;s Blog</description>
+    <title>Posts on 马捕头</title>
+    <link>https://butu.ma/posts/</link>
+    <description>Recent content in Posts on 马捕头</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 May 2020 20:00:02 +0800</lastBuildDate><atom:link href="https://butou.ma/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 May 2020 20:00:02 +0800</lastBuildDate><atom:link href="https://butu.ma/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Go 小程序实现 Windows 平台临时启动特定端口</title>
-      <link>https://butou.ma/posts/golang-port/</link>
+      <link>https://butu.ma/posts/go-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0-windows-%E5%B9%B3%E5%8F%B0%E4%B8%B4%E6%97%B6%E5%90%AF%E5%8A%A8%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/</link>
       <pubDate>Tue, 19 May 2020 20:00:02 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/golang-port/</guid>
+      <guid>https://butu.ma/posts/go-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0-windows-%E5%B9%B3%E5%8F%B0%E4%B8%B4%E6%97%B6%E5%90%AF%E5%8A%A8%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/</guid>
       <description>exe 下载链接： winport.exe
 偶尔需要测试某台主机的端口的防火墙策略是否生效，需要在机器上临时启动对应端口。
 Linux 和 macOS 上都能用 netcat 很方便的用一条命令启动一个本地端口。 比如 1081 端口：
@@ -25,10 +25,10 @@ GOOS=windows GOARCH=amd64 go build -o winport.</description>
     
     <item>
       <title>Dangling Life</title>
-      <link>https://butou.ma/posts/dangling-life/</link>
+      <link>https://butu.ma/posts/dangling-life/</link>
       <pubDate>Wed, 06 May 2020 19:59:20 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/dangling-life/</guid>
+      <guid>https://butu.ma/posts/dangling-life/</guid>
       <description>容器技术 Docker 里有种特殊镜像叫 dangling image , 虚悬镜像。指那些失去了标签和名字但依然存在的镜像。 工作用的 Mac 上经常会用 Docker 进行测试，偶尔手动清理下会发现一大堆被遗忘的 dangling image。 每次看到这些镜像我都会联想到现实，感觉自己的生活也时常处于 dangling 状态，没有明确的方向，存在感很弱。
 试图回忆最近生活里记忆深刻的画面，发现一片空白。反倒经常想起前两年创业时的经历，当时经常熬夜加班， 没赚到钱还一直亏钱。但显然当时的生活是很充实的。
 相对于虚悬镜像，还有从仓库拉取别人测试过能运行，预定义了标签和名称的镜像。
@@ -40,10 +40,10 @@ GOOS=windows GOARCH=amd64 go build -o winport.</description>
     
     <item>
       <title>国内主机配置 k8s 的注意事项及如何正确设置代理</title>
-      <link>https://butou.ma/posts/k8s-proxy/</link>
+      <link>https://butu.ma/posts/k8s-proxy/</link>
       <pubDate>Sat, 23 Nov 2019 19:58:29 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/k8s-proxy/</guid>
+      <guid>https://butu.ma/posts/k8s-proxy/</guid>
       <description>最近学习 kubernetes，在公司三台 centos7 服务器上用 kubeadm 部署 k8s 测试环境。
 过程中有些注意事项，提前避开能节省很多时间。
  1. 安装指定 docker 版本
@@ -57,10 +57,10 @@ GOOS=windows GOARCH=amd64 go build -o winport.</description>
     
     <item>
       <title>解决 vultr 恢复历史快照后，莫名断网问题</title>
-      <link>https://butou.ma/posts/vultr-network/</link>
+      <link>https://butu.ma/posts/vultr-network/</link>
       <pubDate>Tue, 22 Oct 2019 19:57:38 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/vultr-network/</guid>
+      <guid>https://butu.ma/posts/vultr-network/</guid>
       <description>这算是 vultr 机器的老问题了，不明白为啥 vultr 一直没解决。
  起因   之前服务器中了一个俄罗斯的病毒，其实没啥影响，几下解决后，总感觉不舒服可能有其他残留毒素。
   看了下最新的快照列表，中毒前后没什么大的数据更改。干脆直接恢复快照好了。
@@ -78,10 +78,10 @@ Centos 配置文件和 Ubuntu/Debian 略有不同。
     
     <item>
       <title>群晖系统提示硬盘损毁后提取硬盘数据</title>
-      <link>https://butou.ma/posts/nas-data/</link>
+      <link>https://butu.ma/posts/nas-data/</link>
       <pubDate>Tue, 22 Oct 2019 19:56:47 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/nas-data/</guid>
+      <guid>https://butu.ma/posts/nas-data/</guid>
       <description>群晖系统在安装新硬盘时需要进行硬盘的初始化，支持 ext4 或者 btrfs 两种文件系统。（我用的 brtfs）
 群晖在检测到硬盘健康状况不太好时，容易提示硬盘损毁，此时在群晖系统内无法读写硬盘内容了。一般重新格式化或者修复下坏道就能继续正常用。
 此时如果想要先取出其中的文件只能用其他系统。这两种格式都不能直接在 Mac 系统或者 windows 系统里正常读取。
@@ -100,10 +100,10 @@ Centos 配置文件和 Ubuntu/Debian 略有不同。
     
     <item>
       <title>机械键盘换轴记 — FILCO MINILA AIR 67键 红轴</title>
-      <link>https://butou.ma/posts/keyboard-fix/</link>
+      <link>https://butu.ma/posts/keyboard-fix/</link>
       <pubDate>Sat, 05 Oct 2019 19:55:41 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/keyboard-fix/</guid>
+      <guid>https://butu.ma/posts/keyboard-fix/</guid>
       <description> 我目前用的是 filco 的 minila 系列红轴机械键盘（只有蓝牙模式）。  两年多前买的。前段时间感觉灰尘有点多，把键帽拆下来清了一下灰。几天后发现数字 5 键有点失灵，然而已过两年保修期了。
  上淘宝一看。有对应的维修服务，但感觉邮过去再等店家修好邮回来时间周期太长，还不如自己买工具修。 一查资料，filco 的轴是焊在电路板上的，需要电烙铁之类的工具，所以顺便网购了一整套工具（新轴也在这家店买的）。这套小工具既能修键盘也能修其他鼠标之类的数码产品。  维修过程  先把背面两颗螺丝卸下来。 螺丝刀对应的是六角的头。   用撬棒或者撬片之类片状的物体把卡扣撬开，就能卸下后盖。  接下来这步要小心，轴体电路板和蓝牙控制板之间是用针式接口连接，要垂直拔掉，拧的幅度别太大，容易拧坏。
  分离成功后就能看到整体板子的布局。 每个轴体有两个针脚跟电路板连接，直接焊接上去的。   用电烙铁熔化原本的锡。融化过程中可以用吸锡带或者吸锡器辅助。   融化完用拔轴器将坏轴拔下来。   焊接上新买的樱桃红轴。 测试是否正常工作，再安装好后盖。 有意向购买 filco 键盘的朋友，推荐买蓝牙有线双模版。纯蓝牙版厚度相对略厚。有 USB 接口适用场景更广。  </description>
@@ -111,10 +111,10 @@ Centos 配置文件和 Ubuntu/Debian 略有不同。
     
     <item>
       <title>macOS 小脚本-批量复制指定目录下特定类型文件</title>
-      <link>https://butou.ma/posts/macos-shell/</link>
+      <link>https://butu.ma/posts/macos-shell/</link>
       <pubDate>Wed, 18 Sep 2019 19:53:55 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/macos-shell/</guid>
+      <guid>https://butu.ma/posts/macos-shell/</guid>
       <description>github: https://github.com/mabutou/macOS_copyScript
  使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。
  Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!/bin/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$&amp;#39;\\n&amp;#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\_files=\`find ./ -name &amp;#34;\*.md&amp;#34; -print\` #设置目标文件夹 des\_dir=&amp;#34;/Users/XXX/Downloads/md&amp;#34; echo $des\_dir #如果没有对应目标文件夹就创建 \[ -d $des\_dir \] || mkdir -p $des\_dir &amp;amp;&amp;gt; /dev/null #按行读取文件路径 for file in $head\_files do source\_dir=${file#./} echo $source\_dir; #是否保留文件夹层级 #\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir #cp -p &amp;#34;$file&amp;#34; $des\_dir$source\_dir #执行复制命令 cp -p &amp;#34;$file&amp;#34; $des\_dir ((file\_count++)) done echo &amp;#34;复制完毕?</description>
@@ -122,10 +122,10 @@ Centos 配置文件和 Ubuntu/Debian 略有不同。
     
     <item>
       <title>个人Chrome扩展推荐</title>
-      <link>https://butou.ma/posts/chrome-plugin/</link>
+      <link>https://butu.ma/posts/chrome-plugin/</link>
       <pubDate>Wed, 11 Sep 2019 19:50:56 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/chrome-plugin/</guid>
+      <guid>https://butu.ma/posts/chrome-plugin/</guid>
       <description>第一次使用谷歌浏览器是刚上高中时，距现在已有十年了。
 自从知道 Chrome 有自己的应用商店可以安装各种功能的扩展后，就基本没换过其他浏览器了。
 十年间用过无数扩展，感觉有必要写篇文章推荐下最终留下来的这些。
@@ -143,10 +143,10 @@ Tampermonkey 油猴扩展作为脚本管理器比较特殊，会单独写一篇�
     
     <item>
       <title>如何在不同音乐平台间迁移歌单</title>
-      <link>https://butou.ma/posts/music-trans/</link>
+      <link>https://butu.ma/posts/music-trans/</link>
       <pubDate>Sun, 18 Aug 2019 19:49:20 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/music-trans/</guid>
+      <guid>https://butu.ma/posts/music-trans/</guid>
       <description>点击下载觉哥歌单文本文件（共 365 首）：jueSpotifyPlaylist.csv
  起因：刷微博看到黄觉分享了一个 Spotify 歌单二维码，发现评论里好多人没用过 Spotify。反正睡不着，顺手写篇相关教程。
   我各种音乐平台都用过，其中网易云重度用户，累计听歌量两万三  但网易云在 iPhone 上不能在锁屏后用 Siri 直接唤醒放歌（对 AirPods 支持也不行），故最近转移到 Apple Music 了。（转移了六千首过去）   也为了防止单一平台版权原因下架，系统研究了一下各平台的迁移方法
@@ -160,10 +160,10 @@ Tampermonkey 油猴扩展作为脚本管理器比较特殊，会单独写一篇�
     
     <item>
       <title>「视频」北岛朗诵《歧路行》之序曲</title>
-      <link>https://butou.ma/posts/beidao/</link>
+      <link>https://butu.ma/posts/beidao/</link>
       <pubDate>Sat, 20 Apr 2019 19:48:13 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/beidao/</guid>
+      <guid>https://butu.ma/posts/beidao/</guid>
       <description>翻到 16 年的一段旧视频，单向空间的活动上北岛朗诵长诗《歧路行》。 添加字幕后上传到了 youtube 和 bilibili
   时间：2016 年 7 月 2 日
   地点：北京 单向空间书店
@@ -175,10 +175,10 @@ Tampermonkey 油猴扩展作为脚本管理器比较特殊，会单独写一篇�
     
     <item>
       <title>「碎片化信息流的聚合与输出」Rsshub &#43; Reeder &#43; Notion</title>
-      <link>https://butou.ma/posts/rsshub/</link>
+      <link>https://butu.ma/posts/rsshub/</link>
       <pubDate>Sat, 20 Apr 2019 19:43:29 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/rsshub/</guid>
+      <guid>https://butu.ma/posts/rsshub/</guid>
       <description>19.10.05 update:
 1. 之前在服务器端部署的 ttrss 用一段时间后感觉太臃肿，已更换为轻量级的 Miniflux，直接用 Docker 部署在 nas 上的。支持 Reeder ，安装过程也更简单。
 https://github.com/miniflux/miniflux
@@ -195,10 +195,10 @@ Notion 界面简洁，功能也挺强
     
     <item>
       <title>macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working</title>
-      <link>https://butou.ma/posts/macos-bug/</link>
+      <link>https://butu.ma/posts/macos-bug/</link>
       <pubDate>Tue, 19 Mar 2019 19:40:33 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/macos-bug/</guid>
+      <guid>https://butu.ma/posts/macos-bug/</guid>
       <description>我的系统版本：10.13.5
 音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：
  启动终端，输入命令:  sudo killall coreaudiod
@@ -210,55 +210,46 @@ Notion 界面简洁，功能也挺强
     
     <item>
       <title>Mac 版 Anki 安装 AnkiConnect 插件后连接失败解决方法</title>
-      <link>https://butou.ma/posts/ankiconnect/</link>
+      <link>https://butu.ma/posts/ankiconnect/</link>
       <pubDate>Thu, 15 Nov 2018 19:39:14 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/ankiconnect/</guid>
+      <guid>https://butu.ma/posts/ankiconnect/</guid>
       <description>最近使用 Anki 记忆 COCA 词汇时，碰到此问题。  使用 Chrome 上的 Anki 取词插件（比如我用的 Online Dictionary Helper） 时，将单词添加至新卡片的功能需要依靠 AnkiConnect 插件连接桌面客户端与取词插件。 由于 Mac 系统的机制，会导致 Anki 客户端处于后台时，AnkiConnect 的进程被挂起。 结果是取词插件设置页面检测不到 AnkiConnect，或者检测到并设置好后短时间内连接又断开。 打开终端执行下面三行命令  解决方法如下：
 defaults write net.ankiweb.dtop NSAppSleepDisabled -bool true defaults write net.ichi2.anki NSAppSleepDisabled -bool true defaults write org.qt-project.Qt.QtWebEngineCore NSAppSleepDisabled -bool true  重启 Anki 客户端  官方文档原文： Notes for Mac OS X Users Starting with Mac OS X Mavericks, a feature named App Nap has been introduced to the operating system.</description>
     </item>
     
     <item>
       <title>Google账号数据迁移指南</title>
-      <link>https://butou.ma/posts/chrome-trans/</link>
+      <link>https://butu.ma/posts/chrome-trans/</link>
       <pubDate>Wed, 16 May 2018 19:36:47 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/chrome-trans/</guid>
+      <guid>https://butu.ma/posts/chrome-trans/</guid>
       <description> 我有两个 Google 账号，旧的那个 2008 年高中时注册的，已经十年了，但是 id 是当时随意取的。新账号前几年注册的，很好记，但一直懒得迁移数据就放那没用。 昨天花了好几个小时，终于完成了数据迁移。过程中有好几个地方可以使用谷歌自带的功能完成，节省很多时间。 当然相比之下，还是微软账号迁移方便，直接在原账号基础上关联一个别名 ID，然后把新的别名 ID 设置为主 ID 就搞定了，几分钟完成。  Google 不支持别名 ID，只好手动导数据。  Chrome 的数据最重要，里面有三千多书签，上百个网站的账号密码，几十个插件和应用，和主题。  直接退出 pc 端旧账号（本地会保留数据），然后登陆新账号进行同步即可。 可能会发生同步错误问题，得去掉同步项最后的 “Credit cards and addresses using Google Pay” ，详情参考另一篇博文 解决 Chrome 浏览器同步失败问题   谷歌相册，里面有我三千多张照片，如果全下载下来再上传到新账号，得花很久时间。研究了一下，可以使用自带功能，将新账号作为家庭账号关联在一起，将当前所有照片共享过去，登录新账号后，全选保存到内容库，就能全部迁移过去。 谷歌网盘，与相册类似，直接共享所有文件至新账号，新账号保存到自己盘里。 Google keep 同上。 gmail 设置项里有迁移功能，将收到的所有邮件全部迁移到新账号。 通讯录，导出为本地文件后，登录新账号，切换到旧版界面完成导入。 YouTube 订阅列表，这个没找到比较方便的方法，手动重新关注的。   备注：谷歌提供归档功能，可以将账号内的所有服务的数据生成一个压缩文件下载到本地。链接： https://takeout.google.com/settings/takeout
  </description>
     </item>
     
     <item>
       <title>解决 Chrome 浏览器同步失败问题</title>
-      <link>https://butou.ma/posts/chrome-sync/</link>
+      <link>https://butu.ma/posts/chrome-sync/</link>
       <pubDate>Wed, 16 May 2018 19:33:35 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/chrome-sync/</guid>
+      <guid>https://butu.ma/posts/chrome-sync/</guid>
       <description> update：经测试，69 beta 版 Chrome 已解决此问题
  近日把旧的 Google 账号上的资料迁移到新账号上，迁移相册邮件等都没遇到啥问题，最后在同步浏览器数据时一直成功不了。  退出旧账号的同时保留数据在 pc 端，然后登陆新账号，pc 端的本地数据会上传到新账号上，通过 https://chrome.google.com/sync?hl=en-US 能够查询到已经全部上传至服务器端。 此时我用其他设备（MacBook Pro 和 安卓手机端） Chrome 登陆新账号后，始终不能把服务器端数据同步到本地。 尝试各种方法后，在论坛上找到了解决方法：  打开同步选项，先关闭同步所有选项，再手动分别打开各个同步项，除了最后那个 “Credit cards and addresses using Google Pay”。 然后就能顺利同步了，具体原理不清楚，估计是 Google Pay 的同步逻辑与 Chrome 有冲突。   论坛链接：https://productforums.google.com/forum/#!topic/chrome/JLsH2Aeg9_Y  </description>
     </item>
     
     <item>
       <title>Mac OS 下解决 SanDisk CZ80 掉速问题</title>
-      <link>https://butou.ma/posts/sandisk-cz80/</link>
+      <link>https://butu.ma/posts/sandisk-cz80/</link>
       <pubDate>Thu, 09 Nov 2017 19:28:23 +0800</pubDate>
       
-      <guid>https://butou.ma/posts/sandisk-cz80/</guid>
+      <guid>https://butu.ma/posts/sandisk-cz80/</guid>
       <description>CZ80 速度很快可以用来做 win to go 系统。但由于主控原因，用久了会明显掉速。 想要恢复原本速度，可以直接全盘写零进行还原。格式化是没用的。  命令步骤如下：
 在终端中查询磁盘编号：
 bash diskutil list
 确认编号（如 diskX）后（注意大小写），全盘写零：
 bash diskutil zeroDisk /dev/diskX
 过程可能有点慢，进度条走完就好了。</description>
-    </item>
-    
-    <item>
-      <title>About Me</title>
-      <link>https://butou.ma/posts/about-me/</link>
-      <pubDate>Sun, 05 Nov 2017 19:13:59 +0800</pubDate>
-      
-      <guid>https://butou.ma/posts/about-me/</guid>
-      <description> 四川人，现居成都。 网名马捕头，来源于漫画乌龙院。 这个博客记录一些自言自语和生活片段，欢迎留言。 使用 Cloudflare Workers Site 部署，内地访问速度可能不太稳定。  📬 Contact Telegram: mabutou  Email: hi@butou.ma </description>
     </item>
     
   </channel>

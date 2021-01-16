@@ -1,27 +1,27 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Categories on Mabutou&#39;s Blog</title>
-    <link>https://butou.ma/categories/</link>
-    <description>Recent content in Categories on Mabutou&#39;s Blog</description>
+    <title>Categories on 马捕头</title>
+    <link>https://butu.ma/categories/</link>
+    <description>Recent content in Categories on 马捕头</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
-    <lastBuildDate>Tue, 19 May 2020 20:00:02 +0800</lastBuildDate><atom:link href="https://butou.ma/categories/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Tue, 19 May 2020 20:00:02 +0800</lastBuildDate><atom:link href="https://butu.ma/categories/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Tech</title>
-      <link>https://butou.ma/categories/tech/</link>
+      <link>https://butu.ma/categories/tech/</link>
       <pubDate>Tue, 19 May 2020 20:00:02 +0800</pubDate>
       
-      <guid>https://butou.ma/categories/tech/</guid>
+      <guid>https://butu.ma/categories/tech/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Life</title>
-      <link>https://butou.ma/categories/life/</link>
+      <link>https://butu.ma/categories/life/</link>
       <pubDate>Wed, 06 May 2020 19:59:20 +0800</pubDate>
       
-      <guid>https://butou.ma/categories/life/</guid>
+      <guid>https://butu.ma/categories/life/</guid>
       <description></description>
     </item>
     

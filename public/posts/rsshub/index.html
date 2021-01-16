@@ -1,176 +1,307 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.80.0" />
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='19.10.05 update:
+1. 之前在服务器端部署的 ttrss 用一段时间后感觉太臃肿，已更换为轻量级的 Miniflux，直接用 Docker 部署在 nas 上的。支持 Reeder ，安装过程也更简单。
+https://github.com/miniflux/miniflux
+2. 迫于 Typora 一直没有 iOS 端，笔记应用迁移到 Notion ，目前有教育优惠，用教育版邮箱注册直接免费。
+3. Typora 里 md 文件有点多。迁移到 Notion 时，直接导入会造成 md 文件内引用的本地图片丢失。所以先用命令行工具 pandoc 批量转换为 docx 格式文件。再导入 Notion。pandoc 转换文档时可以指定 css 文件进行样式渲染。
+4. 由于 md 文件散布在不同文件夹，写了个 bash 脚本进行批量汇总及转换。
+汇总脚本详情见博文：小脚本-批量复制指定目录下特定类型文件
+汇总 &#43; 转换 &#43; 保留文件夹层级功能脚本点此下载：pandoc.sh
+Notion 界面简洁，功能也挺强
+19.08.14 update:
+1. 文内提到的 RSSHub 的开发者已开发了对应的 Chrome 扩展，可以直接检测页面是否支持 RSS，并一键订阅到阅读器。https://github.com/DIYgod/RSSHub-Radar
+2. RSS 阅读器 Inoreader 转为付费的 Reeder 4。并链接到服务器端部署的 ttrss（开源的，支持过滤器）。'><title>「碎片化信息流的聚合与输出」Rsshub &#43; Reeder &#43; Notion</title>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Butou Ma" />
-  <meta property="og:url" content="https://butou.ma/posts/rsshub/" />
-  <link rel="canonical" href="https://butou.ma/posts/rsshub/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+<link rel='canonical' href='https://butu.ma/posts/rsshub/'>
 
-  <script type="application/ld+json">
-  {
-      "@context" : "http://schema.org",
-      "@type" : "BlogPosting",
-      "mainEntityOfPage": {
-           "@type": "WebPage",
-           "@id": "https:\/\/butou.ma\/"
-      },
-      "articleSection" : "posts",
-      "name" : "「碎片化信息流的聚合与输出」Rsshub \u002b Reeder \u002b Notion",
-      "headline" : "「碎片化信息流的聚合与输出」Rsshub \u002b Reeder \u002b Notion",
-      "description" : "19.10.05 update:\n1. 之前在服务器端部署\u0008的 ttrss 用一段时间后感觉太臃肿，已更换为轻量级的 Miniflux，直接用 Docker 部署在 nas 上的。支持 Reeder ，安装过程也更简单。\nhttps:\/\/github.com\/miniflux\/miniflux\n2. 迫于 Typora 一直没有 iOS 端，笔记应用迁移到 Notion ，目前有教育优惠，用教育版邮箱注册直接免费。\n3. Typora 里 md 文件有点多。迁移到 Notion 时，直接导入会造成 md 文件内引用的本地图片丢失。所以先用命令行工具 pandoc 批量转换为 docx 格式文件。再导入 Notion。pandoc 转换文档时可以指定 css 文件进行样式渲染。\n4. 由于 md 文件散布在不同文件夹，写了个 bash 脚本进行批量汇总及转换。\n汇总脚本详情见博文：小脚本-批量复制指定目录下特定类型文件\n汇总 \u002b 转换 \u002b 保留文件夹层级功能脚本点此下载：pandoc.sh\nNotion 界面简洁，功能也挺强\n19.08.14 update:\n1. 文内提到的 RSSHub 的开发者已开发了对应的 Chrome 扩展，可以直接检测页面是否支持 RSS，并一键订阅到阅读器。https:\/\/github.com\/DIYgod\/RSSHub-Radar\n2. RSS 阅读器 Inoreader 转为付费的 Reeder 4。并链接到服务器端部署的 ttrss（开源的，支持过滤器）。",
-      "inLanguage" : "en-US",
-      "author" : "Butou Ma",
-      "creator" : "Butou Ma",
-      "publisher": "Butou Ma",
-      "accountablePerson" : "Butou Ma",
-      "copyrightHolder" : "Butou Ma",
-      "copyrightYear" : "2019",
-      "datePublished": "2019-04-20 19:43:29 \u002b0800 CST",
-      "dateModified" : "2019-04-20 19:43:29 \u002b0800 CST",
-      "url" : "https:\/\/butou.ma\/posts\/rsshub\/",
-      "keywords" : [  ]
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='「碎片化信息流的聚合与输出」Rsshub &#43; Reeder &#43; Notion'>
+<meta property='og:description' content='19.10.05 update:
+1. 之前在服务器端部署的 ttrss 用一段时间后感觉太臃肿，已更换为轻量级的 Miniflux，直接用 Docker 部署在 nas 上的。支持 Reeder ，安装过程也更简单。
+https://github.com/miniflux/miniflux
+2. 迫于 Typora 一直没有 iOS 端，笔记应用迁移到 Notion ，目前有教育优惠，用教育版邮箱注册直接免费。
+3. Typora 里 md 文件有点多。迁移到 Notion 时，直接导入会造成 md 文件内引用的本地图片丢失。所以先用命令行工具 pandoc 批量转换为 docx 格式文件。再导入 Notion。pandoc 转换文档时可以指定 css 文件进行样式渲染。
+4. 由于 md 文件散布在不同文件夹，写了个 bash 脚本进行批量汇总及转换。
+汇总脚本详情见博文：小脚本-批量复制指定目录下特定类型文件
+汇总 &#43; 转换 &#43; 保留文件夹层级功能脚本点此下载：pandoc.sh
+Notion 界面简洁，功能也挺强
+19.08.14 update:
+1. 文内提到的 RSSHub 的开发者已开发了对应的 Chrome 扩展，可以直接检测页面是否支持 RSS，并一键订阅到阅读器。https://github.com/DIYgod/RSSHub-Radar
+2. RSS 阅读器 Inoreader 转为付费的 Reeder 4。并链接到服务器端部署的 ttrss（开源的，支持过滤器）。'>
+<meta property='og:url' content='https://butu.ma/posts/rsshub/'>
+<meta property='og:site_name' content='马捕头'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:published_time' content='2019-04-20T19:43:29&#43;08:00'/><meta property='article:modified_time' content='2019-04-20T19:43:29&#43;08:00'/>
+<meta name="twitter:site" content="butouma"><meta name="twitter:title" content="「碎片化信息流的聚合与输出」Rsshub &#43; Reeder &#43; Notion">
+<meta name="twitter:description" content="19.10.05 update:
+1. 之前在服务器端部署的 ttrss 用一段时间后感觉太臃肿，已更换为轻量级的 Miniflux，直接用 Docker 部署在 nas 上的。支持 Reeder ，安装过程也更简单。
+https://github.com/miniflux/miniflux
+2. 迫于 Typora 一直没有 iOS 端，笔记应用迁移到 Notion ，目前有教育优惠，用教育版邮箱注册直接免费。
+3. Typora 里 md 文件有点多。迁移到 Notion 时，直接导入会造成 md 文件内引用的本地图片丢失。所以先用命令行工具 pandoc 批量转换为 docx 格式文件。再导入 Notion。pandoc 转换文档时可以指定 css 文件进行样式渲染。
+4. 由于 md 文件散布在不同文件夹，写了个 bash 脚本进行批量汇总及转换。
+汇总脚本详情见博文：小脚本-批量复制指定目录下特定类型文件
+汇总 &#43; 转换 &#43; 保留文件夹层级功能脚本点此下载：pandoc.sh
+Notion 界面简洁，功能也挺强
+19.08.14 update:
+1. 文内提到的 RSSHub 的开发者已开发了对应的 Chrome 扩展，可以直接检测页面是否支持 RSS，并一键订阅到阅读器。https://github.com/DIYgod/RSSHub-Radar
+2. RSS 阅读器 Inoreader 转为付费的 Reeder 4。并链接到服务器端部署的 ttrss（开源的，支持过滤器）。">
+    <link rel="shortcut icon" href="favicon.ico" />
+<style>
+  :root {
+      --article-font-family: "Noto Serif SC", var(--base-font-family);
   }
+</style>
+
+<script>
+  (function () {
+      const customFont = document.createElement('link');
+      customFont.href = "<https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap>";
+  
+      customFont.type = "text/css";
+      customFont.rel = "stylesheet";
+  
+      document.head.appendChild(customFont);
+  }());
 </script>
-<title>「碎片化信息流的聚合与输出」Rsshub &#43; Reeder &#43; Notion - Mabutou&#39;s Blog</title>
-  <meta property="og:title" content="「碎片化信息流的聚合与输出」Rsshub &#43; Reeder &#43; Notion - Mabutou&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:description" content="19.10.05 update:
-1. 之前在服务器端部署的 ttrss 用一段时间后感觉太臃肿，已更换为轻量级的 Miniflux，直接用 Docker 部署在 nas 上的。支持 Reeder ，安装过程也更简单。
-https://github.com/miniflux/miniflux
-2. 迫于 Typora 一直没有 iOS 端，笔记应用迁移到 Notion ，目前有教育优惠，用教育版邮箱注册直接免费。
-3. Typora 里 md 文件有点多。迁移到 Notion 时，直接导入会造成 md 文件内引用的本地图片丢失。所以先用命令行工具 pandoc 批量转换为 docx 格式文件。再导入 Notion。pandoc 转换文档时可以指定 css 文件进行样式渲染。
-4. 由于 md 文件散布在不同文件夹，写了个 bash 脚本进行批量汇总及转换。
-汇总脚本详情见博文：小脚本-批量复制指定目录下特定类型文件
-汇总 &#43; 转换 &#43; 保留文件夹层级功能脚本点此下载：pandoc.sh
-Notion 界面简洁，功能也挺强
-19.08.14 update:
-1. 文内提到的 RSSHub 的开发者已开发了对应的 Chrome 扩展，可以直接检测页面是否支持 RSS，并一键订阅到阅读器。https://github.com/DIYgod/RSSHub-Radar
-2. RSS 阅读器 Inoreader 转为付费的 Reeder 4。并链接到服务器端部署的 ttrss（开源的，支持过滤器）。" />
-  <meta name="description" content="19.10.05 update:
-1. 之前在服务器端部署的 ttrss 用一段时间后感觉太臃肿，已更换为轻量级的 Miniflux，直接用 Docker 部署在 nas 上的。支持 Reeder ，安装过程也更简单。
-https://github.com/miniflux/miniflux
-2. 迫于 Typora 一直没有 iOS 端，笔记应用迁移到 Notion ，目前有教育优惠，用教育版邮箱注册直接免费。
-3. Typora 里 md 文件有点多。迁移到 Notion 时，直接导入会造成 md 文件内引用的本地图片丢失。所以先用命令行工具 pandoc 批量转换为 docx 格式文件。再导入 Notion。pandoc 转换文档时可以指定 css 文件进行样式渲染。
-4. 由于 md 文件散布在不同文件夹，写了个 bash 脚本进行批量汇总及转换。
-汇总脚本详情见博文：小脚本-批量复制指定目录下特定类型文件
-汇总 &#43; 转换 &#43; 保留文件夹层级功能脚本点此下载：pandoc.sh
-Notion 界面简洁，功能也挺强
-19.08.14 update:
-1. 文内提到的 RSSHub 的开发者已开发了对应的 Chrome 扩展，可以直接检测页面是否支持 RSS，并一键订阅到阅读器。https://github.com/DIYgod/RSSHub-Radar
-2. RSS 阅读器 Inoreader 转为付费的 Reeder 4。并链接到服务器端部署的 ttrss（开源的，支持过滤器）。" />
-  <meta property="og:locale" content="en-us" />
+    </head>
+    <body class="article-page keep-sidebar">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
-  <link rel="stylesheet" href="/css/github-markdown.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
-  <link rel="stylesheet" href="/css/index.css">
-  <link rel="stylesheet" href="/css/butou.css">
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-  
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended ">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
-  <link href="/index.xml" rel="alternate" type="application/rss+xml"
-    title="Mabutou&#39;s Blog">
-  
-  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
-  
-  
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/logo_hu106e5724d70123674fe68b09b7c9c4bf_27292_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
 
-  
-</head>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://butu.ma">马捕头</a></h1>
+        <h2 class="site-description">我未曾珍惜的，我不再拥有。</h2>
+    </header>
 
-<body>
-  <article class="post " id="article">
-    <div class="row">
-      <div class="col-xs-12 homepage">
-        <div class="site-header">
-          <header>
-  <div class="signatures site-title">
-    <a href="/">Mabutou</a>
-  </div>
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://photos.butou.ma'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+                
+                <span>Photos</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://timeline.butou.ma/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>Timeline</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://wiki.butou.ma/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Wiki</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about-me'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/tech/" >
+                Tech
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/posts/rsshub/">「碎片化信息流的聚合与输出」Rsshub &#43; Reeder &#43; Notion</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Apr 20, 2019</time>
+    </footer></div>
 </header>
-<div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="https://butou.ma" >Home</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://photos.butou.ma" >Photo</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://timeline.butou.ma" >Timeline</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://wiki.butou.ma/" >Wiki</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="/posts/about-me/" >About</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-</div>
 
-        </div>
-        <header class="post-header">
-          <h1 class="post-title">「碎片化信息流的聚合与输出」Rsshub &#43; Reeder &#43; Notion</h1>
-          
-          <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2019-04-20 19:43:29 CST">
-                20 Apr 2019
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
-              </div>
-              
-            </div>
-          </div>
-          
-        </header>
-
-        <div class="post-content markdown-body">
-          
-          <p><em><strong>19.10.05 update:</strong></em></p>
+    <section class="article-content">
+    <p><em><strong>19.10.05 update:</strong></em></p>
 <p>1. 之前在服务器端部署的 <em>ttrss</em> 用一段时间后感觉太臃肿，已更换为轻量级的 <strong><em>Miniflux</em></strong>，直接用 <em>Docker</em> 部署在 <em>nas</em> 上的。支持 <strong><em>Reeder</em></strong> ，安装过程也更简单。</p>
-<p><a href="https://github.com/miniflux/miniflux"><em>https://github.com/miniflux/miniflux</em></a></p>
+<p><a class="link" href="https://github.com/miniflux/miniflux"  target="_blank" rel="noopener"
+    ><em>https://github.com/miniflux/miniflux</em></a></p>
 <p>2. 迫于 <strong><em>Typora</em></strong> 一直没有 <em>iOS</em> 端，笔记应用迁移到 <em><strong>Notion</strong></em> ，目前有教育优惠，用教育版邮箱注册直接免费。</p>
 <p>3. <strong><em>Typora</em></strong> 里 md 文件有点多。迁移到 <em><strong>Notion</strong></em> 时，直接导入会造成 md 文件内引用的本地图片丢失。所以先用命令行工具 <strong><em>pandoc</em></strong> 批量转换为 docx 格式文件。再导入 <em><strong>Notion</strong></em>。<strong><em>pandoc</em></strong> 转换文档时可以指定 css 文件进行样式渲染。</p>
 <p>4. 由于 md 文件散布在不同文件夹，写了个 bash 脚本进行批量汇总及转换。</p>
-<p>汇总脚本详情见博文：<em><a href="/posts/macos%E5%B0%8F%E8%84%9A%E6%9C%AC/">小脚本-批量复制指定目录下特定类型文件</a></em></p>
-<p>汇总 + 转换 + 保留文件夹层级功能脚本点此下载：<a href="/pandoc.sh"><em>pandoc.sh</em></a></p>
-<p><img src="/img/Screen-Shot-2019-10-05-at-18.23.05-1024x739.png" alt=""></p>
+<p>汇总脚本详情见博文：<em><a class="link" href="/posts/macos%e5%b0%8f%e8%84%9a%e6%9c%ac/" >小脚本-批量复制指定目录下特定类型文件</a></em></p>
+<p>汇总 + 转换 + 保留文件夹层级功能脚本点此下载：<a class="link" href="/pandoc.sh" ><em>pandoc.sh</em></a></p>
+<p><img src="/img/Screen-Shot-2019-10-05-at-18.23.05-1024x739.png" alt=""  /></p>
 <p>Notion 界面简洁，功能也挺强</p>
 <p><em>19.08.14 update:</em></p>
-<p>1. 文内提到的 RSSHub 的开发者已开发了对应的 Chrome 扩展，可以直接检测页面是否支持 RSS，并一键订阅到阅读器。<a href="https://github.com/DIYgod/RSSHub-Radar">https://github.com/DIYgod/RSSHub-Radar</a></p>
+<p>1. 文内提到的 RSSHub 的开发者已开发了对应的 Chrome 扩展，可以直接检测页面是否支持 RSS，并一键订阅到阅读器。<a class="link" href="https://github.com/DIYgod/RSSHub-Radar"  target="_blank" rel="noopener"
+    >https://github.com/DIYgod/RSSHub-Radar</a></p>
 <p>2. RSS 阅读器 Inoreader 转为付费的 Reeder 4。并链接到服务器端部署的 ttrss（开源的，支持过滤器）。</p>
 <p>3. 笔记应用 Trilium 已放弃，转移到 Mac 端的 Typora，配合 Google Drive 进行 markdown 文件和图片文件同步。</p>
-<p><img src="/img/Screen-Shot-2019-08-14-at-19.51.19.png" alt=""></p>
+<p><img src="/img/Screen-Shot-2019-08-14-at-19.51.19.png" alt=""  /></p>
 <h2 id="正文">正文：</h2>
 <p><em><strong>“世间好物不坚牢 彩云易散琉璃碎”</strong></em></p>
 <p>美好的事物不能永恒存在，自然状态下世间万物总是会从有序到无序，为何如此?</p>
@@ -203,24 +334,28 @@ Notion 界面简洁，功能也挺强
 <ul>
 <li>RSSHub 是一个轻量、易于扩展的 RSS 生成器, 可以给各种奇奇怪怪的内容生成 RSS 订阅源。
 <ul>
-<li>github 地址：<a href="https://github.com/DIYgod/RSSHub">https://github.com/DIYgod/RSSHub</a></li>
+<li>github 地址：<a class="link" href="https://github.com/DIYgod/RSSHub"  target="_blank" rel="noopener"
+    >https://github.com/DIYgod/RSSHub</a></li>
 </ul>
 </li>
 <li>主要功能是将一些本来不提供 RSS 的信息源制作成 RSS 源。比如微博和 Instagram。</li>
-<li>已部署至个人服务器，欢迎使用： <a href="http://rsshub.butou.ma/">https://rsshub.butou.ma</a></li>
-<li>使用方法很简单参考官方文档：<a href="https://docs.rsshub.app/">https://docs.rsshub.app</a></li>
+<li>已部署至个人服务器，欢迎使用： <a class="link" href="http://rsshub.butou.ma/"  target="_blank" rel="noopener"
+    >https://rsshub.butou.ma</a></li>
+<li>使用方法很简单参考官方文档：<a class="link" href="https://docs.rsshub.app/"  target="_blank" rel="noopener"
+    >https://docs.rsshub.app</a></li>
 </ul>
 <p>例：比如制作 木遥 微博的订阅源</p>
 <ol>
 <li>打开目标微博主页</li>
 <li>打开网页开发工具，控制台输入 $CONFIG.oid</li>
 </ol>
-<p><img src="/img/1bb80-006tNc79gy1fz7o3iecajj31hc0u0doc.jpg" alt=""></p>
+<p><img src="/img/1bb80-006tNc79gy1fz7o3iecajj31hc0u0doc.jpg" alt=""  /></p>
 <ol>
-<li>复制得到的用户 id 1400854834，拼接成对应 url ：<a href="http://rsshub.butou.ma/weibo/user/1400854834">http://rsshub.butou.ma/weibo/user/1400854834</a></li>
+<li>复制得到的用户 id 1400854834，拼接成对应 url ：<a class="link" href="http://rsshub.butou.ma/weibo/user/1400854834"  target="_blank" rel="noopener"
+    >http://rsshub.butou.ma/weibo/user/1400854834</a></li>
 <li>浏览器如能成功访问此网址，则对应的 RSS 源就生成成功了。</li>
 </ol>
-<p><img src="/img/60a2c-006tNc79gy1fz7o46nbxqj31hc0u0ag9.jpg" alt=""></p>
+<p><img src="/img/60a2c-006tNc79gy1fz7o46nbxqj31hc0u0ag9.jpg" alt=""  /></p>
 <h4 id="注有些渠道比较简单如-instagram直接用-id-拼接成对应-rss-地址即可">注：有些渠道比较简单，如 instagram。直接用 id 拼接成对应 rss 地址即可。</h4>
 <p><em>以长泽雅美 ?masami_nagasawa 为例：https://rsshub.butou.ma/instagram/user/masami_nagasawa</em></p>
 <h4 id="第二步-订阅和阅读-rss">第二步 订阅和阅读 RSS</h4>
@@ -236,33 +371,38 @@ Notion 界面简洁，功能也挺强
 <li>缺点是免费版不支持过滤，可通过 rsshub 增加 url 过滤参数实现，参考使用文档。</li>
 </ul>
 </li>
-<li>地址： <a href="https://www.inoreader.com/">https://www.inoreader.com</a></li>
+<li>地址： <a class="link" href="https://www.inoreader.com/"  target="_blank" rel="noopener"
+    >https://www.inoreader.com</a></li>
 <li>将第一步制作好的 RSS 地址添加进去就行。</li>
 <li>很多个人博客和媒体网站都原生提供 RSS ，不用自己制作。</li>
 </ul>
-<p><img src="/img/85039-006tNc79gy1fz7ocdkas1j30sc0fmq3n.jpg" alt=""></p>
+<p><img src="/img/85039-006tNc79gy1fz7ocdkas1j30sc0fmq3n.jpg" alt=""  /></p>
 <h4 id="最终效果">最终效果</h4>
-<p><img src="/img/2174f-006tNc79gy1fz7odibpixj31hc0u0jwz.jpg" alt=""></p>
+<p><img src="/img/2174f-006tNc79gy1fz7odibpixj31hc0u0jwz.jpg" alt=""  /></p>
 <h4 id="备注-1">备注 1</h4>
 <ul>
 <li>可配合 chrome 插件 Easy-to-RSS 直接获取或生成当前页面的 RSS 地址。</li>
-<li>安装地址 <a href="https://chrome.google.com/webstore/detail/easy-to-rss/hbcmpkcpbnecinpngdnfbnknfkdpdfli">https://chrome.google.com/webstore/detail/easy-to-rss/hbcmpkcpbnecinpngdnfbnknfkdpdfli</a></li>
-<li>github：<a href="https://github.com/idealclover/Easy-to-RSS">https://github.com/idealclover/Easy-to-RSS</a></li>
+<li>安装地址 <a class="link" href="https://chrome.google.com/webstore/detail/easy-to-rss/hbcmpkcpbnecinpngdnfbnknfkdpdfli"  target="_blank" rel="noopener"
+    >https://chrome.google.com/webstore/detail/easy-to-rss/hbcmpkcpbnecinpngdnfbnknfkdpdfli</a></li>
+<li>github：<a class="link" href="https://github.com/idealclover/Easy-to-RSS"  target="_blank" rel="noopener"
+    >https://github.com/idealclover/Easy-to-RSS</a></li>
 </ul>
 <ol>
 <li>如果该网站自带 RSS，Easy-to-RSS 将获取该网站自带 RSS</li>
-<li>如果该网站被 <a href="https://github.com/DIYgod/RSSHub">RSSHub</a> 收录，Easy-to-RSS 将获取该网站在 RSSHub 中的地址：</li>
+<li>如果该网站被 <a class="link" href="https://github.com/DIYgod/RSSHub"  target="_blank" rel="noopener"
+    >RSSHub</a> 收录，Easy-to-RSS 将获取该网站在 RSSHub 中的地址：</li>
 </ol>
 <ul>
 <li>安装好后最好在配置页面把服务器地址改成自己的。</li>
 </ul>
-<p><img src="/img/c537f-006tNc79gy1fz7p0ogcwij30n208kwej.jpg" alt=""></p>
-<p><img src="/img/afe2d-006tNc79gy1fz7p3jhharj31hc0u0tey.jpg" alt=""></p>
+<p><img src="/img/c537f-006tNc79gy1fz7p0ogcwij30n208kwej.jpg" alt=""  /></p>
+<p><img src="/img/afe2d-006tNc79gy1fz7p3jhharj31hc0u0tey.jpg" alt=""  /></p>
 <h4 id="备注-2">备注 2</h4>
 <ul>
-<li>Inoreader 可与 <a href="http://reabble.com/">http://reabble.com/</a> 联动，实现在 kindle 上阅读的同时重新排版。</li>
+<li>Inoreader 可与 <a class="link" href="http://reabble.com/"  target="_blank" rel="noopener"
+    >http://reabble.com/</a> 联动，实现在 kindle 上阅读的同时重新排版。</li>
 <li>reabble 本质上是通过登录 Inoreader 帐号，获取到里面的内容后进行二次排版，专门针对电子墨水屏设备优化。</li>
-<li>效果如图：<img src="/img/6a559-006tNc79gy1fz7pphojawj30ts148gm9.jpg" alt=""></li>
+<li>效果如图：<img src="/img/6a559-006tNc79gy1fz7pphojawj30ts148gm9.jpg" alt=""  /></li>
 </ul>
 <h2 id="输出">输出</h2>
 <p>信息流里有些值得记录的信息，需要手动进行整理与归档。方便查阅或回顾。</p>
@@ -311,7 +451,8 @@ Notion 界面简洁，功能也挺强
 <p>后来转向开源的个人wiki系统。主流的那几个全都试了下，不是太简陋就是太复杂，易用性很一般。</p>
 </li>
 </ul>
-<p><strong>最终用的是 Trilium <a href="https://github.com/zadam/trilium">https://github.com/zadam/trilium</a></strong></p>
+<p><strong>最终用的是 Trilium <a class="link" href="https://github.com/zadam/trilium"  target="_blank" rel="noopener"
+    >https://github.com/zadam/trilium</a></strong></p>
 <p>一款开源知识库软件。</p>
 <ul>
 <li>
@@ -345,7 +486,7 @@ Notion 界面简洁，功能也挺强
 <p>支持自定义主题</p>
 </li>
 </ul>
-<p><img src="/img/2d89b-006tKfTcgy1g07akkwhs2j31hc0u00xv.jpg" alt=""></p>
+<p><img src="/img/2d89b-006tKfTcgy1g07akkwhs2j31hc0u00xv.jpg" alt=""  /></p>
 <h2 id="检索">检索</h2>
 <p>应对”知识爆炸”，大脑只需记住核心的知识点，舍弃边缘的知识点。</p>
 <p>碎片化信息流获取的信息大多是边缘知识，不需要刻意记忆，在需要的时候临时通过搜索引擎或者个人 wiki 检索就行（trlium 有全文搜索功能）。</p>
@@ -353,85 +494,177 @@ Notion 界面简洁，功能也挺强
 <p><strong>在这个变幻的世界，为避免思维僵化，我们需要走出舒适区不断引入新的知识维度，理解很多看似矛盾对立的现实，最终穿越生活的迷雾构建属于自己的多维度思维模型。</strong></p>
 <p><strong>道阻且长, 行则将至。各位共勉。</strong></p>
 
-        </div>
+</section>
 
-        <div class="row middle-xs">
-          <div class="col-xs-12">
-            
-            <div class="post-category">
-              <a href="/categories/tech/">
-                Tech
-              </a>
-            </div>
-            
-          </div>
-        </div>
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+     
         
-          <div class="row">
-            <div class="col-xs-12">
-              
-            </div>
-          </div>
-
-          
-
-          
-          
-          <div style="height: 50px;"></div>
-          
-          <div class="post-comments">
-            <div id="disqus_thread"></div>
-<script>
-  window.addEventListener("load", () => {
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-      
-      var d = document,
-        s = d.createElement("script");
-      s.src = "https://mabutou.disqus.com/embed.js";
-      s.setAttribute("data-timestamp", +new Date());
-      (d.head || d.body).appendChild(s);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mabutou" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
-  });
 </script>
-<noscript
-  >Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript"
-    >comments powered by Disqus.</a
-  ></noscript
->
-
-          </div>
-          
-        
-
-        
-
-<div class="row end-xs">
-  
-  
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
-<div class="header-line"></div>
 
-
-      </div>
-    </div>
-  </article>
-
-  <script src="/js/highlight.pack.js"></script>
-
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
 
 <script>
-  hljs.initHighlightingOnLoad();
-  
-  
-  
-    
-    
-  
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
 </script>
 
-  
+    
 
-</body>
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2021 马捕头
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
 
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+
+    </body>
 </html>

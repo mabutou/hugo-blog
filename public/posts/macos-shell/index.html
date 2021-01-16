@@ -1,145 +1,266 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.80.0" />
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='github: https://github.com/mabutou/macOS_copyScript
+ 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。
+ Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!/bin/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$&amp;#39;\\n&amp;#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\_files=\`find ./ -name &amp;#34;\*.md&amp;#34; -print\` #设置目标文件夹 des\_dir=&amp;#34;/Users/XXX/Downloads/md&amp;#34; echo $des\_dir #如果没有对应目标文件夹就创建 \[ -d $des\_dir \] || mkdir -p $des\_dir &amp;amp;&amp;gt; /dev/null #按行读取文件路径 for file in $head\_files do source\_dir=${file#./} echo $source\_dir; #是否保留文件夹层级 #\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir #cp -p &amp;#34;$file&amp;#34; $des\_dir$source\_dir #执行复制命令 cp -p &amp;#34;$file&amp;#34; $des\_dir ((file\_count&#43;&#43;)) done echo &amp;#34;复制完毕?'><title>macOS 小脚本-批量复制指定目录下特定类型文件</title>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Butou Ma" />
-  <meta property="og:url" content="https://butou.ma/posts/macos-shell/" />
-  <link rel="canonical" href="https://butou.ma/posts/macos-shell/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+<link rel='canonical' href='https://butu.ma/posts/macos-shell/'>
 
-  <script type="application/ld+json">
-  {
-      "@context" : "http://schema.org",
-      "@type" : "BlogPosting",
-      "mainEntityOfPage": {
-           "@type": "WebPage",
-           "@id": "https:\/\/butou.ma\/"
-      },
-      "articleSection" : "posts",
-      "name" : "macOS 小脚本-批量复制指定目录下特定类型文件",
-      "headline" : "macOS 小脚本-批量复制指定目录下特定类型文件",
-      "description" : "github: https:\/\/github.com\/mabutou\/macOS_copyScript\n 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。\n Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!\/bin\/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$\u0026#39;\\\\n\u0026#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\\_files=\\`find .\/ -name \u0026#34;\\*.md\u0026#34; -print\\` #设置目标文件夹 des\\_dir=\u0026#34;\/Users\/XXX\/Downloads\/md\u0026#34; echo $des\\_dir #如果没有对应目标文件夹就创建 \\[ -d $des\\_dir \\] || mkdir -p $des\\_dir \u0026amp;\u0026gt; \/dev\/null #按行读取文件路径 for file in $head\\_files do source\\_dir=${file#.\/} echo $source\\_dir; #是否保留文件夹层级 #\\[ -d $des\\_dir$source\\_dir \\] || mkdir -p $des\\_dir$source\\_dir #cp -p \u0026#34;$file\u0026#34; $des\\_dir$source\\_dir #执行复制命令 cp -p \u0026#34;$file\u0026#34; $des\\_dir ((file\\_count\u002b\u002b)) done echo \u0026#34;复制完毕?",
-      "inLanguage" : "en-US",
-      "author" : "Butou Ma",
-      "creator" : "Butou Ma",
-      "publisher": "Butou Ma",
-      "accountablePerson" : "Butou Ma",
-      "copyrightHolder" : "Butou Ma",
-      "copyrightYear" : "2019",
-      "datePublished": "2019-09-18 19:53:55 \u002b0800 CST",
-      "dateModified" : "2019-09-18 19:53:55 \u002b0800 CST",
-      "url" : "https:\/\/butou.ma\/posts\/macos-shell\/",
-      "keywords" : [  ]
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='macOS 小脚本-批量复制指定目录下特定类型文件'>
+<meta property='og:description' content='github: https://github.com/mabutou/macOS_copyScript
+ 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。
+ Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!/bin/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$&amp;#39;\\n&amp;#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\_files=\`find ./ -name &amp;#34;\*.md&amp;#34; -print\` #设置目标文件夹 des\_dir=&amp;#34;/Users/XXX/Downloads/md&amp;#34; echo $des\_dir #如果没有对应目标文件夹就创建 \[ -d $des\_dir \] || mkdir -p $des\_dir &amp;amp;&amp;gt; /dev/null #按行读取文件路径 for file in $head\_files do source\_dir=${file#./} echo $source\_dir; #是否保留文件夹层级 #\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir #cp -p &amp;#34;$file&amp;#34; $des\_dir$source\_dir #执行复制命令 cp -p &amp;#34;$file&amp;#34; $des\_dir ((file\_count&#43;&#43;)) done echo &amp;#34;复制完毕?'>
+<meta property='og:url' content='https://butu.ma/posts/macos-shell/'>
+<meta property='og:site_name' content='马捕头'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:published_time' content='2019-09-18T19:53:55&#43;08:00'/><meta property='article:modified_time' content='2019-09-18T19:53:55&#43;08:00'/>
+<meta name="twitter:site" content="butouma"><meta name="twitter:title" content="macOS 小脚本-批量复制指定目录下特定类型文件">
+<meta name="twitter:description" content="github: https://github.com/mabutou/macOS_copyScript
+ 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。
+ Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!/bin/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$&amp;#39;\\n&amp;#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\_files=\`find ./ -name &amp;#34;\*.md&amp;#34; -print\` #设置目标文件夹 des\_dir=&amp;#34;/Users/XXX/Downloads/md&amp;#34; echo $des\_dir #如果没有对应目标文件夹就创建 \[ -d $des\_dir \] || mkdir -p $des\_dir &amp;amp;&amp;gt; /dev/null #按行读取文件路径 for file in $head\_files do source\_dir=${file#./} echo $source\_dir; #是否保留文件夹层级 #\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir #cp -p &amp;#34;$file&amp;#34; $des\_dir$source\_dir #执行复制命令 cp -p &amp;#34;$file&amp;#34; $des\_dir ((file\_count&#43;&#43;)) done echo &amp;#34;复制完毕?">
+    <link rel="shortcut icon" href="favicon.ico" />
+<style>
+  :root {
+      --article-font-family: "Noto Serif SC", var(--base-font-family);
   }
+</style>
+
+<script>
+  (function () {
+      const customFont = document.createElement('link');
+      customFont.href = "<https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap>";
+  
+      customFont.type = "text/css";
+      customFont.rel = "stylesheet";
+  
+      document.head.appendChild(customFont);
+  }());
 </script>
-<title>macOS 小脚本-批量复制指定目录下特定类型文件 - Mabutou&#39;s Blog</title>
-  <meta property="og:title" content="macOS 小脚本-批量复制指定目录下特定类型文件 - Mabutou&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:description" content="github: https://github.com/mabutou/macOS_copyScript
- 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。
- Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!/bin/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$&#39;\\n&#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\_files=\`find ./ -name &#34;\*.md&#34; -print\` #设置目标文件夹 des\_dir=&#34;/Users/XXX/Downloads/md&#34; echo $des\_dir #如果没有对应目标文件夹就创建 \[ -d $des\_dir \] || mkdir -p $des\_dir &amp;&gt; /dev/null #按行读取文件路径 for file in $head\_files do source\_dir=${file#./} echo $source\_dir; #是否保留文件夹层级 #\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir #cp -p &#34;$file&#34; $des\_dir$source\_dir #执行复制命令 cp -p &#34;$file&#34; $des\_dir ((file\_count&#43;&#43;)) done echo &#34;复制完毕?" />
-  <meta name="description" content="github: https://github.com/mabutou/macOS_copyScript
- 使用场景： 比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。
- Linux 系统上可以用一条 find 和 cp 组合命令直接完成。 然而 macOS 上命令貌似不太兼容，就写了个小脚本，只在 Mac 上试了，Linux 估计也适用。  使用方法：  按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 copyScript.sh。 若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。 使用 sh copyScript.sh 命令执行即可。  #!/bin/bash #修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名 IFS=$&#39;\\n&#39; #递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改 head\_files=\`find ./ -name &#34;\*.md&#34; -print\` #设置目标文件夹 des\_dir=&#34;/Users/XXX/Downloads/md&#34; echo $des\_dir #如果没有对应目标文件夹就创建 \[ -d $des\_dir \] || mkdir -p $des\_dir &amp;&gt; /dev/null #按行读取文件路径 for file in $head\_files do source\_dir=${file#./} echo $source\_dir; #是否保留文件夹层级 #\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir #cp -p &#34;$file&#34; $des\_dir$source\_dir #执行复制命令 cp -p &#34;$file&#34; $des\_dir ((file\_count&#43;&#43;)) done echo &#34;复制完毕?" />
-  <meta property="og:locale" content="en-us" />
+    </head>
+    <body class="article-page keep-sidebar">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
-  <link rel="stylesheet" href="/css/github-markdown.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
-  <link rel="stylesheet" href="/css/index.css">
-  <link rel="stylesheet" href="/css/butou.css">
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-  
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended ">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
-  <link href="/index.xml" rel="alternate" type="application/rss+xml"
-    title="Mabutou&#39;s Blog">
-  
-  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
-  
-  
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/logo_hu106e5724d70123674fe68b09b7c9c4bf_27292_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
 
-  
-</head>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://butu.ma">马捕头</a></h1>
+        <h2 class="site-description">我未曾珍惜的，我不再拥有。</h2>
+    </header>
 
-<body>
-  <article class="post " id="article">
-    <div class="row">
-      <div class="col-xs-12 homepage">
-        <div class="site-header">
-          <header>
-  <div class="signatures site-title">
-    <a href="/">Mabutou</a>
-  </div>
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://photos.butou.ma'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+                
+                <span>Photos</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://timeline.butou.ma/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>Timeline</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://wiki.butou.ma/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Wiki</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about-me'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/tech/" >
+                Tech
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/posts/macos-shell/">macOS 小脚本-批量复制指定目录下特定类型文件</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Sep 18, 2019</time>
+    </footer></div>
 </header>
-<div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="https://butou.ma" >Home</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://photos.butou.ma" >Photo</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://timeline.butou.ma" >Timeline</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://wiki.butou.ma/" >Wiki</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="/posts/about-me/" >About</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-</div>
 
-        </div>
-        <header class="post-header">
-          <h1 class="post-title">macOS 小脚本-批量复制指定目录下特定类型文件</h1>
-          
-          <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2019-09-18 19:53:55 CST">
-                18 Sep 2019
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
-              </div>
-              
-            </div>
-          </div>
-          
-        </header>
-
-        <div class="post-content markdown-body">
-          
-          <blockquote>
-<p>github: <a href="https://github.com/mabutou/macOS_copyScript">https://github.com/mabutou/macOS_copyScript</a></p>
+    <section class="article-content">
+    <blockquote>
+<p>github: <a class="link" href="https://github.com/mabutou/macOS_copyScript"  target="_blank" rel="noopener"
+    >https://github.com/mabutou/macOS_copyScript</a></p>
 </blockquote>
 <h3 id="使用场景">使用场景：</h3>
 <p>比如我想将某个目录下的几百个 .md 文件（分布在数十个多级子文件夹内），全部集中到一个单独的文件夹内。</p>
@@ -149,114 +270,208 @@
 </ul>
 <h3 id="使用方法">使用方法：</h3>
 <ul>
-<li>按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 <a href="http://copyscript.sh/">copyScript.sh</a>。</li>
+<li>按个人需求修改下方脚本内对应的路径和格式名。创建成 sh 文件放到对应目录。比如叫 <a class="link" href="http://copyscript.sh/"  target="_blank" rel="noopener"
+    >copyScript.sh</a>。</li>
 <li>若要保留文件夹层级，只是为了过滤文件。则删除倒数 7、8 行注释，同时注释掉倒数第 5 行。</li>
-<li>使用 sh <a href="http://copyscript.sh/">copyScript.sh</a> 命令执行即可。</li>
+<li>使用 sh <a class="link" href="http://copyscript.sh/"  target="_blank" rel="noopener"
+    >copyScript.sh</a> 命令执行即可。</li>
 </ul>
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#!/bin/bash
-</span><span style="color:#75715e"></span><span style="color:#75715e">#修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名</span>
-IFS<span style="color:#f92672">=</span><span style="color:#e6db74">$&#39;\\n&#39;</span>
-<span style="color:#75715e">#递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改</span>
-head<span style="color:#ae81ff">\_</span>files<span style="color:#f92672">=</span><span style="color:#ae81ff">\`</span>find ./ -name <span style="color:#e6db74">&#34;\*.md&#34;</span> -print<span style="color:#ae81ff">\`</span>
-<span style="color:#75715e">#设置目标文件夹</span>
-des<span style="color:#ae81ff">\_</span>dir<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/Users/XXX/Downloads/md&#34;</span>
-echo $des<span style="color:#ae81ff">\_</span>dir
-<span style="color:#75715e">#如果没有对应目标文件夹就创建</span>
-<span style="color:#ae81ff">\[</span> -d $des<span style="color:#ae81ff">\_</span>dir <span style="color:#ae81ff">\]</span> <span style="color:#f92672">||</span> mkdir -p $des<span style="color:#ae81ff">\_</span>dir &amp;&gt; /dev/null
-<span style="color:#75715e">#按行读取文件路径</span>
-<span style="color:#66d9ef">for</span> file in $head<span style="color:#ae81ff">\_</span>files
-<span style="color:#66d9ef">do</span>
-source<span style="color:#ae81ff">\_</span>dir<span style="color:#f92672">=</span><span style="color:#e6db74">${</span>file#./<span style="color:#e6db74">}</span>
-echo $source<span style="color:#ae81ff">\_</span>dir;
-<span style="color:#75715e">#是否保留文件夹层级</span>
-<span style="color:#75715e">#\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir</span>
-<span style="color:#75715e">#cp -p &#34;$file&#34; $des\_dir$source\_dir</span>
-<span style="color:#75715e">#执行复制命令</span>
-cp -p <span style="color:#e6db74">&#34;</span>$file<span style="color:#e6db74">&#34;</span> $des<span style="color:#ae81ff">\_</span>dir
-<span style="color:#f92672">((</span>file<span style="color:#ae81ff">\_</span>count++<span style="color:#f92672">))</span>
-<span style="color:#66d9ef">done</span>
-echo <span style="color:#e6db74">&#34;复制完毕?&#34;</span>
-echo <span style="color:#e6db74">&#34;文件总数：</span><span style="color:#e6db74">${</span>file<span style="color:#ae81ff">\_</span>count<span style="color:#e6db74">}</span><span style="color:#e6db74"> ?&#34;</span>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="cp">#!/bin/bash
+</span><span class="cp"></span><span class="c1">#修改IFS变量，将分割字段的字符改为换行符，默认IFS变量含有空格，后续命令会识别不了含有空格的文件夹和文件名</span>
+<span class="nv">IFS</span><span class="o">=</span><span class="s1">$&#39;\\n&#39;</span>
+<span class="c1">#递归过滤当前目录及子目录的所有指定格式文件，默认为md，按需修改</span>
+head<span class="se">\_</span>files<span class="o">=</span><span class="se">\`</span>find ./ -name <span class="s2">&#34;\*.md&#34;</span> -print<span class="se">\`</span>
+<span class="c1">#设置目标文件夹</span>
+des<span class="se">\_</span>dir<span class="o">=</span><span class="s2">&#34;/Users/XXX/Downloads/md&#34;</span>
+<span class="nb">echo</span> <span class="nv">$des</span><span class="se">\_</span>dir
+<span class="c1">#如果没有对应目标文件夹就创建</span>
+<span class="se">\[</span> -d <span class="nv">$des</span><span class="se">\_</span>dir <span class="se">\]</span> <span class="o">||</span> mkdir -p <span class="nv">$des</span><span class="se">\_</span>dir <span class="p">&amp;</span>&gt; /dev/null
+<span class="c1">#按行读取文件路径</span>
+<span class="k">for</span> file in <span class="nv">$head</span><span class="se">\_</span>files
+<span class="k">do</span>
+source<span class="se">\_</span>dir<span class="o">=</span><span class="si">${</span><span class="nv">file</span><span class="p">#./</span><span class="si">}</span>
+<span class="nb">echo</span> <span class="nv">$source</span><span class="se">\_</span>dir<span class="p">;</span>
+<span class="c1">#是否保留文件夹层级</span>
+<span class="c1">#\[ -d $des\_dir$source\_dir \] || mkdir -p $des\_dir$source\_dir</span>
+<span class="c1">#cp -p &#34;$file&#34; $des\_dir$source\_dir</span>
+<span class="c1">#执行复制命令</span>
+cp -p <span class="s2">&#34;</span><span class="nv">$file</span><span class="s2">&#34;</span> <span class="nv">$des</span><span class="se">\_</span>dir
+<span class="o">((</span>file<span class="se">\_</span>count++<span class="o">))</span>
+<span class="k">done</span>
+<span class="nb">echo</span> <span class="s2">&#34;复制完毕?&#34;</span>
+<span class="nb">echo</span> <span class="s2">&#34;文件总数：</span><span class="si">${</span><span class="nv">file</span><span class="se">\_</span><span class="nv">count</span><span class="si">}</span><span class="s2"> ?&#34;</span>
 </code></pre></div>
-        </div>
+</section>
 
-        <div class="row middle-xs">
-          <div class="col-xs-12">
-            
-            <div class="post-category">
-              <a href="/categories/tech/">
-                Tech
-              </a>
-            </div>
-            
-          </div>
-        </div>
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+     
         
-          <div class="row">
-            <div class="col-xs-12">
-              
-            </div>
-          </div>
-
-          
-
-          
-          
-          <div style="height: 50px;"></div>
-          
-          <div class="post-comments">
-            <div id="disqus_thread"></div>
-<script>
-  window.addEventListener("load", () => {
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-      
-      var d = document,
-        s = d.createElement("script");
-      s.src = "https://mabutou.disqus.com/embed.js";
-      s.setAttribute("data-timestamp", +new Date());
-      (d.head || d.body).appendChild(s);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mabutou" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
-  });
 </script>
-<noscript
-  >Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript"
-    >comments powered by Disqus.</a
-  ></noscript
->
-
-          </div>
-          
-        
-
-        
-
-<div class="row end-xs">
-  
-  
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
-<div class="header-line"></div>
 
-
-      </div>
-    </div>
-  </article>
-
-  <script src="/js/highlight.pack.js"></script>
-
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
 
 <script>
-  hljs.initHighlightingOnLoad();
-  
-  
-  
-    
-    
-  
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
 </script>
 
-  
+    
 
-</body>
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2021 马捕头
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
 
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+
+    </body>
 </html>

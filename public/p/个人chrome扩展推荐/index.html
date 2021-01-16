@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='第一次使用谷歌浏览器是刚上高中时，距现在已有十年了。
+自从知道 Chrome 有自己的应用商店可以安装各种功能的扩展后，就基本没换过其他浏览器了。
+十年间用过无数扩展，感觉有必要写篇文章推荐下最终留下来的这些。
+某些扩展功能比较冷门，下面只介绍比较通用的。
+Tampermonkey 油猴扩展作为脚本管理器比较特殊，会单独写一篇进行介绍和推荐对应的脚本。
+ 所有扩展截图（查看大图）  
+必装扩展推荐（点击名称可跳转到应用商店页面） Extensity
+ 管理扩展的扩展。 扩展装的太多后，会拖慢电脑运行速度，某些扩展只是特定场景使用，所以有必要用一个管理器进行管理。 界面简洁，支持分组和一键关闭或启用单个及某组扩展。   
+Tampermonkey
+ 专门管理和运行 JS 脚本的扩展，非常强大。 需配合各种脚本使用，所以会单写一篇介绍。  Dark Reader
+ 可以为那些不支持黑暗模式的网站自动生成黑暗模式配色，也可以在 UI 界面自定义黑暗效果。 专业用户还可以编辑 css 文件针对不同网站进行定制。  uBlock Origin
+ 网页广告拦截器。 优点是内存和 CPU 占用低（相比于其他同类扩展）。  Imagus
+ 看图利器 鼠标悬停在图片上时，会自动弹出分辨率更高的原图，不需要额外点击。  OneTab
+ 打开太多的标签页时，单击 OneTab 图标，一键将所有标签页转换成一个列表。 需要再次访问这些标签页时，也可以单独或全部一键恢复。  xStyle
+ 可以为各种网站创建 css 文件进行页面样式定制 同类软件有 Stylus，这款 UI 更现代些。 样式文件可以去专门网站安装，有很多网友共享的  比如 https://userstyles.'><title>个人Chrome扩展推荐</title>
+
+<link rel='canonical' href='https://butu.ma/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/'>
+
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='个人Chrome扩展推荐'>
+<meta property='og:description' content='第一次使用谷歌浏览器是刚上高中时，距现在已有十年了。
+自从知道 Chrome 有自己的应用商店可以安装各种功能的扩展后，就基本没换过其他浏览器了。
+十年间用过无数扩展，感觉有必要写篇文章推荐下最终留下来的这些。
+某些扩展功能比较冷门，下面只介绍比较通用的。
+Tampermonkey 油猴扩展作为脚本管理器比较特殊，会单独写一篇进行介绍和推荐对应的脚本。
+ 所有扩展截图（查看大图）  
+必装扩展推荐（点击名称可跳转到应用商店页面） Extensity
+ 管理扩展的扩展。 扩展装的太多后，会拖慢电脑运行速度，某些扩展只是特定场景使用，所以有必要用一个管理器进行管理。 界面简洁，支持分组和一键关闭或启用单个及某组扩展。   
+Tampermonkey
+ 专门管理和运行 JS 脚本的扩展，非常强大。 需配合各种脚本使用，所以会单写一篇介绍。  Dark Reader
+ 可以为那些不支持黑暗模式的网站自动生成黑暗模式配色，也可以在 UI 界面自定义黑暗效果。 专业用户还可以编辑 css 文件针对不同网站进行定制。  uBlock Origin
+ 网页广告拦截器。 优点是内存和 CPU 占用低（相比于其他同类扩展）。  Imagus
+ 看图利器 鼠标悬停在图片上时，会自动弹出分辨率更高的原图，不需要额外点击。  OneTab
+ 打开太多的标签页时，单击 OneTab 图标，一键将所有标签页转换成一个列表。 需要再次访问这些标签页时，也可以单独或全部一键恢复。  xStyle
+ 可以为各种网站创建 css 文件进行页面样式定制 同类软件有 Stylus，这款 UI 更现代些。 样式文件可以去专门网站安装，有很多网友共享的  比如 https://userstyles.'>
+<meta property='og:url' content='https://butu.ma/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/'>
+<meta property='og:site_name' content='马捕头'>
+<meta property='og:type' content='article'><meta property='article:section' content='Post' /><meta property='article:published_time' content='2019-09-11T19:50:56&#43;08:00'/><meta property='article:modified_time' content='2019-09-11T19:50:56&#43;08:00'/>
+<meta name="twitter:site" content="butouma"><meta name="twitter:title" content="个人Chrome扩展推荐">
+<meta name="twitter:description" content="第一次使用谷歌浏览器是刚上高中时，距现在已有十年了。
+自从知道 Chrome 有自己的应用商店可以安装各种功能的扩展后，就基本没换过其他浏览器了。
+十年间用过无数扩展，感觉有必要写篇文章推荐下最终留下来的这些。
+某些扩展功能比较冷门，下面只介绍比较通用的。
+Tampermonkey 油猴扩展作为脚本管理器比较特殊，会单独写一篇进行介绍和推荐对应的脚本。
+ 所有扩展截图（查看大图）  
+必装扩展推荐（点击名称可跳转到应用商店页面） Extensity
+ 管理扩展的扩展。 扩展装的太多后，会拖慢电脑运行速度，某些扩展只是特定场景使用，所以有必要用一个管理器进行管理。 界面简洁，支持分组和一键关闭或启用单个及某组扩展。   
+Tampermonkey
+ 专门管理和运行 JS 脚本的扩展，非常强大。 需配合各种脚本使用，所以会单写一篇介绍。  Dark Reader
+ 可以为那些不支持黑暗模式的网站自动生成黑暗模式配色，也可以在 UI 界面自定义黑暗效果。 专业用户还可以编辑 css 文件针对不同网站进行定制。  uBlock Origin
+ 网页广告拦截器。 优点是内存和 CPU 占用低（相比于其他同类扩展）。  Imagus
+ 看图利器 鼠标悬停在图片上时，会自动弹出分辨率更高的原图，不需要额外点击。  OneTab
+ 打开太多的标签页时，单击 OneTab 图标，一键将所有标签页转换成一个列表。 需要再次访问这些标签页时，也可以单独或全部一键恢复。  xStyle
+ 可以为各种网站创建 css 文件进行页面样式定制 同类软件有 Stylus，这款 UI 更现代些。 样式文件可以去专门网站安装，有很多网友共享的  比如 https://userstyles.">
+    <link rel="shortcut icon" href="favicon.ico" />
+<style>
+  :root {
+      --article-font-family: "Noto Serif SC", var(--base-font-family);
+  }
+</style>
+
+<script>
+  (function () {
+      const customFont = document.createElement('link');
+      customFont.href = "<https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap>";
+  
+      customFont.type = "text/css";
+      customFont.rel = "stylesheet";
+  
+      document.head.appendChild(customFont);
+  }());
+</script>
+    </head>
+    <body class="">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
+
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
+
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended article-page with-toolbar">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
+
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/avatar_hu106e5724d70123674fe68b09b7c9c4bf_27292_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
+
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://butu.ma">马捕头</a></h1>
+        <h2 class="site-description">我未曾珍惜的，我不再拥有。</h2>
+    </header>
+
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://photos.butou.ma'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+                
+                <span>Photos</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://timeline.butou.ma/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>Timeline</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://wiki.butou.ma/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Wiki</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about-me'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <div id="article-toolbar">
+        <a href="https://butu.ma" class="back-home">
+            <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-chevron-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="15 6 9 12 15 18" />
+</svg>
+
+
+
+            <span>Back</span>
+        </a>
+    </div>
+
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/tech/" style="background-color: #2a9d8f; color: #fff;">
+                Tech
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/">个人Chrome扩展推荐</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Sep 11, 2019</time>
+    </footer></div>
+</header>
+
+    <section class="article-content">
+    <blockquote>
+<p>第一次使用谷歌浏览器是刚上高中时，距现在已有十年了。<br>
+自从知道 Chrome 有自己的应用商店可以安装各种功能的扩展后，就基本没换过其他浏览器了。<br>
+十年间用过无数扩展，感觉有必要写篇文章推荐下最终留下来的这些。<br>
+<strong>某些扩展功能比较冷门，下面只介绍比较通用的。</strong><br>
+<strong>Tampermonkey 油猴扩展作为脚本管理器比较特殊，会单独写一篇进行介绍和推荐对应的脚本。</strong></p>
+</blockquote>
+<h2 id="所有扩展截图查看大图img_6324ab00274a-1jpeg">所有扩展截图（<a class="link" href="IMG_6324AB00274A-1.jpeg" >查看大图</a>）</h2>
+<p><figure style="flex-grow: 24; flex-basis: 58px">
+		<a href="/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/IMG_6324AB00274A-1-248x1024.jpeg" data-size="248x1024"><img src="/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/IMG_6324AB00274A-1-248x1024.jpeg"
+				srcset="/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/IMG_6324AB00274A-1-248x1024_hu9e470111f8cacaf272b4430c59d1af99_55995_480x0_resize_q75_box.jpeg 480w, /p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/IMG_6324AB00274A-1-248x1024_hu9e470111f8cacaf272b4430c59d1af99_55995_1024x0_resize_q75_box.jpeg 1024w"
+				width="248"
+				height="1024"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<h2 id="必装扩展推荐点击名称可跳转到应用商店页面">必装扩展推荐（点击名称可跳转到应用商店页面）</h2>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/extensity/jjmflmamggggndanpgfnpelongoepncg"  target="_blank" rel="noopener"
+    >Extensity</a></p>
+<ul>
+<li>管理扩展的扩展。</li>
+<li>扩展装的太多后，会拖慢电脑运行速度，某些扩展只是特定场景使用，所以有必要用一个管理器进行管理。</li>
+<li>界面简洁，支持分组和一键关闭或启用单个及某组扩展。</li>
+</ul>
+<p><figure style="flex-grow: 51; flex-basis: 124px">
+		<a href="/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/Screen-Shot-2019-09-11-at-17.24.12-531x1024.png" data-size="531x1024"><img src="/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/Screen-Shot-2019-09-11-at-17.24.12-531x1024.png"
+				srcset="/p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/Screen-Shot-2019-09-11-at-17.24.12-531x1024_hu79a860586e70897f767fc0c582eb3609_164879_480x0_resize_box_2.png 480w, /p/%E4%B8%AA%E4%BA%BAchrome%E6%89%A9%E5%B1%95%E6%8E%A8%E8%8D%90/Screen-Shot-2019-09-11-at-17.24.12-531x1024_hu79a860586e70897f767fc0c582eb3609_164879_1024x0_resize_box_2.png 1024w"
+				width="531"
+				height="1024"
+				loading="lazy"
+				>
+		</a>
+		
+	</figure></p>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo"  target="_blank" rel="noopener"
+    >Tampermonkey</a></p>
+<ul>
+<li>专门管理和运行 JS 脚本的扩展，非常强大。</li>
+<li>需配合各种脚本使用，所以会单写一篇介绍。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/dark-reader/eimadpbcbfnmbkopoojfekhnkhdbieeh"  target="_blank" rel="noopener"
+    >Dark Reader</a></p>
+<ul>
+<li>可以为那些不支持黑暗模式的网站自动生成黑暗模式配色，也可以在 UI 界面自定义黑暗效果。</li>
+<li>专业用户还可以编辑 css 文件针对不同网站进行定制。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/ublock-origin/cjpalhdlnbpafiamejdnhcphjbkeiagm"  target="_blank" rel="noopener"
+    >uBlock Origin</a></p>
+<ul>
+<li>网页广告拦截器。</li>
+<li>优点是内存和 CPU 占用低（相比于其他同类扩展）。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/imagus/immpkjjlgappgfkkfieppnmlhakdmaab"  target="_blank" rel="noopener"
+    >Imagus</a></p>
+<ul>
+<li>看图利器</li>
+<li>鼠标悬停在图片上时，会自动弹出分辨率更高的原图，不需要额外点击。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/onetab/chphlpgkkbolifaimnlloiipkdnihall"  target="_blank" rel="noopener"
+    >OneTab</a></p>
+<ul>
+<li>打开太多的标签页时，单击 OneTab 图标，一键将所有标签页转换成一个列表。</li>
+<li>需要再次访问这些标签页时，也可以单独或全部一键恢复。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/xstyle/hncgkmhphmncjohllpoleelnibpmccpj"  target="_blank" rel="noopener"
+    >xStyle</a></p>
+<ul>
+<li>可以为各种网站创建 css 文件进行页面样式定制</li>
+<li>同类软件有 Stylus，这款 UI 更现代些。</li>
+<li>样式文件可以去专门网站安装，有很多网友共享的
+<ul>
+<li>比如 <a class="link" href="https://userstyles.org/"  target="_blank" rel="noopener"
+    >https://userstyles.org</a></li>
+</ul>
+</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/im-a-gentleman/afjaicccalbbickikgdegaihmajaidpd"  target="_blank" rel="noopener"
+    >I’m a Gentleman</a></p>
+<ul>
+<li>鼠标在图片上拖拽，就能保存图片到本地。比右键点保存更快。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/simpread-reader-view/ijllcpnolfcooahcekpamkbidhejabll"  target="_blank" rel="noopener"
+    >简悦 – SimpRead</a></p>
+<ul>
+<li>排除多余元素，将网页文本重排，瞬间进入沉浸式阅读模式。</li>
+<li>类似 Safari 的阅读模式, 但更强大。</li>
+<li>支持各种主题。</li>
+</ul>
+<p><a class="link" href="https://butou.ma/2019/09/11/%e4%b8%aa%e4%ba%ba-chrome-%e6%89%a9%e5%b1%95%e6%8e%a8%e8%8d%90/[https://chrome.google.com/webstore/detail/%E4%BA%91%E7%9B%98%E4%B8%87%E8%83%BD%E9%92%A5%E5%8C%99/anlllmnpjodopgbkbpnghnjlelnogfjc]%28https://chrome.google.com/webstore/detail/%E4%BA%91%E7%9B%98%E4%B8%87%E8%83%BD%E9%92%A5%E5%8C%99/anlllmnpjodopgbkbpnghnjlelnogfjc%29"  target="_blank" rel="noopener"
+    >云盘万能钥匙</a></p>
+<ul>
+<li>自动填写百度网盘 &amp; 蓝奏云提取密码。</li>
+<li>自动检测百度网盘 &amp; 蓝奏云分享链接的状态是否有效。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/search-the-current-site/jliolpcnkmolaaecncdfeofombdekjcp"  target="_blank" rel="noopener"
+    >Search the current site (站内搜索)</a></p>
+<ul>
+<li>使用 Google 等搜索引擎提供当前浏览网站的站内搜索功能。</li>
+<li>其实就是省去了自己填写 site: 关键词的作用。</li>
+</ul>
+<p><a class="link" href="https://butou.ma/2019/09/11/%e4%b8%aa%e4%ba%ba-chrome-%e6%89%a9%e5%b1%95%e6%8e%a8%e8%8d%90/[https://chrome.google.com/webstore/detail/pakku%EF%BC%9A%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%BC%B9%E5%B9%95%E8%BF%87%E6%BB%A4%E5%99%A8/jklfcpboamajpiikgkbjcnnnnooefbhh]%28https://chrome.google.com/webstore/detail/pakku%EF%BC%9A%E5%93%94%E5%93%A9%E5%93%94%E5%93%A9%E5%BC%B9%E5%B9%95%E8%BF%87%E6%BB%A4%E5%99%A8/jklfcpboamajpiikgkbjcnnnnooefbhh%29"  target="_blank" rel="noopener"
+    >pakku：哔哩哔哩弹幕过滤器</a></p>
+<ul>
+<li>过滤 B 站 (bilibili.com) 的刷屏弹幕。</li>
+<li>将同样内容弹幕合并。</li>
+<li>进度条上显示弹幕密度图。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/view-image/jpcmhcelnjdmblfmjabdeclccemkghjk"  target="_blank" rel="noopener"
+    >View Image</a></p>
+<ul>
+<li>重新添加 Google 图片结果页面的 “查看图片” 和“以图搜图”按钮。
+<ul>
+<li>这两个按钮以前一直有，后来由于版权考虑，Google 给去掉了。</li>
+</ul>
+</li>
+</ul>
+<p><a class="link" href="https://butou.ma/2019/09/11/%e4%b8%aa%e4%ba%ba-chrome-%e6%89%a9%e5%b1%95%e6%8e%a8%e8%8d%90/[https://chrome.google.com/webstore/detail/%E4%BA%AC%E4%BB%B7%E4%BF%9D-%E4%BA%AC%E4%B8%9C%E4%BB%B7%E4%BF%9D%E5%8A%A9%E6%89%8B/gfgkebiommjpiaomalcbfefimhhanlfd]%28https://chrome.google.com/webstore/detail/%E4%BA%AC%E4%BB%B7%E4%BF%9D-%E4%BA%AC%E4%B8%9C%E4%BB%B7%E4%BF%9D%E5%8A%A9%E6%89%8B/gfgkebiommjpiaomalcbfefimhhanlfd%29"  target="_blank" rel="noopener"
+    >京价保 – 京东价保助手</a></p>
+<ul>
+<li>自动为你申请京东价格保护，自动签到领京豆、钢镚。</li>
+<li>很实用，因为京东的价格保护不是自动触发的，需要自己手动去申请</li>
+</ul>
+<p><a class="link" href="https://butou.ma/2019/09/11/%e4%b8%aa%e4%ba%ba-chrome-%e6%89%a9%e5%b1%95%e6%8e%a8%e8%8d%90/[https://chrome.google.com/webstore/detail/%E7%8C%AB%E6%8A%93/jfedfbgedapdagkghmgibemcoggfppbb]%28https://chrome.google.com/webstore/detail/%E7%8C%AB%E6%8A%93/jfedfbgedapdagkghmgibemcoggfppbb%29"  target="_blank" rel="noopener"
+    >猫抓</a></p>
+<ul>
+<li>网页媒体嗅探工具, 比如 mp3 文件，视频文件。</li>
+<li>但适用网页不多，需和更强大的脚本配合。
+<ul>
+<li>比如 SaveFrom.net 提供的脚本，支持各类网站 YouTube Instagram 等（此脚本需配合油猴使用）。</li>
+</ul>
+</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/grammarly-for-chrome/kbfnbcaeplbcioakkpcpgfkobkghlhen"  target="_blank" rel="noopener"
+    >Grammarly for Chrome</a></p>
+<ul>
+<li>著名语法纠正软件的 Chrome 版。</li>
+<li>能监测输入框内容的语法错误或表达瑕疵，并提供修改建议。</li>
+</ul>
+<p><a class="link" href="https://butou.ma/2019/09/11/%e4%b8%aa%e4%ba%ba-chrome-%e6%89%a9%e5%b1%95%e6%8e%a8%e8%8d%90/[https://chrome.google.com/webstore/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D-%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/cdonnmffkdaoajfknoeeecmchibpmkmg]%28https://chrome.google.com/webstore/detail/%E6%B2%99%E6%8B%89%E6%9F%A5%E8%AF%8D-%E8%81%9A%E5%90%88%E8%AF%8D%E5%85%B8%E5%88%92%E8%AF%8D%E7%BF%BB%E8%AF%91/cdonnmffkdaoajfknoeeecmchibpmkmg%29"  target="_blank" rel="noopener"
+    >Saladict 沙拉查词</a></p>
+<ul>
+<li>界面美观，功能强大。</li>
+<li>涵盖中英日韩法德西语，支持划词操作、网页翻译、生词本、PDF 查词。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/online-dictionary-helper/lppjdajkacanlmpbbcdkccjkdbpllajb"  target="_blank" rel="noopener"
+    >在线词典助手</a></p>
+<ul>
+<li>查词功能上比沙拉查词弱。</li>
+<li>特色功能是支持连接桌面端 Anki 客户端，实现一键将单词制作成 Anki 卡片。</li>
+</ul>
+<p><a class="link" href="https://chrome.google.com/webstore/detail/words-discoverer-expand-y/noncaeikjgpbdeoocblijjgegnobogib"  target="_blank" rel="noopener"
+    >单词发现者</a></p>
+<ul>
+<li>高亮显示网页上的英文生词。</li>
+<li>可以直接导入熟词库。</li>
+</ul>
+<p>先写这些，剩下的在文首截图里有，可以根据截图上的自带介绍判断是否符合自己需要。</p>
+
+</section>
+
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+    <aside class="related-contents--wrapper">
+    
+    
+        <h2 class="section-title">相关文章</h2>
+        <div class="related-contents">
+            <div class="flex article-list--tile">
+                
+                    
+<article class="">
+    <a href="/p/go-%E5%B0%8F%E7%A8%8B%E5%BA%8F%E5%AE%9E%E7%8E%B0-windows-%E5%B9%B3%E5%8F%B0%E4%B8%B4%E6%97%B6%E5%90%AF%E5%8A%A8%E7%89%B9%E5%AE%9A%E7%AB%AF%E5%8F%A3/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">Go 小程序实现 Windows 平台临时启动特定端口</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E5%9B%BD%E5%86%85%E4%B8%BB%E6%9C%BA%E9%85%8D%E7%BD%AE-k8s-%E7%9A%84%E6%B3%A8%E6%84%8F%E4%BA%8B%E9%A1%B9%E5%8F%8A%E5%A6%82%E4%BD%95%E6%AD%A3%E7%A1%AE%E8%AE%BE%E7%BD%AE%E4%BB%A3%E7%90%86/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">国内主机配置 k8s 的注意事项及如何正确设置代理</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E8%A7%A3%E5%86%B3-vultr-%E6%81%A2%E5%A4%8D%E5%8E%86%E5%8F%B2%E5%BF%AB%E7%85%A7%E5%90%8E%E8%8E%AB%E5%90%8D%E6%96%AD%E7%BD%91%E9%97%AE%E9%A2%98/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">解决 vultr 恢复历史快照后，莫名断网问题</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/%E7%BE%A4%E6%99%96%E7%B3%BB%E7%BB%9F%E6%8F%90%E7%A4%BA%E7%A1%AC%E7%9B%98%E6%8D%9F%E6%AF%81%E5%90%8E%E6%8F%90%E5%8F%96%E7%A1%AC%E7%9B%98%E6%95%B0%E6%8D%AE/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">群晖系统提示硬盘损毁后提取硬盘数据</h2>
+        </div>
+    </a>
+</article>
+                
+                    
+<article class="">
+    <a href="/p/macos-%E5%B0%8F%E8%84%9A%E6%9C%AC-%E6%89%B9%E9%87%8F%E5%A4%8D%E5%88%B6%E6%8C%87%E5%AE%9A%E7%9B%AE%E5%BD%95%E4%B8%8B%E7%89%B9%E5%AE%9A%E7%B1%BB%E5%9E%8B%E6%96%87%E4%BB%B6/">
+        
+        
+
+        <div class="article-details">
+            <h2 class="article-title">macOS 小脚本-批量复制指定目录下特定类型文件</h2>
+        </div>
+    </a>
+</article>
+                
+            </div>
+        </div>
+    
+</aside>
+
+
+    
+        
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
+    (function() {
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mabutou" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
+    })();
+</script>
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+</div>
+
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
+
+<script>
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
+</script>
+
+    
+
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2021 马捕头
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+
+    </body>
+</html>

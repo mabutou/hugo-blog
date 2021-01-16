@@ -1,152 +1,276 @@
 <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="generator" content="Hugo 0.80.0" />
+<html lang="en-us">
+    <head><meta charset='utf-8'>
+<meta name='viewport' content='width=device-width, initial-scale=1'><meta name='description' content='我的系统版本：10.13.5
+音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：
+ 启动终端，输入命令:  sudo killall coreaudiod
+ 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl &#43; 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：
+  先将其他一样的快捷键设置为另外的组合
+  启动终端输入下面命令，回车即可
+  killall Dock'><title>macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working</title>
 
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="author" content="Butou Ma" />
-  <meta property="og:url" content="https://butou.ma/posts/macos-bug/" />
-  <link rel="canonical" href="https://butou.ma/posts/macos-bug/" /><link rel="preload" href="/js/highlight.pack.js" as="script" /><link rel="alternate" type="application/atom+xml" href="https://butou.ma/index.xml" title="Mabutou&#39;s Blog">
+<link rel='canonical' href='https://butu.ma/posts/macos-bug/'>
 
-  <script type="application/ld+json">
-  {
-      "@context" : "http://schema.org",
-      "@type" : "BlogPosting",
-      "mainEntityOfPage": {
-           "@type": "WebPage",
-           "@id": "https:\/\/butou.ma\/"
-      },
-      "articleSection" : "posts",
-      "name" : "macOS 玄学 bug — 音频输出异常\u002b切换左桌面快捷键失灵 || \u0027Move left a space\u0027 shortcuts not working",
-      "headline" : "macOS 玄学 bug — 音频输出异常\u002b切换左桌面快捷键失灵 || \u0027Move left a space\u0027 shortcuts not working",
-      "description" : "我的系统版本：10.13.5\n音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：\n 启动终端，输入命令:  sudo killall coreaudiod\n 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl \u002b 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：\n  先将其他一样的快捷键设置为另外的组合\n  启动终端输入下面命令，回车即可\n  killall Dock",
-      "inLanguage" : "en-US",
-      "author" : "Butou Ma",
-      "creator" : "Butou Ma",
-      "publisher": "Butou Ma",
-      "accountablePerson" : "Butou Ma",
-      "copyrightHolder" : "Butou Ma",
-      "copyrightYear" : "2019",
-      "datePublished": "2019-03-19 19:40:33 \u002b0800 CST",
-      "dateModified" : "2019-03-19 19:40:33 \u002b0800 CST",
-      "url" : "https:\/\/butou.ma\/posts\/macos-bug\/",
-      "keywords" : [  ]
+<link rel="stylesheet" href="/scss/style.min.css"><meta property='og:title' content='macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working'>
+<meta property='og:description' content='我的系统版本：10.13.5
+音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：
+ 启动终端，输入命令:  sudo killall coreaudiod
+ 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl &#43; 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：
+  先将其他一样的快捷键设置为另外的组合
+  启动终端输入下面命令，回车即可
+  killall Dock'>
+<meta property='og:url' content='https://butu.ma/posts/macos-bug/'>
+<meta property='og:site_name' content='马捕头'>
+<meta property='og:type' content='article'><meta property='article:section' content='Posts' /><meta property='article:published_time' content='2019-03-19T19:40:33&#43;08:00'/><meta property='article:modified_time' content='2019-03-19T19:40:33&#43;08:00'/>
+<meta name="twitter:site" content="butouma"><meta name="twitter:title" content="macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working">
+<meta name="twitter:description" content="我的系统版本：10.13.5
+音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：
+ 启动终端，输入命令:  sudo killall coreaudiod
+ 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl &#43; 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：
+  先将其他一样的快捷键设置为另外的组合
+  启动终端输入下面命令，回车即可
+  killall Dock">
+    <link rel="shortcut icon" href="favicon.ico" />
+<style>
+  :root {
+      --article-font-family: "Noto Serif SC", var(--base-font-family);
   }
+</style>
+
+<script>
+  (function () {
+      const customFont = document.createElement('link');
+      customFont.href = "<https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@400;700&display=swap>";
+  
+      customFont.type = "text/css";
+      customFont.rel = "stylesheet";
+  
+      document.head.appendChild(customFont);
+  }());
 </script>
-<title>macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working - Mabutou&#39;s Blog</title>
-  <meta property="og:title" content="macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working - Mabutou&#39;s Blog" />
-  <meta property="og:type" content="article" />
-  <meta property="og:description" content="我的系统版本：10.13.5
-音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：
- 启动终端，输入命令:  sudo killall coreaudiod
- 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl &#43; 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：
-  先将其他一样的快捷键设置为另外的组合
-  启动终端输入下面命令，回车即可
-  killall Dock" />
-  <meta name="description" content="我的系统版本：10.13.5
-音频输出异常  平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。 偶尔出现浏览器视频播放失败，听歌软件无法播放（我用的网易云）。  解决方法：
- 启动终端，输入命令:  sudo killall coreaudiod
- 回车即可 (可能需要输入密码)  切换桌面快捷键失灵  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl &#43; 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。  解决方法：
-  先将其他一样的快捷键设置为另外的组合
-  启动终端输入下面命令，回车即可
-  killall Dock" />
-  <meta property="og:locale" content="en-us" />
+    </head>
+    <body class="article-page keep-sidebar">
+    <script>
+        (function() {
+            const colorSchemeKey = 'StackColorScheme';
+            if(!localStorage.getItem(colorSchemeKey)){
+                localStorage.setItem(colorSchemeKey, "auto");
+            }
+        })();
+    </script><script>
+    (function() {
+        const colorSchemeKey = 'StackColorScheme';
+        const colorSchemeItem = localStorage.getItem(colorSchemeKey);
+        const supportDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches === true;
 
-  <link rel="stylesheet" href="/css/flexboxgrid-6.3.1.min.css" />
-  <link rel="stylesheet" href="/css/github-markdown.css" />
-  <link rel="stylesheet" href="/css/highlight/tomorrow.min.css" />
-  <link rel="stylesheet" href="/css/index.css">
-  <link rel="stylesheet" href="/css/butou.css">
+        if (colorSchemeItem == 'dark' || colorSchemeItem === 'auto' && supportDarkMode) {
+            
 
-  
+            document.body.dataset.scheme = 'dark';
+        } else {
+            document.body.dataset.scheme = 'light';
+        }
+    })();
+</script><div class="container main-container flex on-phone--column extended ">
+            <aside class="sidebar left-sidebar sticky">
+    <button class="hamburger hamburger--spin" type="button" id="toggle-menu" aria-label="切换菜单">
+        <span class="hamburger-box">
+            <span class="hamburger-inner"></span>
+        </span>
+    </button>
 
-  <link href="/index.xml" rel="alternate" type="application/rss+xml"
-    title="Mabutou&#39;s Blog">
-  
-  <link href="https://fonts.googleapis.com/css?family=Arvo|Permanent+Marker|Bree+Serif" rel="stylesheet">
-  
-  
+    <header class="site-info">
+        
+            <figure class="site-avatar">
+                
+                    
+                    
+                    
+                        
+                        <img src="/img/logo_hu106e5724d70123674fe68b09b7c9c4bf_27292_300x0_resize_box_2.png" width="300"
+                            height="300" class="site-logo" loading="lazy" alt="Avatar">
+                    
+                
 
-  
-</head>
+                
+            </figure>
+        
+        <h1 class="site-name"><a href="https://butu.ma">马捕头</a></h1>
+        <h2 class="site-description">我未曾珍惜的，我不再拥有。</h2>
+    </header>
 
-<body>
-  <article class="post " id="article">
-    <div class="row">
-      <div class="col-xs-12 homepage">
-        <div class="site-header">
-          <header>
-  <div class="signatures site-title">
-    <a href="/">Mabutou</a>
-  </div>
+    <ol class="menu" id="main-menu">
+        
+        
+        
+
+        <li >
+            <a href='/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-home" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <polyline points="5 12 3 12 12 3 21 12 19 12" />
+  <path d="M5 12v7a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-7" />
+  <path d="M9 21v-6a2 2 0 0 1 2 -2h2a2 2 0 0 1 2 2v6" />
+</svg>
+
+
+
+                
+                <span>Home</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://photos.butou.ma'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+                
+                <span>Photos</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://timeline.butou.ma/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+                
+                <span>Timeline</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='https://wiki.butou.ma/'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-link" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <path d="M10 14a3.5 3.5 0 0 0 5 0l4 -4a3.5 3.5 0 0 0 -5 -5l-.5 .5" />
+  <path d="M14 10a3.5 3.5 0 0 0 -5 0l-4 4a3.5 3.5 0 0 0 5 5l.5 -.5" />
+</svg>
+
+
+
+                
+                <span>Wiki</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/archives'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-archive" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <rect x="3" y="4" width="18" height="4" rx="2" />
+  <path d="M5 8v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2 -2v-10" />
+  <line x1="10" y1="12" x2="14" y2="12" />
+</svg>
+
+
+
+                
+                <span>Archives</span>
+            </a>
+        </li>
+        
+        
+
+        <li >
+            <a href='/about-me'>
+                
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-user" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="7" r="4" />
+  <path d="M6 21v-2a4 4 0 0 1 4 -4h4a4 4 0 0 1 4 4v2" />
+</svg>
+
+
+
+                
+                <span>About</span>
+            </a>
+        </li>
+        
+
+        
+            <li id="dark-mode-toggle">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-left" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="8" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-toggle-right" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="16" cy="12" r="2" />
+  <rect x="2" y="6" width="20" height="12" rx="6" />
+</svg>
+
+
+
+                <span>暗色模式</span>
+            </li>
+        
+    </ol>
+</aside>
+
+            <main class="main full-width">
+    <article class="main-article">
+    <header class="article-header">
+
+    <div class="article-details">
+    
+    <header class="article-category">
+        
+            <a href="/categories/tech/" >
+                Tech
+            </a>
+        
+    </header>
+    
+
+    <h2 class="article-title">
+        <a href="/posts/macos-bug/">macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working</a>
+    </h2>
+
+    <footer class="article-time">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-clock" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <polyline points="12 7 12 12 15 15" />
+</svg>
+
+
+
+        <time class="article-time--published">Mar 19, 2019</time>
+    </footer></div>
 </header>
-<div class="site-footer">
-  
-  <div class="site-footer-item">
-    <a href="https://butou.ma" >Home</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://photos.butou.ma" >Photo</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://timeline.butou.ma" >Timeline</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="https://wiki.butou.ma/" >Wiki</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-  <div class="site-footer-item">
-    <a href="/posts/about-me/" >About</a>
-  </div>
-  
-  <script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
-  
-  
-</div>
 
-        </div>
-        <header class="post-header">
-          <h1 class="post-title">macOS 玄学 bug — 音频输出异常&#43;切换左桌面快捷键失灵 || &#39;Move left a space&#39; shortcuts not working</h1>
-          
-          <div class="row post-desc">
-            <div class="col-xs-6">
-              
-              <time class="post-date" datetime="2019-03-19 19:40:33 CST">
-                19 Mar 2019
-              </time>
-              
-            </div>
-            <div class="col-xs-6">
-              
-              <div class="post-author">
-                <a target="_blank" href="https://butou.ma/">@Butou Ma</a>
-              </div>
-              
-            </div>
-          </div>
-          
-        </header>
-
-        <div class="post-content markdown-body">
-          
-          <p>我的系统版本：10.13.5</p>
+    <section class="article-content">
+    <p>我的系统版本：10.13.5</p>
 <h2 id="音频输出异常">音频输出异常</h2>
 <ol>
 <li>平时正常，每次连接一款蓝牙耳机后，如果打开多个在输出音频的应用，暂停其中一个，其他应用的声音也会消失。</li>
@@ -164,7 +288,7 @@
 <ol>
 <li>设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl + 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。</li>
 </ol>
-<p><img src="/img/006tKfTcgy1g0wg1da4stj30yi0u0q5k-1.jpg" alt=""></p>
+<p><img src="/img/006tKfTcgy1g0wg1da4stj30yi0u0q5k-1.jpg" alt=""  /></p>
 <p>解决方法：</p>
 <ul>
 <li>
@@ -176,85 +300,177 @@
 </ul>
 <p>killall Dock</p>
 
-        </div>
+</section>
 
-        <div class="row middle-xs">
-          <div class="col-xs-12">
-            
-            <div class="post-category">
-              <a href="/categories/tech/">
-                Tech
-              </a>
-            </div>
-            
-          </div>
-        </div>
+
+    <footer class="article-footer">
+    
+
+    
+    <section class="article-copyright">
+        <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-copyright" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+  <path stroke="none" d="M0 0h24v24H0z"/>
+  <circle cx="12" cy="12" r="9" />
+  <path d="M14.5 9a3.5 4 0 1 0 0 6" />
+</svg>
+
+
+
+        <span>Licensed under CC BY-NC-SA 4.0</span>
+    </section>
+    </footer>
+
+    
+</article>
+
+     
         
-          <div class="row">
-            <div class="col-xs-12">
-              
-            </div>
-          </div>
-
-          
-
-          
-          
-          <div style="height: 50px;"></div>
-          
-          <div class="post-comments">
-            <div id="disqus_thread"></div>
-<script>
-  window.addEventListener("load", () => {
+    <div class="disqus-container">
+    <div id="disqus_thread"></div>
+<script type="application/javascript">
+    var disqus_config = function () {
+    
+    
+    
+    };
     (function() {
-      
-      var d = document,
-        s = d.createElement("script");
-      s.src = "https://mabutou.disqus.com/embed.js";
-      s.setAttribute("data-timestamp", +new Date());
-      (d.head || d.body).appendChild(s);
+        if (["localhost", "127.0.0.1"].indexOf(window.location.hostname) != -1) {
+            document.getElementById('disqus_thread').innerHTML = 'Disqus comments not available by default when the website is previewed locally.';
+            return;
+        }
+        var d = document, s = d.createElement('script'); s.async = true;
+        s.src = '//' + "mabutou" + '.disqus.com/embed.js';
+        s.setAttribute('data-timestamp', +new Date());
+        (d.head || d.body).appendChild(s);
     })();
-  });
 </script>
-<noscript
-  >Please enable JavaScript to view the
-  <a href="https://disqus.com/?ref_noscript"
-    >comments powered by Disqus.</a
-  ></noscript
->
-
-          </div>
-          
-        
-
-        
-
-<div class="row end-xs">
-  
-  
+<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="https://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
 </div>
-<div class="header-line"></div>
 
-
-      </div>
-    </div>
-  </article>
-
-  <script src="/js/highlight.pack.js"></script>
-
+<style>
+    .disqus-container {
+        background-color: var(--card-background);
+        border-radius: var(--card-border-radius);
+        box-shadow: var(--shadow-l1);
+        padding: var(--card-padding);
+    }
+</style>
 
 <script>
-  hljs.initHighlightingOnLoad();
-  
-  
-  
-    
-    
-  
+    window.addEventListener('onColorSchemeChange', (e) => {
+        if (DISQUS) {
+            DISQUS.reset({
+                reload: true
+            });
+        }
+    })
 </script>
 
-  
+    
 
-</body>
+    <footer class="site-footer">
+    <section class="copyright">
+        &copy; 
+        
+            2017 - 
+        
+        2021 马捕头
+    </section>
+    
+    <section class="powerby">
+        Built with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> <br />
+        Theme <b><a href="https://github.com/CaiJimmy/hugo-theme-stack" target="_blank" rel="noopener" data-version="2.0.1">Stack</a></b> designed by <a href="https://jimmycai.com" target="_blank" rel="noopener">Jimmy</a>
+    </section>
+</footer>
 
+    
+<div class="pswp" tabindex="-1" role="dialog" aria-hidden="true">
+
+    
+    <div class="pswp__bg"></div>
+
+    
+    <div class="pswp__scroll-wrap">
+
+        
+        <div class="pswp__container">
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+            <div class="pswp__item"></div>
+        </div>
+
+        
+        <div class="pswp__ui pswp__ui--hidden">
+
+            <div class="pswp__top-bar">
+
+                
+
+                <div class="pswp__counter"></div>
+
+                <button class="pswp__button pswp__button--close" title="Close (Esc)"></button>
+
+                <button class="pswp__button pswp__button--share" title="Share"></button>
+
+                <button class="pswp__button pswp__button--fs" title="Toggle fullscreen"></button>
+
+                <button class="pswp__button pswp__button--zoom" title="Zoom in/out"></button>
+
+                
+                
+                <div class="pswp__preloader">
+                    <div class="pswp__preloader__icn">
+                        <div class="pswp__preloader__cut">
+                            <div class="pswp__preloader__donut"></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="pswp__share-modal pswp__share-modal--hidden pswp__single-tap">
+                <div class="pswp__share-tooltip"></div>
+            </div>
+
+            <button class="pswp__button pswp__button--arrow--left" title="Previous (arrow left)">
+            </button>
+
+            <button class="pswp__button pswp__button--arrow--right" title="Next (arrow right)">
+            </button>
+
+            <div class="pswp__caption">
+                <div class="pswp__caption__center"></div>
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe-ui-default.min.js"></script>
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/default-skin/default-skin.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/photoswipe@4.1.3/dist/photoswipe.css">
+
+            </main>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/node-vibrant@3.1.5/dist/vibrant.min.js"
+    integrity="sha256-5NovOZc4iwiAWTYIFiIM7DxKUXKWvpVEuMEPLzcm5/g=" crossorigin="anonymous"></script><script type="text/javascript" src="/ts/main.js" defer></script>
+<script>
+    (function () {
+        const customFont = document.createElement('link');
+        customFont.href = "https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap";
+
+        customFont.type = "text/css";
+        customFont.rel = "stylesheet";
+
+        document.head.appendChild(customFont);
+    }());
+</script>
+
+<script defer src='https://static.cloudflareinsights.com/beacon.min.js' data-cf-beacon='{"token": "1ed80c4eab39481fba1c0d6fbfe29000"}'></script>
+
+    </body>
 </html>
