@@ -1,6 +1,6 @@
 baseurl: https://butu.ma
 languageCode: en-us
-theme: hugo-theme-stack
+theme: stack
 paginate: 7
 title: 马捕头
 
@@ -99,13 +99,13 @@ menu:
 
         - identifier: about
           name: About
-          url: about-me
+          url: /about-me
           weight: -50
           pre: user
 
         - identifier: archives
           name: Archives
-          url: archives
+          url: /archives
           weight: -60
           pre: archives
 
