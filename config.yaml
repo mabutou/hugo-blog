@@ -117,13 +117,13 @@ menu:
 
         - identifier: timeline
           name: Timeline
-          url: https://timeline.butou.ma/
+          url: https://t.me/s/butouma
           weight: -80
           pre: clock
 
         - identifier: wiki
           name: Wiki
-          url: https://wiki.butou.ma/
+          url: https://wiki.butou.ma
           weight: -70
           pre: link
 
