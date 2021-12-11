@@ -29,7 +29,7 @@ pygmentscodefencesguesssyntax = true
   name = "Photos"
   weight = 20
   identifier = "photos"
-  url = "https://craft.butou.ma"
+  url = "https://photos.butou.ma"
 [[menu.main]]
   name = "Wiki"
   weight = 30
