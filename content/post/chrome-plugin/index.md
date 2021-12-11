@@ -10,21 +10,18 @@ categories: ['Tech']
 > **某些扩展功能比较冷门，下面只介绍比较通用的。**  
 > **Tampermonkey 油猴扩展作为脚本管理器比较特殊，会单独写一篇进行介绍和推荐对应的脚本。**
 
-所有扩展截图（[查看大图](IMG_6324AB00274A-1.jpeg)）
 -----------------------------------------------------------------------------------
 
-![](IMG_6324AB00274A-1-248x1024.jpeg)
 
 必装扩展推荐（点击名称可跳转到应用商店页面）
 ----------------------
 
-[Extensity](https://chrome.google.com/webstore/detail/extensity/jjmflmamggggndanpgfnpelongoepncg)
+[扩展管理器（Extension Manager）](https://chrome.google.com/webstore/detail/extension-manager/gjldcdngmdknpinoemndlidpcabkggco)
 
 *   管理扩展的扩展。
 *   扩展装的太多后，会拖慢电脑运行速度，某些扩展只是特定场景使用，所以有必要用一个管理器进行管理。
 *   界面简洁，支持分组和一键关闭或启用单个及某组扩展。
 
-![](Screen-Shot-2019-09-11-at-17.24.12-531x1024.png)
 
 [Tampermonkey](https://chrome.google.com/webstore/detail/tampermonkey/dhdgffkkebhmkfjojejmpbldmpobfkfo)
 

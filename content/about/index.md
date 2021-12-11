@@ -1,14 +1,8 @@
----
-title: About Me
-date: 2017-11-05T19:13:59.000+08:00
-menu:
-  main:
-    identifier: about
-    name: About
-    weight: 6
-    pre: user
-
----
++++
+title = "About"
+date = "2019-02-28"
+author = "Mabutou"
++++
 - 四川人，现居成都。
 - 网名马捕头，来源于漫画乌龙院。
 - 这个博客记录一些自言自语和生活片段，欢迎留言。
