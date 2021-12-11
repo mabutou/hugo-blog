@@ -1,4 +1,4 @@
-baseURL = "https://butou.ma"
+baseURL = "https://butou.ma/"
 languageCode = "en"
 defaultContentLanguage = "en"
 title = "时间 机器"                        # site title                     # 网站标题
