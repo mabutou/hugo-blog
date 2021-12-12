@@ -6,7 +6,7 @@ author = "Mabutou"
 - 四川人，现居成都。
 - 网名马捕头，来源于漫画乌龙院。
 - 这个博客记录一些自言自语和生活片段，欢迎留言。
-- 使用 Cloudflare Pages 部署，内地访问速度可能不太稳定。
+- 使用 Vercel 自动构建，内地访问速度不稳定。
 ## 📬 Contact
 ### Telegram: [mabutou](https://t.me/mabutou)  
 ### Email: [hi@butou.ma](mailto:hi@butou.ma)
