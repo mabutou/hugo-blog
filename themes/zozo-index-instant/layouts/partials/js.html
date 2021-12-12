@@ -1,0 +1,11 @@
+<script src="{{ "js/jquery-3.5.1.min.js" | absURL }}"></script>
+<link href="{{ "css/fancybox.min.css" | absURL }}" rel="stylesheet">
+<script src="{{ "js/fancybox.min.js" | absURL }}"></script>
+<script src="{{ "js/zozo.js" | absURL }}"></script>
+
+{{ if .Site.Params.enableMathJax }}
+{{ partial "mathjax.html" . }}
+{{ end }}
+
+{{ template "_internal/google_analytics_async.html" . }}
+<script async defer data-website-id="122f213a-a081-4bb2-ab6b-826f741acb51" src="https://umami.pp.wtf/umami.js"></script>
