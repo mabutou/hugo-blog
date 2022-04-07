@@ -1,11 +1,25 @@
 <footer class="footer">
+    <div class="footer_slogan">
+        <span>{{ .Site.Params.footerSlogan }}</span>
+    </div>
+    <script src="//cdn.jsdelivr.net/npm/@waline/client/dist/Waline.min.js"></script>
+  <div id="waline"></div>
+  <script>
+    Waline({
+      el: '#waline',
+    //   avatar: 'hide',
+      lang: 'zh-CN',
+      serverURL: 'https://waline.butou.ma',
+      visitor: false,
+      copyright: false
+    //   dark: 'auto',
+    });
+  </script>
     <div class="powered_by">
         <a href="">© 马捕头 2017-2021</a>
         <a href="https://varkai.com">Designed by VarKai,</a>
         <a href="http://www.gohugo.io/">Proudly published with Hugo</a>
     </div>
 
-    <div class="footer_slogan">
-        <span>{{ .Site.Params.footerSlogan }}</span>
-    </div>
+    
 </footer>

@@ -8,7 +8,7 @@ summaryLength = 100
 paginate = 20                        # shows the number of articles   # 首页显示文章数量
 enableEmoji = true
 googleAnalytics = ""                   # your google analytics id       # Google统计代码
-disqusShortname = "mabutou"                   # your discuss shortname         # Disqus评论系统代码
+# disqusShortname = "mabutou"                   # your discuss shortname         # Disqus评论系统代码
 
 pygmentsUseClasses = true
 pygmentCodeFences = true
