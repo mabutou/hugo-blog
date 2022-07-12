@@ -4,12 +4,12 @@
     "type": "split",
     "children": [
       {
-        "id": "c03de2d37b0f4efc",
+        "id": "cee415dba928858b",
         "type": "leaf",
         "state": {
           "type": "markdown",
           "state": {
-            "file": "about/index.md",
+            "file": "content/post/tailscale-ipv4-no-addr-found/index.md.md",
             "mode": "source",
             "backlinks": true,
             "source": false
@@ -78,7 +78,7 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "about/index.md",
+                "file": "content/post/tailscale-ipv4-no-addr-found/index.md.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +95,7 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "about/index.md",
+                "file": "content/post/tailscale-ipv4-no-addr-found/index.md.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -107,7 +107,7 @@
             "state": {
               "type": "outline",
               "state": {
-                "file": "about/index.md"
+                "file": "content/post/tailscale-ipv4-no-addr-found/index.md.md"
               }
             }
           }
@@ -118,16 +118,17 @@
     "width": 300,
     "collapsed": true
   },
-  "active": "c03de2d37b0f4efc",
+  "active": "cee415dba928858b",
   "lastOpenFiles": [
+    "content/post/tailscale-ipv4-no-addr-found/index.md.md",
+    "README.md",
+    "Home.md",
     "about/index.md",
-    "Template/index.md",
+    "Obisdian-Template/index.md",
     "post/tailscale-ipv4-no-addr-found/index.md.md",
     "post/jiu/index.md",
     "post/hetzner-firewall/index.md",
     "post/h/h.md",
-    "post/golang-port/index.md",
-    "post/AnkiConnect/index.md",
-    "post/vultr-network/index.md"
+    "post/golang-port/index.md"
   ]
 }
