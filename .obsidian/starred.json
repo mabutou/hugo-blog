@@ -4,6 +4,11 @@
       "type": "file",
       "title": "kubernetes常见异常退出",
       "path": "Work/devops/kubernetes常见异常退出.md"
+    },
+    {
+      "type": "file",
+      "title": "index",
+      "path": "content/about/index.md"
     }
   ]
 }

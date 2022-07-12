@@ -3,5 +3,7 @@
   "obsidian-local-images",
   "obsidian-link-converter",
   "obsidian-show-file-path",
-  "quickadd"
+  "quickadd",
+  "obsidian-pangu",
+  "obsidian-pandoc"
 ]
