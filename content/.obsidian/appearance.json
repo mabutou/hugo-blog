@@ -1,0 +1,10 @@
+{
+  "theme": "moonstone",
+  "cssTheme": "Minimal",
+  "enabledCssSnippets": [],
+  "translucency": false,
+  "interfaceFontFamily": "LXGW WenKai Screen",
+  "textFontFamily": "LXGW WenKai Screen",
+  "monospaceFontFamily": "Hack Nerd Font Mono",
+  "baseFontSize": 16
+}

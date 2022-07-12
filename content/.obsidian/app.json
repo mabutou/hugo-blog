@@ -1,0 +1,22 @@
+{
+  "spellcheck": false,
+  "defaultViewMode": "source",
+  "vimMode": true,
+  "emacsyKeys": false,
+  "attachmentFolderPath": "./",
+  "alwaysUpdateLinks": true,
+  "promptDelete": false,
+  "legacyEditor": false,
+  "showLineNumber": true,
+  "readableLineLength": false,
+  "showFrontmatter": true,
+  "newLinkFormat": "relative",
+  "useMarkdownLinks": true,
+  "pdfExportSettings": {
+    "pageSize": "A4",
+    "landscape": false,
+    "margin": "0",
+    "downscalePercent": 100
+  },
+  "newFileLocation": "current"
+}

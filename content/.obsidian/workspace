@@ -1,0 +1,133 @@
+{
+  "main": {
+    "id": "11b0ed525f2111fd",
+    "type": "split",
+    "children": [
+      {
+        "id": "c03de2d37b0f4efc",
+        "type": "leaf",
+        "state": {
+          "type": "markdown",
+          "state": {
+            "file": "about/index.md",
+            "mode": "source",
+            "backlinks": true,
+            "source": false
+          }
+        }
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "750337ca76243021",
+    "type": "split",
+    "children": [
+      {
+        "id": "69eb6cfe033ed5b4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "79e16762f9555efb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {}
+            }
+          },
+          {
+            "id": "4ab703e167865fd8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3b75b7f44dc2316c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300
+  },
+  "right": {
+    "id": "65ef5636fa308cd0",
+    "type": "split",
+    "children": [
+      {
+        "id": "40518b18fd10b972",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "36d14cbcba6839bd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "about/index.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f04e44b17786c744",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "about/index.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "91207f3893827052",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "about/index.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 300,
+    "collapsed": true
+  },
+  "active": "c03de2d37b0f4efc",
+  "lastOpenFiles": [
+    "about/index.md",
+    "Template/index.md.md",
+    "post/tailscale-ipv4-no-addr-found/index.md.md",
+    "post/jiu/index.md",
+    "post/hetzner-firewall/index.md",
+    "post/h/h.md",
+    "post/golang-port/index.md",
+    "post/AnkiConnect/index.md",
+    "post/vultr-network/index.md"
+  ]
+}
