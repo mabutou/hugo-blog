@@ -73,3 +73,9 @@ pygmentscodefencesguesssyntax = true
 [markup.goldmark]
 [markup.goldmark.renderer]
   unsafe = true
+
+[params.artalk]
+server = "https://artalk.butou.ma"
+site = "mabutou's blog"
+# flatMode = "auto"
+locale = "auto"

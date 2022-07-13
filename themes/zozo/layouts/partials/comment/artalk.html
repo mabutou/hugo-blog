@@ -1,0 +1,20 @@
+<link href="https://artalk.butou.ma/dist/Artalk.css" rel="stylesheet">
+<script src="https://artalk.butou.ma/dist/Artalk.js"></script>
+<!-- <link href="{{ "css/artalk/Artalk.css" | absURL }}" rel="stylesheet">
+<script src="{{ "js/artalk/Artalk.js" | absURL }}"></script> -->
+<!-- Artalk -->
+<div id="Comments"></div>
+
+<script>
+  new Artalk({
+    useBackendConf: 'true',
+    el:        '#Comments',
+    pageKey:   '{{ .Permalink }}',
+    pageTitle: '{{ .Title }}',
+    server:    '{{ $.Site.Params.artalk.server }}',
+    site:      '{{ $.Site.Params.artalk.site }}',
+    locale:     '{{ $.Site.Params.artalk.locale }}',
+    site:      '{{ $.Site.Params.artalk.site }}',
+    // ...你的其他配置
+  })
+</script>

@@ -4,16 +4,11 @@
     "type": "split",
     "children": [
       {
-        "id": "fb6b419158055503",
+        "id": "469b0e514d38db94",
         "type": "leaf",
         "state": {
-          "type": "markdown",
-          "state": {
-            "file": "content/post/eternity-and-a-day/index.md",
-            "mode": "source",
-            "backlinks": true,
-            "source": false
-          }
+          "type": "empty",
+          "state": {}
         }
       }
     ],
@@ -62,7 +57,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 264.00521087646484
+    "width": 194.00521087646484
   },
   "right": {
     "id": "65ef5636fa308cd0",
@@ -78,7 +73,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/eternity-and-a-day/index.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -95,7 +89,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/eternity-and-a-day/index.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -106,9 +99,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "content/post/eternity-and-a-day/index.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -117,11 +108,11 @@
     "direction": "horizontal",
     "width": 121.5
   },
-  "active": "fb6b419158055503",
+  "active": "469b0e514d38db94",
   "lastOpenFiles": [
+    "content/post/hetzner-firewall/index.md",
     "content/post/eternity-and-a-day/index.md",
     "content/post/AnkiConnect/index.md",
-    "content/post/hetzner-firewall/index.md",
     "content/post/music-trans/index.md",
     "content/post/nas-data/index.md",
     "content/post/nas-data/1607841982111.png",

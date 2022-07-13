@@ -33,6 +33,10 @@
                 {{ else }}
                 <div class="doc_comments">{{ template "_internal/disqus.html" . }}</div>
                 {{ end }}
+                <!-- artalk -->
+                <div class="article-comments">
+                    {{- partial "comment/artalk" . -}}
+                  </div>
             </div>
         </div>
     </div>
