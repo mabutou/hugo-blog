@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "469b0e514d38db94",
+        "id": "92c8322f0d36e459",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -108,9 +108,10 @@
     "direction": "horizontal",
     "width": 121.5
   },
-  "active": "469b0e514d38db94",
+  "active": "92c8322f0d36e459",
   "lastOpenFiles": [
     "content/post/hetzner-firewall/index.md",
+    "README.md",
     "content/post/eternity-and-a-day/index.md",
     "content/post/AnkiConnect/index.md",
     "content/post/music-trans/index.md",
@@ -118,7 +119,6 @@
     "content/post/nas-data/1607841982111.png",
     "content/post/nas-data/1607841863918.png",
     "content/post/vultr-network/index.md",
-    "content/post/tailscale-ipv4-no-addr-found/index.md.md",
-    "content/about/index.md"
+    "content/post/tailscale-ipv4-no-addr-found/index.md.md"
   ]
 }
