@@ -43,7 +43,7 @@ pygmentscodefencesguesssyntax = true
 
 [params]
   #subTitle = "我未曾珍惜的，我不再拥有"                                       # site's subTitle              # 网站二级标题
-  subTitle = "走吧，我们没有失去记忆，我们去寻找生命的湖"                                       # site's subTitle              # 网站二级标题
+  subTitle = "我们没有失去记忆，我们去寻找生命的湖"                                       # site's subTitle              # 网站二级标题
   #footerSlogan = "© 2017-2021 | Mabutou"                                   # site's footer slogan         # 网站页脚标语
   keywords = ["马捕头","mabutou","blog"]                                   # site's keywords              # 网站关键字
   description = "mabutou's blog."                        # site's description           # 网站描述
