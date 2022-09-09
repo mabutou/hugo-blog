@@ -26,6 +26,11 @@ pygmentscodefencesguesssyntax = true
   identifier = "home"
   url = "/"
 [[menu.main]]
+  name = "Memos"
+  weight = 20
+  identifier = "memos"
+  url = "https://run.butou.ma/explore"
+[[menu.main]]
   name = "Photos"
   weight = 20
   identifier = "photos"

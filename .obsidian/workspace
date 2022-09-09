@@ -4,7 +4,7 @@
     "type": "split",
     "children": [
       {
-        "id": "92c8322f0d36e459",
+        "id": "3ba7c52feefdd52f",
         "type": "leaf",
         "state": {
           "type": "empty",
@@ -57,7 +57,7 @@
       }
     ],
     "direction": "horizontal",
-    "width": 194.00521087646484
+    "width": 238.5
   },
   "right": {
     "id": "65ef5636fa308cd0",
@@ -108,17 +108,17 @@
     "direction": "horizontal",
     "width": 121.5
   },
-  "active": "92c8322f0d36e459",
+  "active": "3ba7c52feefdd52f",
   "lastOpenFiles": [
-    "content/post/hetzner-firewall/index.md",
+    "移动宽带.md",
+    "Untitled.md",
     "README.md",
+    "content/post/hetzner-firewall/index.md",
     "content/post/eternity-and-a-day/index.md",
     "content/post/AnkiConnect/index.md",
     "content/post/music-trans/index.md",
     "content/post/nas-data/index.md",
     "content/post/nas-data/1607841982111.png",
-    "content/post/nas-data/1607841863918.png",
-    "content/post/vultr-network/index.md",
-    "content/post/tailscale-ipv4-no-addr-found/index.md.md"
+    "content/post/nas-data/1607841863918.png"
   ]
 }
