@@ -1,0 +1,141 @@
+{
+  "main": {
+    "id": "11b0ed525f2111fd",
+    "type": "split",
+    "children": [
+      {
+        "id": "4c83193127ccdc02",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "4e10e72e02e29296",
+            "type": "leaf",
+            "state": {
+              "type": "markdown",
+              "state": {
+                "file": "content/post/Setting-sun/未命名.md",
+                "mode": "source",
+                "backlinks": true,
+                "source": false
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "vertical"
+  },
+  "left": {
+    "id": "750337ca76243021",
+    "type": "split",
+    "children": [
+      {
+        "id": "69eb6cfe033ed5b4",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "79e16762f9555efb",
+            "type": "leaf",
+            "state": {
+              "type": "file-explorer",
+              "state": {
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "4ab703e167865fd8",
+            "type": "leaf",
+            "state": {
+              "type": "search",
+              "state": {
+                "query": "",
+                "matchingCase": false,
+                "explainSearch": false,
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical"
+              }
+            }
+          },
+          {
+            "id": "3b75b7f44dc2316c",
+            "type": "leaf",
+            "state": {
+              "type": "starred",
+              "state": {}
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 238.5
+  },
+  "right": {
+    "id": "65ef5636fa308cd0",
+    "type": "split",
+    "children": [
+      {
+        "id": "40518b18fd10b972",
+        "type": "tabs",
+        "children": [
+          {
+            "id": "36d14cbcba6839bd",
+            "type": "leaf",
+            "state": {
+              "type": "backlink",
+              "state": {
+                "file": "content/post/Setting-sun/未命名.md",
+                "collapseAll": false,
+                "extraContext": false,
+                "sortOrder": "alphabetical",
+                "showSearch": false,
+                "searchQuery": "",
+                "backlinkCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "f04e44b17786c744",
+            "type": "leaf",
+            "state": {
+              "type": "outgoing-link",
+              "state": {
+                "file": "content/post/Setting-sun/未命名.md",
+                "linksCollapsed": false,
+                "unlinkedCollapsed": true
+              }
+            }
+          },
+          {
+            "id": "91207f3893827052",
+            "type": "leaf",
+            "state": {
+              "type": "outline",
+              "state": {
+                "file": "content/post/Setting-sun/未命名.md"
+              }
+            }
+          }
+        ]
+      }
+    ],
+    "direction": "horizontal",
+    "width": 121.5
+  },
+  "active": "4e10e72e02e29296",
+  "lastOpenFiles": [
+    "content/post/vultr-network/index.md",
+    "content/post/hetzner-firewall/hetzner.png",
+    "content/post/hetzner-firewall/index.md",
+    "content/post/Setting-sun/未命名.md",
+    "移动宽带.md",
+    "Untitled.md",
+    "README.md",
+    "content/post/eternity-and-a-day/index.md",
+    "content/post/AnkiConnect/index.md",
+    "content/post/music-trans/index.md"
+  ]
+}

@@ -6,5 +6,6 @@
   "interfaceFontFamily": "LXGW WenKai Screen",
   "textFontFamily": "LXGW WenKai Screen",
   "monospaceFontFamily": "Hack Nerd Font Mono",
-  "baseFontSize": 16
+  "baseFontSize": 16,
+  "accentColor": ""
 }
