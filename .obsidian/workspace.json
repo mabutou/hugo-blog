@@ -4,20 +4,15 @@
     "type": "split",
     "children": [
       {
-        "id": "4c83193127ccdc02",
+        "id": "5a496cbd5ce2d611",
         "type": "tabs",
         "children": [
           {
-            "id": "4e10e72e02e29296",
+            "id": "d01f1c1c7121b8eb",
             "type": "leaf",
             "state": {
-              "type": "markdown",
-              "state": {
-                "file": "content/post/Setting-sun/未命名.md",
-                "mode": "source",
-                "backlinks": true,
-                "source": false
-              }
+              "type": "empty",
+              "state": {}
             }
           }
         ]
@@ -86,7 +81,6 @@
             "state": {
               "type": "backlink",
               "state": {
-                "file": "content/post/Setting-sun/未命名.md",
                 "collapseAll": false,
                 "extraContext": false,
                 "sortOrder": "alphabetical",
@@ -103,7 +97,6 @@
             "state": {
               "type": "outgoing-link",
               "state": {
-                "file": "content/post/Setting-sun/未命名.md",
                 "linksCollapsed": false,
                 "unlinkedCollapsed": true
               }
@@ -114,9 +107,7 @@
             "type": "leaf",
             "state": {
               "type": "outline",
-              "state": {
-                "file": "content/post/Setting-sun/未命名.md"
-              }
+              "state": {}
             }
           }
         ]
@@ -125,7 +116,7 @@
     "direction": "horizontal",
     "width": 121.5
   },
-  "active": "4e10e72e02e29296",
+  "active": "d01f1c1c7121b8eb",
   "lastOpenFiles": [
     "content/post/vultr-network/index.md",
     "content/post/hetzner-firewall/hetzner.png",
