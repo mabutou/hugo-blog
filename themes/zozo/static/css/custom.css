@@ -8,3 +8,10 @@
 body {
   font-family: LXGW, 'PingFang SC', 'Microsoft YaHei', sans-serif;
 } */
+
+.bb-timeline ul li .bb-div {
+  border: 0px !important;
+  box-shadow: 0 10px 20px 0 rgb(236 236 236 / 66%);
+  /* box-shadow: 4px 4px 8px 0px rgb(0 0 0 / 11%), -4px -4px 8px 0px #f2f4f8; */
+  /* box-shadow: 4px 4px 8px 0px rgb(0 0 0 / 11%), -4px -4px 8px 0px #fff; */
+  border-radius: 10px;
