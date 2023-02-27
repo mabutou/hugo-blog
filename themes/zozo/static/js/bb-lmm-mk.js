@@ -27,7 +27,7 @@ var bbDom = document.querySelector(bbMemo.domId)
 var load = '<div class="bb-load"><button class="load-btn button-load">加载中……</button></div>'
 if (bbDom) {
 	getFirstList()
-	meNums()
+	// meNums()
 	var btn = document.querySelector('button.button-load')
 	btn.addEventListener('click', function () {
 		btn.textContent = '加载中……'
@@ -71,21 +71,21 @@ function getNextList() {
 			}
 		})
 }
-function meNums() {
-	var bbLoad = document.querySelector('.bb-load')
-	var bbUrl = memos + 'api/memo/amount?userId=' + bbMemo.creatorId
-	fetch(bbUrl)
-		.then((res) => res.json())
-		.then((resdata) => {
-			if (resdata.data) {
-				var allnums =
-					'<div id="bb-footer"><p class="bb-allnums">共 ' +
-					resdata.data +
-					' 条 </p><p class="bb-allpub"><a href="https://immmmm.com/bbs/" target="_blank">Memos Public</p></div>'
-				bbLoad.insertAdjacentHTML('afterend', allnums)
-			}
-		})
-}
+// function meNums() {
+// 	var bbLoad = document.querySelector('.bb-load')
+// 	var bbUrl = memos + 'api/memo/amount?userId=' + bbMemo.creatorId
+// 	fetch(bbUrl)
+// 		.then((res) => res.json())
+// 		.then((resdata) => {
+// 			if (resdata.data) {
+// 				var allnums =
+// 					'<div id="bb-footer"><p class="bb-allnums">共 ' +
+// 					resdata.data +
+// 					' 条 </p><p class="bb-allpub"><a href="https://immmmm.com/bbs/" target="_blank">Memos Public</p></div>'
+// 				bbLoad.insertAdjacentHTML('afterend', allnums)
+// 			}
+// 		})
+// }
 function updateHTMl(data) {
 	var result = '',
 		resultAll = ''
