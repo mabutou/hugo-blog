@@ -8,3 +8,4 @@ zone_id = "91c9f72bd0892e7ea92d21e3afb9e3b0"
 [site]
 bucket = "./public"
 entry-point = "workers-site"
+compatibility-date="2023-03-06"
