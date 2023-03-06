@@ -8,6 +8,7 @@ categories: ['Life']
 - 剧中版本的中文翻译和常规版略有不同
 - 这首诗创作于1831年，当时莱蒙托夫居然只有17岁，有点厉害
 - bilibili: https://www.bilibili.com/video/BV13g4y1J74w/
+
 <div style="text-align: center;">
   <video controls style="width: 50%;">
     <source src="/post/the-cup-of-life/the-cup-of-life.mp4" type="video/mp4">
