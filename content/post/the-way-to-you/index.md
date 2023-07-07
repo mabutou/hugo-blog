@@ -10,6 +10,7 @@ categories: ['Life']
 - 以前在虾米音乐有上架，虾米消失后，这张专辑已在互联网上踪迹难觅。
 - 我传了一份到自己服务器上，部署了一个网页播放器，能在线播放也可以下载到本地。
   - 地址：[https://music.butou.ma](https://music.butou.ma) 用户名密码都是anpu
+![](intersection-playing.png)
 - 推荐里面的《路口》，金城武作曲、陈升作词、张悬翻唱。是我最喜欢的华语歌曲。
 
   - bilibili: https://www.bilibili.com/video/BV1XW41187Yz
