@@ -11,7 +11,7 @@ categories: ['Life']
 - 地址：https://music.butou.ma 用户名密码都是anpu
 - 推荐里面的《路口》，金城武作曲、陈升作词、张悬翻唱。是我最喜欢的华语歌曲。
 
--- bilibili: https://www.bilibili.com/video/BV1XW41187Yz
+- bilibili: https://www.bilibili.com/video/BV1XW41187Yz
 
 <div style="text-align: center;">
   <video controls style="width: 50%;">
