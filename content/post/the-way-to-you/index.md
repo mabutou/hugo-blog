@@ -3,6 +3,8 @@ title: "《The way to you.》&&《路口》"
 date: 2023-07-07T23:45:00+08:00
 categories: ['Life']
 ---
+<!-- ![](GoldenMelody.png) -->
+
 - 前几天金曲奖，张悬的《最好的时光》拿了年度最佳歌曲奖。
 - 想起一张和她有关的特殊专辑，《The way to you.》。
   - 豆瓣链接：[https://music.douban.com/subject/27081464/](https://music.douban.com/subject/27081464/)
