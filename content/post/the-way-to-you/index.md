@@ -27,7 +27,7 @@ categories: ['Life']
   - [https://www.bilibili.com/video/BV1XW41187Yz](https://www.bilibili.com/video/BV1XW41187Yz)
 
 <div style="text-align: center;">
-  <video controls style="width: 50%;">
+  <video controls style="width: 70%;">
     <source src="/post/the-way-to-you/intersection.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
