@@ -6,7 +6,7 @@ categories: ['Life']
 <!-- ![](GoldenMelody.png) -->
 
 <div style="text-align: center;">
-  <video controls style="width: 50%;">
+  <video controls style="width: 70%;">
     <source src="/post/the-way-to-you/The_best_time.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
