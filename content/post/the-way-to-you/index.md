@@ -5,6 +5,15 @@ categories: ['Life']
 ---
 <!-- ![](GoldenMelody.png) -->
 
+<div style="text-align: center;">
+  <video controls style="width: 50%;">
+    <source src="/post/the-way-to-you/The_best_time.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+</div>
+
+- [https://www.bilibili.com/video/BV1ZX4y1n7QN](https://www.bilibili.com/video/BV1ZX4y1n7QN)
+
 - 前几天金曲奖，张悬的《最好的时光》拿了年度最佳歌曲奖。
 - 想起一张和她有关的特殊专辑，《The way to you.》。
   - 豆瓣链接：[https://music.douban.com/subject/27081464/](https://music.douban.com/subject/27081464/)
@@ -15,7 +24,7 @@ categories: ['Life']
 ![](intersection-playing.png)
 - 推荐里面的《路口》，金城武作曲、陈升作词、张悬翻唱。是我最喜欢的华语歌曲。
 
-  - bilibili: https://www.bilibili.com/video/BV1XW41187Yz
+  - [https://www.bilibili.com/video/BV1XW41187Yz](https://www.bilibili.com/video/BV1XW41187Yz)
 
 <div style="text-align: center;">
   <video controls style="width: 50%;">
