@@ -41,7 +41,7 @@ if (bbDom) {
 }
 function getFirstList() {
 	bbDom.insertAdjacentHTML('afterend', load)
-	var bbUrl = memos + 'api/memo?creatorId=' + bbMemo.creatorId + '&rowStatus=NORMAL&limit=' + limit
+	var bbUrl = memos + 'api/v1/memo?creatorId=' + bbMemo.creatorId + '&rowStatus=NORMAL&limit=' + limit
 	fetch(bbUrl)
 		.then((res) => res.json())
 		.then((resdata) => {
