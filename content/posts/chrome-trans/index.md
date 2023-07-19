@@ -23,4 +23,4 @@ Google 不支持别名 ID，只好手动导数据。
 
 > 备注：谷歌提供归档功能，可以将账号内的所有服务的数据生成一个压缩文件下载到本地。链接： https://takeout.google.com/settings/takeout
 
-![](20180516161857.png)
+![](https://image.butou.ma/i/2023/07/19/64b7bb5a665c1.png)

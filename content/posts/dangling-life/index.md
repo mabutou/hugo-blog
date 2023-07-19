@@ -3,7 +3,7 @@ title: "Dangling Life"
 date: 2020-05-06T19:59:20+08:00
 categories: ['Life']
 ---
-![water](water.png)
+![water](https://image.butou.ma/i/2023/07/19/64b7bb80206b7.png)
 #### **容器技术 Docker 里有种特殊镜像叫 dangling image , 虚悬镜像。指那些失去了标签和名字但依然存在的镜像。**
 
 - 工作用的 Mac 上经常会用 Docker 进行测试，偶尔手动清理下会发现一大堆被遗忘的 dangling image。 每次看到这些镜像我都会联想到现实，感觉自己的生活也时常处于 dangling 状态，没有明确的方向，存在感很弱。

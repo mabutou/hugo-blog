@@ -24,7 +24,6 @@ _**19.10.05 update:**_
 
 汇总 + 转换 + 保留文件夹层级功能脚本点此下载：[_pandoc.sh_](/pandoc.sh)
 
-![](Screen-Shot-2019-10-05-at-18.23.05-1024x739.png)
 
 Notion 界面简洁，功能也挺强
 
@@ -36,7 +35,7 @@ _19.08.14 update:_
 
 3. 笔记应用 Trilium 已放弃，转移到 Mac 端的 Typora，配合 Google Drive 进行 markdown 文件和图片文件同步。
 
-![](Screen-Shot-2019-08-14-at-19.51.19.png)
+![](https://image.butou.ma/i/2023/07/19/64b7beae52b14.png)
 
 ## 正文
 
@@ -94,12 +93,12 @@ _**“世间好物不坚牢 彩云易散琉璃碎”**_
 1. 打开目标微博主页
 2. 打开网页开发工具，控制台输入 $CONFIG.oid
 
-![](1bb80-006tNc79gy1fz7o3iecajj31hc0u0doc.jpg)
+![](https://image.butou.ma/i/2023/07/19/64b7becc1e9d2.jpg)
 
 1. 复制得到的用户 id 1400854834，拼接成对应 url ：[http://rsshub.butou.ma/weibo/user/1400854834](http://rsshub.butou.ma/weibo/user/1400854834)
 2. 浏览器如能成功访问此网址，则对应的 RSS 源就生成成功了。
 
-![](60a2c-006tNc79gy1fz7o46nbxqj31hc0u0ag9.jpg)
+![](https://image.butou.ma/i/2023/07/19/64b7bed599428.jpg)
 
 #### 注：有些渠道比较简单，如 instagram。直接用 id 拼接成对应 rss 地址即可
 
@@ -116,11 +115,11 @@ _以长泽雅美 ?masami_nagasawa 为例：https://rsshub.butou.ma/instagram/use
 - 将第一步制作好的 RSS 地址添加进去就行。
 - 很多个人博客和媒体网站都原生提供 RSS ，不用自己制作。
 
-![](85039-006tNc79gy1fz7ocdkas1j30sc0fmq3n.jpg)
+![](https://image.butou.ma/i/2023/07/19/64b7bee768dc7.jpg)
 
 #### 最终效果
 
-![](2174f-006tNc79gy1fz7odibpixj31hc0u0jwz.jpg)
+![](https://image.butou.ma/i/2023/07/19/64b7bef237c3b.jpg)
 
 #### 备注 1
 
@@ -133,15 +132,15 @@ _以长泽雅美 ?masami_nagasawa 为例：https://rsshub.butou.ma/instagram/use
 
 - 安装好后最好在配置页面把服务器地址改成自己的。
 
-![](c537f-006tNc79gy1fz7p0ogcwij30n208kwej.jpg)
+![](https://image.butou.ma/i/2023/07/19/64b7befbcad6f.jpg)
 
-![](afe2d-006tNc79gy1fz7p3jhharj31hc0u0tey.jpg)
+![](https://image.butou.ma/i/2023/07/19/64b7bf04511c1.jpg)
 
 #### 备注 2
 
 - Inoreader 可与 [http://reabble.com/](http://reabble.com/) 联动，实现在 kindle 上阅读的同时重新排版。
 - reabble 本质上是通过登录 Inoreader 帐号，获取到里面的内容后进行二次排版，专门针对电子墨水屏设备优化。
-- 效果如图：![](6a559-006tNc79gy1fz7pphojawj30ts148gm9.jpg)
+- 效果如图：![](https://image.butou.ma/i/2023/07/19/64b7bf0f9db1c.jpg)
 
 ## 输出
 
@@ -190,7 +189,7 @@ _以长泽雅美 ?masami_nagasawa 为例：https://rsshub.butou.ma/instagram/use
 
 - 支持自定义主题
 
-![](2d89b-006tKfTcgy1g07akkwhs2j31hc0u00xv.jpg)
+![](https://image.butou.ma/i/2023/07/19/64b7bf1b9774c.jpg)
 
 ## 检索
 
