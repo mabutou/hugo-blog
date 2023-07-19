@@ -55,7 +55,7 @@ pygmentscodefencesguesssyntax = true
   description = "mabutou's blog."                        # site's description           # 网站描述
   enableMathJax = false                                                 # enable mathjax               # 是否使用mathjax（数学公式）
   enableSummary = false                                                 # display the article summary  # 是否显示文章摘要
-  mainSections = ["post"]
+  mainSections = ["posts"]
   customCSS = ["custom.css"]
   
 # Valine.
