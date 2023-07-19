@@ -45,15 +45,17 @@ function getFirstList() {
 	fetch(bbUrl)
 		.then((res) => res.json())
 		.then((resdata) => {
-			updateHTMl(resdata.data)
-			var nowLength = resdata.data.length
-			if (nowLength < limit) {
-				document.querySelector('button.button-load').remove()
-				return
+			if (resdata !== undefined) {
+				updateHTMl(resdata)
+				var nowLength = resdata.length
+				if (nowLength < limit) {
+					document.querySelector('button.button-load').remove()
+					return
+				}
+				page++
+				offset = limit * (page - 1)
+				getNextList()
 			}
-			page++
-			offset = limit * (page - 1)
-			getNextList()
 		})
 }
 function getNextList() {
@@ -61,7 +63,7 @@ function getNextList() {
 	fetch(bbUrl)
 		.then((res) => res.json())
 		.then((resdata) => {
-			nextDom = resdata.data
+			nextDom = resdata
 			nextLength = nextDom.length
 			page++
 			offset = limit * (page - 1)
@@ -116,7 +118,7 @@ function updateHTMl(data) {
 				YOUTUBE_REG,
 				"<div class='video-wrapper'><iframe src='https://www.youtube.com/embed/$1' title='YouTube video player' frameborder='0' allow='accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture' allowfullscreen title='YouTube Video'></iframe></div>"
 			)
-		if (data[i].resourceList && data[i].resourceList.length > 0) {
+		if (data[i].resourceList !== undefined && data[i].resourceList.length > 0) {
 			var resourceList = data[i].resourceList
 			var imgUrl = '',
 				resUrl = '',
