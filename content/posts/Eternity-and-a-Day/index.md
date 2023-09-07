@@ -6,7 +6,7 @@ date: 2021-06-23T14:45:20+08:00
 - 流水滔滔，日复一日。仿佛生活也会如此永恒的重复下去。
 - [《永恒和一日 Eternity and a Day》](https://movie.douban.com/subject/1293455/)
 
-{{< img src="https://image.butou.ma/i/2023/07/19/64b7bb99e3520.webp" >}}
-{{< img src="https://image.butou.ma/i/2023/07/19/64b7bbaeb1960.jpeg" >}}
-{{< img src="https://image.butou.ma/i/2023/07/19/64b7bbb87f945.jpeg" >}}
-{{< img src="https://image.butou.ma/i/2023/07/19/64b7bbce1de2f.jpeg" >}}
+{{< img src="/posts/eternity-and-a-day/Eternity-and-a-Day.webp" >}}
+{{< img src="/posts/eternity-and-a-day/river0.jpeg" >}}
+{{< img src="/posts/eternity-and-a-day/river1.jpeg" >}}
+{{< img src="/posts/eternity-and-a-day/river2.jpeg" >}}

@@ -57,6 +57,6 @@ winport.exe -p=10001
 
 浏览器打开 http://localhost:10001 , 应该能看到如下界面。
 
-![](https://image.butou.ma/i/2023/07/19/64b7bbfa20dd2.png)
+![](win.png)
 
 然后就可以开始测试了。
