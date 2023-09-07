@@ -11,7 +11,7 @@ categories: ['Life']
 
 <div style="text-align: center;">
   <video controls style="width: 50%;">
-    <source src="/post/the-cup-of-life/the-cup-of-life.mp4" type="video/mp4">
+    <source src="/posts/the-cup-of-life/the-cup-of-life.mp4" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </div>
