@@ -9,4 +9,4 @@ categories: ['Life']
 >记得那时前一天晚上陪我妈一起看了纪录片《四个春天》，不觉间已过去了三个。
 >萧瑟秋风今又是，换了人间。
 
-{{< img src="https://image.butou.ma/i/2023/07/19/64b7bf3db00ef.jpg" >}}
+{{< img src="/posts/setting-sun/Setting-sun.jpg" >}}

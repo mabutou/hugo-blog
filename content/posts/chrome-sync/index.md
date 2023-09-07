@@ -15,4 +15,4 @@ categories: ['Tech']
     *   然后就能顺利同步了，具体原理不清楚，估计是 Google Pay 的同步逻辑与 Chrome 有冲突。
 *   论坛链接：[https://productforums.google.com/forum/#!topic/chrome/JLsH2Aeg9\_Y](https://productforums.google.com/forum/#!topic/chrome/JLsH2Aeg9_Y)
 
-![](https://image.butou.ma/i/2023/07/19/64b7b5b8e0af5.jpg)
+![](Snipaste_2018-05-16_15-51-31.jpg)

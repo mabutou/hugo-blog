@@ -25,7 +25,7 @@ sudo killall coreaudiod
 
 1.  设置选项里可以将切换快捷键（Mission Control）设置为其他组合键，如 Ctrl + 1 。但是如果其他快捷键设置过同样的组合键，即使没有激活，也会导致左切换快捷键失效（Move left a space），神奇的是右切换不受影响。
 
-![](https://image.butou.ma/i/2023/07/19/64b7bd8e51136.jpg)
+![](006tKfTcgy1g0wg1da4stj30yi0u0q5k-1.jpg)
 
 解决方法：
 
