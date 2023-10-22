@@ -21,27 +21,27 @@ pygmentscodefencesguesssyntax = true
   smartypants = false
 
 [[menu.main]]                          # config your menu               # 配置菜单
-  name = "Home"
+  name = "home"
   weight = 10
   identifier = "home"
   url = "/"
 [[menu.main]]
-  name = "Memos"
+  name = "turbulence"
   weight = 20
-  identifier = "memos"
-  url = "/memos/"
+  identifier = "turbulence"
+  url = "/turbulence/"
 [[menu.main]]
-  name = "Photos"
+  name = "photos"
   weight = 20
   identifier = "photos"
   url = "https://photos.butou.ma"
 [[menu.main]]
-  name = "Wiki"
+  name = "wiki"
   weight = 30
   identifier = "wiki"
   url = "https://wiki.butou.ma"
 [[menu.main]]
-  name = "About"
+  name = "about"
   weight = 40
   identifier = "about"
   url = "/about/"
