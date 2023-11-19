@@ -59,7 +59,7 @@ function getFirstList() {
 		})
 }
 function getNextList() {
-	var bbUrl = memos + 'api/memo?creatorId=' + bbMemo.creatorId + '&rowStatus=NORMAL&limit=' + limit + '&offset=' + offset
+	var bbUrl = memos + 'api/v1/memo?creatorId=' + bbMemo.creatorId + '&rowStatus=NORMAL&limit=' + limit + '&offset=' + offset
 	fetch(bbUrl)
 		.then((res) => res.json())
 		.then((resdata) => {
@@ -103,10 +103,15 @@ function updateHTMl(data) {
 		var bbContREG = data[i].content.replace(TAG_REG, "<span class='tag-span'>#$1</span> ")
 		bbContREG = marked
 			.parse(bbContREG)
+			// .replace(
+			// 	BILIBILI_REG,
+			// 	"<div class='video-wrapper'><iframe src='//player.bilibili.com/player.html?bvid=$1&as_wide=1&high_quality=1&danmaku=0' scrolling='no' border='0' frameborder='no' framespacing='0' allowfullscreen='true'></iframe></div>"
+			// )
 			.replace(
 				BILIBILI_REG,
-				"<div class='video-wrapper'><iframe src='//player.bilibili.com/player.html?bvid=$1&as_wide=1&high_quality=1&danmaku=0' scrolling='no' border='0' frameborder='no' framespacing='0' allowfullscreen='true'></iframe></div>"
+				"<div class='video-wrapper'><iframe src='//www.bilibili.com/blackboard/html5mobileplayer.html?bvid=$1&as_wide=1&high_quality=1&danmaku=0' scrolling='no' border='0' frameborder='no' framespacing='0' allowfullscreen='true'></iframe></div>"
 			)
+
 			.replace(NETEASE_MUSIC_REG, "<meting-js auto='https://music.163.com/#/song?id=$1'></meting-js>")
 			.replace(QQMUSIC_REG, "<meting-js auto='https://y.qq.com/n/yqq/song$1.html'></meting-js>")
 			.replace(
