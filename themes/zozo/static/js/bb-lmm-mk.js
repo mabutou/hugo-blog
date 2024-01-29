@@ -136,8 +136,11 @@ function updateHTMl(data) {
 				if (resexlink) {
 					resLink = resexlink
 				} else {
-					fileId = resourceList[j].publicId || resourceList[j].filename
-					resLink = memos + 'o/r/' + resourceList[j].id + '/' + fileId
+					// 2024 fix api_url_path 修改开始：适应新的图片URL格式
+					fileId = resourceList[j].name
+					resLink = memos + 'o/r/' + fileId
+					// fileId = resourceList[j].publicId || resourceList[j].filename
+					// resLink = memos + 'o/r/' + resourceList[j].id + '/' + fileId
 				}
 				if (restype == 'image') {
 					imgUrl += '<figure class="gallery-thumbnail"><img class="img thumbnail-image" src="' + resLink + '"/></figure>'
